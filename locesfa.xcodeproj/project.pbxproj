@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */; };
+		CD7181B21C5AF4FA004734E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181B11C5AF4FA004734E4 /* ViewController.swift */; };
+		CD7181B51C5AF4FA004734E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7181B31C5AF4FA004734E4 /* Main.storyboard */; };
+		CD7181B81C5AF4FA004734E4 /* locesfa.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */; };
+		CD7181BA1C5AF4FA004734E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD7181B91C5AF4FA004734E4 /* Assets.xcassets */; };
+		CD7181BD1C5AF4FA004734E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7181BB1C5AF4FA004734E4 /* LaunchScreen.storyboard */; };
+		CD7181C81C5AF4FA004734E4 /* locesfaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181C71C5AF4FA004734E4 /* locesfaTests.swift */; };
+		CD7181D31C5AF4FA004734E4 /* locesfaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181D21C5AF4FA004734E4 /* locesfaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD7181C41C5AF4FA004734E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD7181A41C5AF4FA004734E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD7181AB1C5AF4FA004734E4;
+			remoteInfo = locesfa;
+		};
+		CD7181CF1C5AF4FA004734E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD7181A41C5AF4FA004734E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD7181AB1C5AF4FA004734E4;
+			remoteInfo = locesfa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD7181AC1C5AF4FA004734E4 /* locesfa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locesfa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD7181B11C5AF4FA004734E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD7181B41C5AF4FA004734E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD7181B71C5AF4FA004734E4 /* locesfa.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = locesfa.xcdatamodel; sourceTree = "<group>"; };
+		CD7181B91C5AF4FA004734E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD7181BC1C5AF4FA004734E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD7181BE1C5AF4FA004734E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD7181C31C5AF4FA004734E4 /* locesfaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = locesfaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD7181C71C5AF4FA004734E4 /* locesfaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locesfaTests.swift; sourceTree = "<group>"; };
+		CD7181C91C5AF4FA004734E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD7181CE1C5AF4FA004734E4 /* locesfaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = locesfaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD7181D21C5AF4FA004734E4 /* locesfaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locesfaUITests.swift; sourceTree = "<group>"; };
+		CD7181D41C5AF4FA004734E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD7181A91C5AF4FA004734E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD7181C01C5AF4FA004734E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD7181CB1C5AF4FA004734E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD7181A31C5AF4FA004734E4 = {
+			isa = PBXGroup;
+			children = (
+				CD7181AE1C5AF4FA004734E4 /* locesfa */,
+				CD7181C61C5AF4FA004734E4 /* locesfaTests */,
+				CD7181D11C5AF4FA004734E4 /* locesfaUITests */,
+				CD7181AD1C5AF4FA004734E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD7181AD1C5AF4FA004734E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD7181AC1C5AF4FA004734E4 /* locesfa.app */,
+				CD7181C31C5AF4FA004734E4 /* locesfaTests.xctest */,
+				CD7181CE1C5AF4FA004734E4 /* locesfaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD7181AE1C5AF4FA004734E4 /* locesfa */ = {
+			isa = PBXGroup;
+			children = (
+				CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */,
+				CD7181B11C5AF4FA004734E4 /* ViewController.swift */,
+				CD7181B31C5AF4FA004734E4 /* Main.storyboard */,
+				CD7181B91C5AF4FA004734E4 /* Assets.xcassets */,
+				CD7181BB1C5AF4FA004734E4 /* LaunchScreen.storyboard */,
+				CD7181BE1C5AF4FA004734E4 /* Info.plist */,
+				CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */,
+			);
+			path = locesfa;
+			sourceTree = "<group>";
+		};
+		CD7181C61C5AF4FA004734E4 /* locesfaTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD7181C71C5AF4FA004734E4 /* locesfaTests.swift */,
+				CD7181C91C5AF4FA004734E4 /* Info.plist */,
+			);
+			path = locesfaTests;
+			sourceTree = "<group>";
+		};
+		CD7181D11C5AF4FA004734E4 /* locesfaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD7181D21C5AF4FA004734E4 /* locesfaUITests.swift */,
+				CD7181D41C5AF4FA004734E4 /* Info.plist */,
+			);
+			path = locesfaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD7181AB1C5AF4FA004734E4 /* locesfa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD7181D71C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfa" */;
+			buildPhases = (
+				CD7181A81C5AF4FA004734E4 /* Sources */,
+				CD7181A91C5AF4FA004734E4 /* Frameworks */,
+				CD7181AA1C5AF4FA004734E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = locesfa;
+			productName = locesfa;
+			productReference = CD7181AC1C5AF4FA004734E4 /* locesfa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD7181C21C5AF4FA004734E4 /* locesfaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD7181DA1C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfaTests" */;
+			buildPhases = (
+				CD7181BF1C5AF4FA004734E4 /* Sources */,
+				CD7181C01C5AF4FA004734E4 /* Frameworks */,
+				CD7181C11C5AF4FA004734E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD7181C51C5AF4FA004734E4 /* PBXTargetDependency */,
+			);
+			name = locesfaTests;
+			productName = locesfaTests;
+			productReference = CD7181C31C5AF4FA004734E4 /* locesfaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD7181CD1C5AF4FA004734E4 /* locesfaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD7181DD1C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfaUITests" */;
+			buildPhases = (
+				CD7181CA1C5AF4FA004734E4 /* Sources */,
+				CD7181CB1C5AF4FA004734E4 /* Frameworks */,
+				CD7181CC1C5AF4FA004734E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD7181D01C5AF4FA004734E4 /* PBXTargetDependency */,
+			);
+			name = locesfaUITests;
+			productName = locesfaUITests;
+			productReference = CD7181CE1C5AF4FA004734E4 /* locesfaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD7181A41C5AF4FA004734E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = datalabor.com.mx;
+				TargetAttributes = {
+					CD7181AB1C5AF4FA004734E4 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					CD7181C21C5AF4FA004734E4 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CD7181AB1C5AF4FA004734E4;
+					};
+					CD7181CD1C5AF4FA004734E4 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CD7181AB1C5AF4FA004734E4;
+					};
+				};
+			};
+			buildConfigurationList = CD7181A71C5AF4FA004734E4 /* Build configuration list for PBXProject "locesfa" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD7181A31C5AF4FA004734E4;
+			productRefGroup = CD7181AD1C5AF4FA004734E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD7181AB1C5AF4FA004734E4 /* locesfa */,
+				CD7181C21C5AF4FA004734E4 /* locesfaTests */,
+				CD7181CD1C5AF4FA004734E4 /* locesfaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD7181AA1C5AF4FA004734E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD7181BD1C5AF4FA004734E4 /* LaunchScreen.storyboard in Resources */,
+				CD7181BA1C5AF4FA004734E4 /* Assets.xcassets in Resources */,
+				CD7181B51C5AF4FA004734E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD7181C11C5AF4FA004734E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD7181CC1C5AF4FA004734E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD7181A81C5AF4FA004734E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD7181B21C5AF4FA004734E4 /* ViewController.swift in Sources */,
+				CD7181B81C5AF4FA004734E4 /* locesfa.xcdatamodeld in Sources */,
+				CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD7181BF1C5AF4FA004734E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD7181C81C5AF4FA004734E4 /* locesfaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD7181CA1C5AF4FA004734E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD7181D31C5AF4FA004734E4 /* locesfaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD7181C51C5AF4FA004734E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD7181AB1C5AF4FA004734E4 /* locesfa */;
+			targetProxy = CD7181C41C5AF4FA004734E4 /* PBXContainerItemProxy */;
+		};
+		CD7181D01C5AF4FA004734E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD7181AB1C5AF4FA004734E4 /* locesfa */;
+			targetProxy = CD7181CF1C5AF4FA004734E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD7181B31C5AF4FA004734E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD7181B41C5AF4FA004734E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD7181BB1C5AF4FA004734E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD7181BC1C5AF4FA004734E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD7181D51C5AF4FA004734E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD7181D61C5AF4FA004734E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD7181D81C5AF4FA004734E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = locesfa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CD7181D91C5AF4FA004734E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = locesfa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CD7181DB1C5AF4FA004734E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = locesfaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/locesfa.app/locesfa";
+			};
+			name = Debug;
+		};
+		CD7181DC1C5AF4FA004734E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = locesfaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/locesfa.app/locesfa";
+			};
+			name = Release;
+		};
+		CD7181DE1C5AF4FA004734E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = locesfaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = locesfa;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CD7181DF1C5AF4FA004734E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = locesfaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = locesfa;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD7181A71C5AF4FA004734E4 /* Build configuration list for PBXProject "locesfa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD7181D51C5AF4FA004734E4 /* Debug */,
+				CD7181D61C5AF4FA004734E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD7181D71C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD7181D81C5AF4FA004734E4 /* Debug */,
+				CD7181D91C5AF4FA004734E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CD7181DA1C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD7181DB1C5AF4FA004734E4 /* Debug */,
+				CD7181DC1C5AF4FA004734E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CD7181DD1C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD7181DE1C5AF4FA004734E4 /* Debug */,
+				CD7181DF1C5AF4FA004734E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CD7181B71C5AF4FA004734E4 /* locesfa.xcdatamodel */,
+			);
+			currentVersion = CD7181B71C5AF4FA004734E4 /* locesfa.xcdatamodel */;
+			path = locesfa.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CD7181A41C5AF4FA004734E4 /* Project object */;
+}
