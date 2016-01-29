@@ -110,6 +110,36 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         self.hasWaitDialog = true
 
     
+        ////
+        
+        
+        if let selectedEsteticaCell = sender as? customTableView4!{
+            let indexPath = tableView.indexPathForCell(selectedEsteticaCell)!
+            let row = indexPath.row
+            let currentEstetica = self.dataSource.esteticas[row]
+            
+            let oldEstetica = dataAccess.sharedInstance.currentEstetica
+            let curEstetica = currentEstetica.id
+            if (oldEstetica != curEstetica)
+            {
+                dataAccess.sharedInstance.currentEstetica = currentEstetica.id!
+               
+                
+            }
+            
+            
+            let esteticaDetailViewController = segue.destinationViewController as! esteticaview
+            
+            esteticaDetailViewController.CurEstetica = currentEstetica
+            
+
+            
+            
+        }
+        
+     
+        ///
+        
     
     }
  
@@ -181,7 +211,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         
         print(cell.id)
         
-        performSegueWithIdentifier("showEstetica", sender: nil)
+        performSegueWithIdentifier("showEstetica", sender: cell)
     }
     
     
