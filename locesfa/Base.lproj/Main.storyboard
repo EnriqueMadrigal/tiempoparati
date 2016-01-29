@@ -64,25 +64,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-nF-rjV">
-                                <rect key="frame" x="180" y="333" width="240" height="212"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myIdentifier" id="n2M-Cp-dYj">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2M-Cp-dYj" id="Ls7-Dh-MhF">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="vP2-y6-8m2" kind="show" identifier="showEstetica" id="v7G-du-GiN"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WFh-tM-iPB">
+                                <rect key="frame" x="29" y="44" width="560" height="580"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-ks-L1H">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="133"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-iz-yY7">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="133"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Z2f-iz-yY7" secondAttribute="height" multiplier="1:1" id="0ag-AJ-DND"/>
+                                                </constraints>
+                                                <state key="normal" image="favoritos"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk3-5o-tlt">
+                                                <rect key="frame" x="143" y="0.0" width="132" height="133"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Bk3-5o-tlt" secondAttribute="height" multiplier="1:1" id="8YQ-Js-O4C"/>
+                                                </constraints>
+                                                <state key="normal" image="womancut"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gb-BS-2dh">
+                                                <rect key="frame" x="285" y="0.0" width="133" height="133"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7gb-BS-2dh" secondAttribute="height" multiplier="1:1" id="itP-De-rq9"/>
+                                                </constraints>
+                                                <state key="normal" image="womancomb"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aol-ZI-KHk">
+                                                <rect key="frame" x="428" y="0.0" width="132" height="133"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aol-ZI-KHk" secondAttribute="height" multiplier="1:1" id="kKh-iQ-ETK"/>
+                                                </constraints>
+                                                <state key="normal" image="womanmakeup"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WH8-VC-MOc">
+                                        <rect key="frame" x="0.0" y="143" width="560" height="132"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9X-UX-GfP">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="132"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="M9X-UX-GfP" secondAttribute="height" multiplier="1:1" id="bEg-6n-Y9a"/>
+                                                </constraints>
+                                                <state key="normal" image="womanfacial"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhV-lu-idN">
+                                                <rect key="frame" x="143" y="0.0" width="132" height="132"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="rhV-lu-idN" secondAttribute="height" multiplier="1:1" id="vlA-Ja-Eta"/>
+                                                </constraints>
+                                                <state key="normal" image="womannails"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtA-It-8v0">
+                                                <rect key="frame" x="285" y="0.0" width="133" height="132"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="BtA-It-8v0" secondAttribute="height" multiplier="1:1" id="SZF-PG-T8R"/>
+                                                </constraints>
+                                                <state key="normal" image="womanmassage"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aej-l1-fxn">
+                                                <rect key="frame" x="428" y="0.0" width="132" height="132"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="aej-l1-fxn" secondAttribute="height" multiplier="1:1" id="pro-DW-ehe"/>
+                                                </constraints>
+                                                <state key="normal" image="favoritos"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-kP-HiD">
+                                        <rect key="frame" x="0.0" y="285" width="560" height="0.0"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Selecciona tu estetica favorita:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-ku-xOO">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nyG-Jm-Qkr">
+                                        <rect key="frame" x="0.0" y="295" width="560" height="285"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-nF-rjV">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="285"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myIdentifier" id="n2M-Cp-dYj">
+                                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2M-Cp-dYj" id="Ls7-Dh-MhF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <segue destination="vP2-y6-8m2" kind="show" identifier="showEstetica" id="v7G-du-GiN"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="WFh-tM-iPB" secondAttribute="trailing" constant="-9" id="IPS-6G-GWj"/>
+                            <constraint firstItem="WFh-tM-iPB" firstAttribute="top" secondItem="5rC-fx-nAs" secondAttribute="bottom" constant="24" id="KGM-aC-bg1"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="WFh-tM-iPB" secondAttribute="bottom" constant="-24" id="sYL-Lc-qoy"/>
+                            <constraint firstItem="WFh-tM-iPB" firstAttribute="leading" secondItem="raA-Q3-72a" secondAttribute="leadingMargin" constant="9" id="zTA-7u-lgQ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Esteticas" id="j3g-1C-bvQ"/>
                     <connections>
@@ -150,7 +243,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="favoritos" width="512" height="512"/>
         <image name="logo1" width="160" height="120"/>
+        <image name="womancomb" width="256" height="256"/>
+        <image name="womancut" width="256" height="256"/>
+        <image name="womanfacial" width="256" height="256"/>
+        <image name="womanmakeup" width="256" height="256"/>
+        <image name="womanmassage" width="256" height="256"/>
+        <image name="womannails" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="v7G-du-GiN"/>
