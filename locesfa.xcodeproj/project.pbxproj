@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */; };
+		CD4D9D071C5BF4B4005DD971 /* customTableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */; };
+		CD4D9D081C5BF4B4005DD971 /* customTableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */; };
+		CD4D9D091C5BF4B4005DD971 /* customTableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */; };
+		CD4D9D0A1C5BF4B9005DD971 /* DataSourceComentariosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */; };
+		CD4D9D0B1C5BF4BA005DD971 /* DataSourceComentariosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */; };
 		CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */; };
 		CD7181B21C5AF4FA004734E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181B11C5AF4FA004734E4 /* ViewController.swift */; };
 		CD7181B51C5AF4FA004734E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7181B31C5AF4FA004734E4 /* Main.storyboard */; };
@@ -62,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceComentariosFixed.swift; sourceTree = "<group>"; };
+		CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView3.swift; sourceTree = "<group>"; };
 		CD7181AC1C5AF4FA004734E4 /* locesfa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locesfa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD7181B11C5AF4FA004734E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +184,7 @@
 		CD7181F01C5AF583004734E4 /* customCells */ = {
 			isa = PBXGroup;
 			children = (
+				CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */,
 				CD7181F11C5AF5AF004734E4 /* customTableView4.swift */,
 			);
 			name = customCells;
@@ -184,6 +193,7 @@
 		CD7181F91C5AF5FA004734E4 /* dataSources */ = {
 			isa = PBXGroup;
 			children = (
+				CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */,
 				CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */,
 			);
 			name = dataSources;
@@ -321,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD7181F61C5AF5C4004734E4 /* messages.swift in Sources */,
+				CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CD7181FF1C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181EA1C5AF56F004734E4 /* getdata.swift in Sources */,
 				CD7181B21C5AF4FA004734E4 /* ViewController.swift in Sources */,
@@ -329,6 +340,7 @@
 				CD7182031C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CD7181F21C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E51C5AF55D004734E4 /* dataModels.swift in Sources */,
+				CD4D9D071C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181ED1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */,
 				CD7181E11C5AF551004734E4 /* dataAccess.swift in Sources */,
@@ -339,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4D9D0A1C5BF4B9005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CD7181C81C5AF4FA004734E4 /* locesfaTests.swift in Sources */,
 				CD7181FC1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CD7181F31C5AF5AF004734E4 /* customTableView4.swift in Sources */,
@@ -348,6 +361,7 @@
 				CD7182001C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181F71C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD7181EE1C5AF56F004734E4 /* getimage.swift in Sources */,
+				CD4D9D081C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181E21C5AF551004734E4 /* dataAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4D9D0B1C5BF4BA005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CD7181D31C5AF4FA004734E4 /* locesfaUITests.swift in Sources */,
 				CD7181FD1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CD7181F41C5AF5AF004734E4 /* customTableView4.swift in Sources */,
@@ -365,6 +380,7 @@
 				CD7182011C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181F81C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD7181EF1C5AF56F004734E4 /* getimage.swift in Sources */,
+				CD4D9D091C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181E31C5AF551004734E4 /* dataAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +592,7 @@
 				CD7181D91C5AF4FA004734E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD7181DA1C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfaTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +601,7 @@
 				CD7181DC1C5AF4FA004734E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD7181DD1C5AF4FA004734E4 /* Build configuration list for PBXNativeTarget "locesfaUITests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +610,7 @@
 				CD7181DF1C5AF4FA004734E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

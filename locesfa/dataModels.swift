@@ -49,14 +49,14 @@ class Servicio {
     var id: Int?
     var title: String?
     var descripcion: String?
-    var imageFileName: String?
+    //var imageFileName: String?
     
    
     init(json: NSDictionary) {
         self.id = Int((json["id"] as? String)!)!
         self.title = json["title"] as? String
         self.descripcion = json["descripcion"] as? String
-        self.imageFileName = json["imageFileName"] as? String
+        //self.imageFileName = json["imageFileName"] as? String
     }
     
 }
