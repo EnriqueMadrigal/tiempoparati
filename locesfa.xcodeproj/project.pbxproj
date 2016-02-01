@@ -13,6 +13,9 @@
 		CD4D9D091C5BF4B4005DD971 /* customTableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */; };
 		CD4D9D0A1C5BF4B9005DD971 /* DataSourceComentariosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */; };
 		CD4D9D0B1C5BF4BA005DD971 /* DataSourceComentariosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */; };
+		CD53A1A11C5C96BF00A426C2 /* serviciosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */; };
+		CD53A1A21C5C96BF00A426C2 /* serviciosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */; };
+		CD53A1A31C5C96BF00A426C2 /* serviciosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */; };
 		CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */; };
 		CD7181B21C5AF4FA004734E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181B11C5AF4FA004734E4 /* ViewController.swift */; };
 		CD7181B51C5AF4FA004734E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7181B31C5AF4FA004734E4 /* Main.storyboard */; };
@@ -48,6 +51,12 @@
 		CD7182031C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
+		CDC706A41C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */; };
+		CDC706A51C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */; };
+		CDC706A61C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */; };
+		CDC706A81C5F013B00AC1275 /* customTableView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A71C5F013B00AC1275 /* customTableView1.swift */; };
+		CDC706A91C5F013B00AC1275 /* customTableView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A71C5F013B00AC1275 /* customTableView1.swift */; };
+		CDC706AA1C5F013B00AC1275 /* customTableView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A71C5F013B00AC1275 /* customTableView1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +79,7 @@
 /* Begin PBXFileReference section */
 		CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceComentariosFixed.swift; sourceTree = "<group>"; };
 		CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView3.swift; sourceTree = "<group>"; };
+		CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serviciosview.swift; sourceTree = "<group>"; };
 		CD7181AC1C5AF4FA004734E4 /* locesfa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locesfa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD7181B11C5AF4FA004734E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +103,8 @@
 		CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceEsteticasFixed.swift; sourceTree = "<group>"; };
 		CD7181FE1C5B285F004734E4 /* mainscene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainscene.swift; sourceTree = "<group>"; };
 		CD7182021C5B2A54004734E4 /* esteticaview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = esteticaview.swift; sourceTree = "<group>"; };
+		CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceServiciosFixed.swift; sourceTree = "<group>"; };
+		CDC706A71C5F013B00AC1275 /* customTableView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,7 @@
 				CD7181BE1C5AF4FA004734E4 /* Info.plist */,
 				CD7181FE1C5B285F004734E4 /* mainscene.swift */,
 				CD7182021C5B2A54004734E4 /* esteticaview.swift */,
+				CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */,
 				CD7181F91C5AF5FA004734E4 /* dataSources */,
 				CD7181F01C5AF583004734E4 /* customCells */,
 				CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */,
@@ -186,6 +199,7 @@
 			children = (
 				CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */,
 				CD7181F11C5AF5AF004734E4 /* customTableView4.swift */,
+				CDC706A71C5F013B00AC1275 /* customTableView1.swift */,
 			);
 			name = customCells;
 			sourceTree = "<group>";
@@ -193,6 +207,7 @@
 		CD7181F91C5AF5FA004734E4 /* dataSources */ = {
 			isa = PBXGroup;
 			children = (
+				CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */,
 				CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */,
 				CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */,
 			);
@@ -334,12 +349,15 @@
 				CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CD7181FF1C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181EA1C5AF56F004734E4 /* getdata.swift in Sources */,
+				CD53A1A11C5C96BF00A426C2 /* serviciosview.swift in Sources */,
 				CD7181B21C5AF4FA004734E4 /* ViewController.swift in Sources */,
 				CD7181FB1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CD7181B81C5AF4FA004734E4 /* locesfa.xcdatamodeld in Sources */,
 				CD7182031C5B2A54004734E4 /* esteticaview.swift in Sources */,
+				CDC706A81C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181F21C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E51C5AF55D004734E4 /* dataModels.swift in Sources */,
+				CDC706A41C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD4D9D071C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181ED1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */,
@@ -354,12 +372,15 @@
 				CD4D9D0A1C5BF4B9005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CD7181C81C5AF4FA004734E4 /* locesfaTests.swift in Sources */,
 				CD7181FC1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
+				CDC706A51C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD7181F31C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E61C5AF55D004734E4 /* dataModels.swift in Sources */,
 				CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */,
+				CDC706A91C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EB1C5AF56F004734E4 /* getdata.swift in Sources */,
 				CD7182001C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181F71C5AF5C4004734E4 /* messages.swift in Sources */,
+				CD53A1A21C5C96BF00A426C2 /* serviciosview.swift in Sources */,
 				CD7181EE1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD4D9D081C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181E21C5AF551004734E4 /* dataAccess.swift in Sources */,
@@ -373,12 +394,15 @@
 				CD4D9D0B1C5BF4BA005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CD7181D31C5AF4FA004734E4 /* locesfaUITests.swift in Sources */,
 				CD7181FD1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
+				CDC706A61C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD7181F41C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E71C5AF55D004734E4 /* dataModels.swift in Sources */,
 				CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */,
+				CDC706AA1C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EC1C5AF56F004734E4 /* getdata.swift in Sources */,
 				CD7182011C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181F81C5AF5C4004734E4 /* messages.swift in Sources */,
+				CD53A1A31C5C96BF00A426C2 /* serviciosview.swift in Sources */,
 				CD7181EF1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD4D9D091C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181E31C5AF551004734E4 /* dataAccess.swift in Sources */,

@@ -16,9 +16,27 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     @IBOutlet weak var labelDireccion: UILabel!
     @IBOutlet weak var tableView: UITableView!
        
+     internal var servicios = [Servicio]()
+    
+    @IBAction func getPeinados(sender: UIButton) {
+        print("Peinados")
+        //performSegueWithIdentifier("showServicios", sender: nil)
+       // let vc :serviciosview = self.storyboard?.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
+         //      self.presentViewController(vc, animated: true, completion: nil)
+        
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
+        vc.curServicio = 1
+        self.showViewController(vc, sender: nil)
+            //.showViewController(vc, animated: true, completion: nil)
+        
+    }
+    
+    
     
     var CurEstetica: Estetica!
-    private lazy var dataSource: DataSourceComentariosFixed! = nil
+    private lazy var dataSource: DataSourceServiciosFixed! = nil
     var refreshControl:UIRefreshControl!
     var hasrefresh: Bool = false
     var hasWaitDialog: Bool = false
@@ -82,9 +100,12 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
             self.refreshControl.addTarget(self, action: "refreshdata:", forControlEvents: UIControlEvents.ValueChanged)
             tableView.addSubview(self.refreshControl)
-
+            tableView.rowHeight = 48
+            
+            
             
             ////
+            
             
         }
         
@@ -99,7 +120,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     }
     
 
-    /*
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -107,7 +128,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+   
 
     
     
@@ -116,10 +137,10 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         let IdEstetica = dataAccess.sharedInstance.currentEstetica
         let datapost: String = "idestetica=\(IdEstetica)"
         
-        let newDataPost: NSString = NSString(string: datapost)
-        self.dataSource = DataSourceComentariosFixed(cururl: "http://192.168.15.201/nailsalon/app/getcomentarios.php", posdata: newDataPost)
+        self.dataSource = DataSourceServiciosFixed(cururl: "http://192.168.15.201/nailsalon/app/getservicios.php", posdata: datapost)
         
-        if (self.dataSource.comentarios.count == 0 && self.dataSource.responsecode != 0) {
+              
+        if (self.dataSource.servicios.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
@@ -131,6 +152,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
+        
         
         
     }
@@ -159,6 +181,29 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
     }
 
+    
+    
+    ////// Delegate
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+        //let row = indexPath.row
+        
+        //let currentServicio = self.dataSource.servicios[row]
+        
+        
+        let cell: customTableView1 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView1
+        
+        print(cell.id)
+        
+        //performSegueWithIdentifier("showEstetica", sender: cell)
+    }
+    
+
+    
     
     
 }
