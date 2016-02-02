@@ -67,7 +67,7 @@ class SubServicio {
     var title: String?
     var descripcion: String?
     var idservicio: Int?
-    var imageFileName: String?
+    //var imageFileName: String?
     var costoservicio: Double?
     var tiemposervicio: Int?
     
@@ -77,7 +77,7 @@ class SubServicio {
         self.title = json["title"] as? String
         self.descripcion = json["descripcion"] as? String
         self.idservicio = Int((json["idservicio"] as? String)!)!
-        self.imageFileName = json["imageFileName"] as? String
+        //self.imageFileName = json["imageFileName"] as? String
         self.costoservicio = Double((json["costoservicio"] as? String)!)!
         self.tiemposervicio = Int((json["tiemposervicio"] as? String)!)!
     }

@@ -17,6 +17,8 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     @IBOutlet weak var tableView: UITableView!
        
      internal var servicios = [Servicio]()
+     var Dialogo = Dialogs()
+    
     
     @IBAction func getPeinados(sender: UIButton) {
         print("Peinados")
@@ -27,7 +29,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
-        vc.curServicio = 1
+        //vc.curServicio = 1
         self.showViewController(vc, sender: nil)
             //.showViewController(vc, animated: true, completion: nil)
         
@@ -127,6 +129,12 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print(segue.identifier)
+        
+       
+    
+    
+    
     }
    
 
@@ -190,20 +198,51 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         
-        //let row = indexPath.row
-        
-        //let currentServicio = self.dataSource.servicios[row]
+        let row = indexPath.row
+        let currentServicio = self.dataSource.servicios[row]
         
         
         let cell: customTableView1 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView1
         
         print(cell.id)
         
+        
+        
+        
         //performSegueWithIdentifier("showEstetica", sender: cell)
+        
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+
+        
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
+        vc.curServicio = currentServicio
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+
+        
+        
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("didAppear")
+        if (self.hasWaitDialog){
+            Dialogo.closeWaitDialog()
+            view.alpha = 1.0
+            view.userInteractionEnabled = true
+            self.hasWaitDialog = false
+        }
 
-    
+    }
     
     
 }

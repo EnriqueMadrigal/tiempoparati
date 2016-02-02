@@ -78,28 +78,28 @@ class DataSourceServiciosFixed: NSObject, UITableViewDataSource {
         switch item.id!{
             
         case 1:
-            imagename = "womancut"
-            
-        case 2:
             imagename = "womancomb"
             
-        case 3:
+        case 2:
             imagename = "womanmakeup"
             
-        case 4:
+        case 3:
             imagename = "womanfacial"
-        
+            
+        case 4:
+            imagename = "womanhair"
+            
         case 5:
-            imagename = "womannails"
+            imagename = "womancut"
             
         case 6:
             imagename = "womanmassage"
-       
+            
         case 7:
-            imagename = "womanhair"
-       
-        case 8:
             imagename = "womantreatment"
+            
+        case 8:
+            imagename = "womannails"
          
         default:
             imagename = "notavail"

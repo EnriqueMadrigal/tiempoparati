@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         let UUIDValue = UIDevice.currentDevice().identifierForVendor!.UUIDString
         dataAccess.sharedInstance.UIID = UUIDValue
         print("UUID: \(UUIDValue)")
+       
 
         
     }

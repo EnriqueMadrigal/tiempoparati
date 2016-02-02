@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
+class DataSourceSubServiciosFixed: NSObject , UITableViewDataSource {
     
     var maxWaitTime: Double = 40000.0
     
@@ -65,17 +65,17 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
         
         
         for item in data {
-               esteticas.append(Estetica(json: item as! NSDictionary))
+               subservicios.append(SubServicio(json: item as! NSDictionary))
         }
 
         
         
-        for estetica in esteticas{
+        for subservicio in subservicios{
             
-            let curid: Int = estetica.id!
+            let curid: Int = subservicio.id!
             let datosimage = GetImage()
-            datosimage.setURL("http://192.168.15.201/nailsalon/app/getimagesalon.php")
-            datosimage.setPostData("idestetica=\(curid)&width=64&height=64")
+            datosimage.setURL("http://192.168.15.201/nailsalon/app/getimagesubservicio.php")
+            datosimage.setPostData("idsubservicio=\(curid)&width=64&height=64")
             datosimage.ObtenData()
             
             let curtime = NSDate()
@@ -91,8 +91,8 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
                 break
             }
             
-            let newImage: Estetica_Images = Estetica_Images(idEstetica: curid, newimage: datosimage.GetcurImage())
-                esteticasImages.append(newImage)
+            let newImage: Servicios_Images = Servicios_Images(idServicio: curid, newimage: datosimage.GetcurImage())
+                serviciosImages.append(newImage)
             
         }
         
@@ -109,28 +109,29 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.esteticas.count
+        return self.subservicios.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let item = self.items[indexPath.row]
-        let item = self.esteticas[indexPath.row]
+        let item = self.subservicios[indexPath.row]
         
         //let cell = tableView.dequeueReusableCellWithIdentifier(self.CellIdentifier, forIndexPath: indexPath) as! customTableView1
-        let cell =  customTableView4(style: UITableViewCellStyle.Default, reuseIdentifier: "myIdentifier")
+        let cell =  customTableView2(style: UITableViewCellStyle.Default, reuseIdentifier: "myIdentifier")
         
         
         cell.campo0.text = item.title!
         cell.campo1.text = item.descripcion!
+        cell.campo2.text = "costo $ \(item.costoservicio!) m.n."
         //cell.campo1.text = item.calle! + " " + item.exterior! + " " + item.interior!
         //cell.campo2.text = item.colonia! + " " + item.ciudad!
         cell.id = item.id!
        // let imagename: NSString = item.imageFileName!
        // let filename = imagename.stringByDeletingPathExtension
-        let curImage = esteticasImages[indexPath.row]
+        let curImage = serviciosImages[indexPath.row]
         
         cell.image1.image = curImage.imagedata!
-        cell.rating = item.rate!
+        //cell.rating = item.rate!
         
         return cell
     }
@@ -153,8 +154,8 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
 
    
     //private var tableView: UITableView!
-    private var esteticasImages = [Estetica_Images]()
-    internal var esteticas = [Estetica]()
+    private var serviciosImages = [Servicios_Images]()
+    internal var subservicios = [SubServicio]()
     //private var CellIdentifier: String
     var responsecode: Int!
     

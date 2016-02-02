@@ -168,7 +168,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     
      func LoadData(){
         self.dataSource = nil
-    self.dataSource = DataSourceEsteticasFixed(cururl: "http://192.168.15.201/nailsalon/app/getsalons.php", posdata: "IdPersona=0", tableView: self.tableView)
+    self.dataSource = DataSourceEsteticasFixed(cururl: "http://192.168.15.201/nailsalon/app/getsalons.php", posdata: "IdPersona=0")
     
     if (self.dataSource.esteticas.count==0 && self.dataSource.responsecode != 0) {
     print ("No se encontro el servidor")
