@@ -16,6 +16,7 @@ class dataAccess {
     var currentEstetica = 0
    
    var UIID: String = ""
+    var curPersona: Persona!
     
     static let sharedInstance = dataAccess()
     

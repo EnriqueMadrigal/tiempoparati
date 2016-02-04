@@ -13,6 +13,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     
      private lazy var dataSource: DataSourceEsteticasFixed! = nil
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var labelNombre: UILabel!
    
  
     
@@ -52,7 +53,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         self.tableView.addSubview(self.refreshControl)
  
     LoadData()
-     
+    RegisterUser()
         
         
         
@@ -62,6 +63,8 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //print("willAppear")
+        self.labelNombre.text = "Hola " + dataAccess.sharedInstance.curPersona.Nombre!
+
         
     }
     
@@ -215,6 +218,37 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     }
     
     
+    func RegisterUser(){
+        
+        let uuid: String = dataAccess.sharedInstance.UIID
+        let datos = GetData()
+        datos.setURL("http://192.168.15.201/nailsalon/app/registeruser.php")
+        datos.setPostData("uuid=" + uuid)
+        datos.ObtenData()
+        
+        let curtime = NSDate()
+        var passedTime: Double = 0
+        
+        
+        while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
+            passedTime = curtime.timeIntervalSinceNow * -1000.0
+        }
+        
+        if (datos.resulterror==1){
+            print ("No se encontro el servidor")
+            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+            
+            
+            
+        }
+        
+        
+        
+        
+    }
     
 
 }

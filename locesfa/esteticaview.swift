@@ -13,8 +13,13 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var labelNombre: UILabel!
     @IBOutlet weak var labelDescripcion: UILabel!
-    @IBOutlet weak var labelDireccion: UILabel!
+   
+   
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func Favoritos(sender: AnyObject) {
+     AgregarFavorito()
+    }
        
      internal var servicios = [Servicio]()
      var Dialogo = Dialogs()
@@ -65,11 +70,11 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         if let CurEstetica = CurEstetica{
          self.labelNombre.text = CurEstetica.title!
             self.labelDescripcion.text = CurEstetica.descripcion!
-            let dir1: String = CurEstetica.calle! + " " + CurEstetica.exterior! + " " + CurEstetica.interior!
-            let dir2: String =  CurEstetica.colonia! + "," + CurEstetica.ciudad! + "," + CurEstetica.estado!
+            //let dir1: String = CurEstetica.calle! + " " + CurEstetica.exterior! + " " + CurEstetica.interior!
+            //let dir2: String =  CurEstetica.colonia! + "," + CurEstetica.ciudad! + "," + CurEstetica.estado!
             self.labelDescripcion.numberOfLines = 0
             self.labelDescripcion.lineBreakMode = .ByWordWrapping
-            self.labelDireccion.text =  dir1 + "," + dir2
+            //self.labelDireccion.text =  dir1 + "," + dir2
             //self.labelTelefono1.text = CurEstetica.telefono1
             
             
@@ -243,6 +248,51 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         }
 
     }
+    func AgregarFavorito(){
+        
+     
+         let AddFavorite = { (action:UIAlertAction!) -> Void in
+            self.AgregaFav()
+            
+            
+            
+        }
+        
+        let alert :UIAlertController = UIAlertController(title: "Agregar a favoritos", message: "Desea añadir esta estetica en su lista de favoritos", preferredStyle: UIAlertControllerStyle.Alert)
+        let OkButton : UIAlertAction = UIAlertAction(title: "SI.", style: UIAlertActionStyle.Default, handler: AddFavorite)
+        let CancelButton : UIAlertAction = UIAlertAction(title: "NO.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+        
+        alert.addAction(OkButton)
+        alert.addAction(CancelButton)
+        self.presentViewController(alert, animated: false, completion: nil)
+        
+        
+    }
     
+    func AgregaFav(){
+        
+        print("AgregandoFavorio")
+        let uuid: String = dataAccess.sharedInstance.UIID
+        let curestetica: Int = dataAccess.sharedInstance.currentEstetica
+
+        let datos = SentRequest(curaction: "addfavorito.php")
+        datos.AddPosData(DataPost(newItem: "uuid", newValue: uuid))
+        datos.AddPosData(DataPost(newItem: "idestetica", newValue: "\(curestetica)"))
+        datos.ObtenData()
+        
+        if (datos.result==1){
+            print ("No se encontro el servidor")
+            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+            
+            
+            
+        }
+
+        
+        
+    }
     
 }

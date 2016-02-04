@@ -10,6 +10,8 @@ import UIKit
 
 class privacidad: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,7 +27,7 @@ class privacidad: UIViewController {
         backgroundImage.image = UIImage(named: "background1")
         self.view.insertSubview(backgroundImage, atIndex: 0)
 
-        
+        //self.textView.scrollRangeToVisible(NSMakeRange(0, 0))
       
         
         
@@ -33,26 +35,7 @@ class privacidad: UIViewController {
         
         // read aviso de privacidad
         
-        if let path = NSBundle.mainBundle().pathForResource("assets/aviso", ofType: "txt", inDirectory: "archivos")
-        {
-           
-
-            do {
-                let text2 = try NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-                print(text2)
-            }
-            catch let error1 as NSError {
-            print ("read error")
-                print(error1)
-            }
-            
-        }
         
-        else {
-            
-            print("Could no read file")
-        }
-      
         
     }
 
@@ -62,6 +45,11 @@ class privacidad: UIViewController {
     }
     
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.textView.setContentOffset(CGPointZero, animated: false)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -25,7 +25,18 @@ class ViewController: UIViewController {
         let UUIDValue = UIDevice.currentDevice().identifierForVendor!.UUIDString
         dataAccess.sharedInstance.UIID = UUIDValue
         print("UUID: \(UUIDValue)")
-       
+        let curPersona = ObtenPesona()
+        
+        if let newPerson: Persona = curPersona.GetPerson()
+        {
+        dataAccess.sharedInstance.curPersona = newPerson
+            
+        }
+        else {
+            let newPerson: Persona = Persona(newName: "", newemail: "", newsexo: 0)
+            dataAccess.sharedInstance.curPersona = newPerson
+        }
+        
 
         
     }

@@ -9,6 +9,34 @@
 import Foundation
 import UIKit
 
+
+class Persona {
+    
+    var Nombre: String?
+    var email: String?
+    var sexo: Int?
+    
+    init(newName: String, newemail: String, newsexo: Int)
+    {
+        self.Nombre = newName
+        self.email = newemail
+        self.sexo = newsexo
+    }
+    
+    
+}
+
+
+class DataPost {
+    var item: String?
+    var value: String?
+    init(newItem: String, newValue: String){
+        self.item = newItem
+        self.value = newValue
+    }
+    
+}
+
 class Estetica {
     var id: Int?
     var title: String?
