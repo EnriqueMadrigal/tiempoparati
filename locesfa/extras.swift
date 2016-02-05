@@ -17,7 +17,7 @@ class SentRequest {
     
     private var PostData = [DataPost]()
     var result: Int = 0
-    
+     var datos: NSArray = []
     
     init(curaction: String) {
         self.CurAction = curaction;
@@ -60,9 +60,82 @@ class SentRequest {
         }
 
         self.result = datos.resulterror
-        
+        self.datos = datos.GetJson()
         
     }
     
     
+    func GetJson() ->NSArray{
+        return self.datos
+    }
+
+    
+    
 }
+
+
+
+class SentRequest_image {
+    
+    private var CurAction: String!
+    let globalUrl: String = "http://192.168.15.201/nailsalon/app/"
+    
+    private var PostData = [DataPost]()
+    var result: Int = 0
+   var curimage: UIImage?
+    
+    init(curaction: String) {
+        self.CurAction = curaction;
+    }
+    
+    func AddPosData(newdata: DataPost){
+        PostData.append(newdata)
+    }
+    
+    func ObtenData(){
+        let datos = GetImage()
+        datos.setURL(self.globalUrl + self.CurAction )
+        
+        var posdata: String = ""
+        var firtdata:Bool = true
+        
+        for dato: DataPost in PostData{
+            
+            if (!firtdata){
+                posdata.appendContentsOf("&")
+            }
+            
+            posdata.appendContentsOf(dato.item!)
+            posdata.appendContentsOf("=")
+            posdata.appendContentsOf(dato.value!)
+            firtdata = false
+            
+        }
+        
+        //print(posdata)
+        
+        datos.setPostData(posdata)
+        datos.ObtenData()
+        
+        let curtime = NSDate()
+        var passedTime: Double = 0
+        
+        while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
+            passedTime = curtime.timeIntervalSinceNow * -1000.0
+        }
+        
+        print(datos.resulterror)
+        self.result = datos.resulterror
+        self.curimage = datos.GetcurImage()
+        
+    }
+    
+    
+    func GetJson() ->UIImage{
+        return self.curimage!
+    }
+    
+    
+    
+}
+

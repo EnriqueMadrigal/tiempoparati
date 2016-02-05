@@ -77,6 +77,12 @@
 		CDC706B01C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */; };
 		CDC706B11C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */; };
 		CDC706B21C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */; };
+		CDC93CBB1C63CF9400818782 /* catalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBA1C63CF9400818782 /* catalogViewController.swift */; };
+		CDC93CBC1C63CF9400818782 /* catalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBA1C63CF9400818782 /* catalogViewController.swift */; };
+		CDC93CBD1C63CF9400818782 /* catalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBA1C63CF9400818782 /* catalogViewController.swift */; };
+		CDC93CBF1C63D78D00818782 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */; };
+		CDC93CC01C63D78D00818782 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */; };
+		CDC93CC11C63D78D00818782 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +137,8 @@
 		CDC706A71C5F013B00AC1275 /* customTableView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView1.swift; sourceTree = "<group>"; };
 		CDC706AB1C5F2E4E00AC1275 /* customTableView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView2.swift; sourceTree = "<group>"; };
 		CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceSubServiciosFixed.swift; sourceTree = "<group>"; };
+		CDC93CBA1C63CF9400818782 /* catalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catalogViewController.swift; sourceTree = "<group>"; };
+		CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +210,7 @@
 				CD7181F01C5AF583004734E4 /* customCells */,
 				CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */,
 				CDB9D2B41C61692500EAAF28 /* extras.swift */,
+				CDC93CBA1C63CF9400818782 /* catalogViewController.swift */,
 			);
 			path = locesfa;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 				CD7181F11C5AF5AF004734E4 /* customTableView4.swift */,
 				CDC706A71C5F013B00AC1275 /* customTableView1.swift */,
 				CDC706AB1C5F2E4E00AC1275 /* customTableView2.swift */,
+				CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */,
 			);
 			name = customCells;
 			sourceTree = "<group>";
@@ -379,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC93CBB1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CD7181F61C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CDC706B01C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */,
@@ -388,6 +399,7 @@
 				CD41C6B31C6017EF0023C520 /* preferencias.swift in Sources */,
 				CDB9D2B51C61692500EAAF28 /* extras.swift in Sources */,
 				CD7181B21C5AF4FA004734E4 /* ViewController.swift in Sources */,
+				CDC93CBF1C63D78D00818782 /* CollectionViewCell1.swift in Sources */,
 				CD7181FB1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CDB9D2B11C6110AD00EAAF28 /* ObtenPersona.swift in Sources */,
 				CD7181B81C5AF4FA004734E4 /* locesfa.xcdatamodeld in Sources */,
@@ -413,8 +425,10 @@
 				CDC706AD1C5F2E4E00AC1275 /* customTableView2.swift in Sources */,
 				CDC706B11C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */,
 				CD7181C81C5AF4FA004734E4 /* locesfaTests.swift in Sources */,
+				CDC93CC01C63D78D00818782 /* CollectionViewCell1.swift in Sources */,
 				CD7181FC1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CDB9D2B21C6110AD00EAAF28 /* ObtenPersona.swift in Sources */,
+				CDC93CBC1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CDC706A51C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD7181F31C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E61C5AF55D004734E4 /* dataModels.swift in Sources */,
@@ -441,8 +455,10 @@
 				CDC706AE1C5F2E4E00AC1275 /* customTableView2.swift in Sources */,
 				CDC706B21C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */,
 				CD7181D31C5AF4FA004734E4 /* locesfaUITests.swift in Sources */,
+				CDC93CC11C63D78D00818782 /* CollectionViewCell1.swift in Sources */,
 				CD7181FD1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CDB9D2B31C6110AD00EAAF28 /* ObtenPersona.swift in Sources */,
+				CDC93CBD1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CDC706A61C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD7181F41C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E71C5AF55D004734E4 /* dataModels.swift in Sources */,

@@ -163,10 +163,8 @@ class Promociones_Esteticas {
 class Catalogos_Esteticas {
     var id: Int?
     var idestetica: Int?
-    //var created: String?
     var title: String?
     var descripcion: String?
-    var imageFileName: String?
     
     
     init(json: NSDictionary) {
@@ -174,7 +172,6 @@ class Catalogos_Esteticas {
         self.idestetica = Int((json["idestetica"] as? String)!)!
         self.title = json["title"] as? String
         self.descripcion = json["descripcion"] as? String
-        self.imageFileName = json["imageFileName"] as? String
         
     }
     

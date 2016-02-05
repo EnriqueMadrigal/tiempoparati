@@ -102,7 +102,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
    
-        print(segue.identifier)
+        //print(segue.identifier)
         
         Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
         view.userInteractionEnabled = false

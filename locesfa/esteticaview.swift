@@ -24,6 +24,25 @@ class esteticaview: UIViewController ,UITableViewDelegate{
      internal var servicios = [Servicio]()
      var Dialogo = Dialogs()
     
+    @IBAction func showCatalogo(sender: AnyObject) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("catalogoView") as! catalogViewController
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+
+        
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+        
+        
+    }
     
     @IBAction func getPeinados(sender: UIButton) {
         print("Peinados")
