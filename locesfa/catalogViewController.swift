@@ -100,12 +100,19 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        //tableView.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.None)
-        
-        // let cell: customTableView1 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView1
-        
+            
         let currentcell: CollectionViewCell1 = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell1
         print(currentcell.id)
+        let currentCatalog = self.catalogos[indexPath.row]
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("catalogviewImage") as! catalogoviewImage
+        //vc.curServicio = 1
+        vc.curCatalogo = currentCatalog
+        
+        self.showViewController(vc, sender: nil)
+
+        
         
     }
     
@@ -137,7 +144,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         
         for curCatalogo in self.catalogos{
         
-        print(curCatalogo.descripcion)
+        //print(curCatalogo.descripcion)
         let datosImage = SentRequest_image(curaction: "getimagecatalogo.php")
         datosImage.AddPosData(DataPost(newItem: "idcatalogo", newValue: "\(curCatalogo.id!)"))
         datosImage.AddPosData(DataPost(newItem: "width", newValue: "80"))

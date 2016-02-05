@@ -83,6 +83,9 @@
 		CDC93CBF1C63D78D00818782 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */; };
 		CDC93CC01C63D78D00818782 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */; };
 		CDC93CC11C63D78D00818782 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */; };
+		CDC93CC31C64234100818782 /* catalogoviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC21C64234100818782 /* catalogoviewImage.swift */; };
+		CDC93CC41C64234100818782 /* catalogoviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC21C64234100818782 /* catalogoviewImage.swift */; };
+		CDC93CC51C64234100818782 /* catalogoviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC21C64234100818782 /* catalogoviewImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +142,7 @@
 		CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceSubServiciosFixed.swift; sourceTree = "<group>"; };
 		CDC93CBA1C63CF9400818782 /* catalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catalogViewController.swift; sourceTree = "<group>"; };
 		CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell1.swift; sourceTree = "<group>"; };
+		CDC93CC21C64234100818782 /* catalogoviewImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catalogoviewImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +215,7 @@
 				CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */,
 				CDB9D2B41C61692500EAAF28 /* extras.swift */,
 				CDC93CBA1C63CF9400818782 /* catalogViewController.swift */,
+				CDC93CC21C64234100818782 /* catalogoviewImage.swift */,
 			);
 			path = locesfa;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC93CC31C64234100818782 /* catalogoviewImage.swift in Sources */,
 				CDC93CBB1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CD7181F61C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */,
@@ -431,6 +437,7 @@
 				CDC93CBC1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CDC706A51C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD7181F31C5AF5AF004734E4 /* customTableView4.swift in Sources */,
+				CDC93CC41C64234100818782 /* catalogoviewImage.swift in Sources */,
 				CD7181E61C5AF55D004734E4 /* dataModels.swift in Sources */,
 				CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706A91C5F013B00AC1275 /* customTableView1.swift in Sources */,
@@ -461,6 +468,7 @@
 				CDC93CBD1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CDC706A61C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD7181F41C5AF5AF004734E4 /* customTableView4.swift in Sources */,
+				CDC93CC51C64234100818782 /* catalogoviewImage.swift in Sources */,
 				CD7181E71C5AF55D004734E4 /* dataModels.swift in Sources */,
 				CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706AA1C5F013B00AC1275 /* customTableView1.swift in Sources */,
