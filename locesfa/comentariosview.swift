@@ -16,9 +16,12 @@ class comentariosview: UIViewController, UITableViewDelegate {
     
     private lazy var dataSource: DataSourceComentariosFixed! = nil
     var refreshControl:UIRefreshControl!
-    var newWordField: UITextField!
-    var rating: RatingControl!
+    
 
+    @IBOutlet weak var labelComentarios: UITextView!
+    @IBOutlet weak var ratingControl: RatingControl!
+    
+    
     @IBAction func addComentario(sender: AnyObject) {
       AgregarComentario()
     }
@@ -133,21 +136,8 @@ class comentariosview: UIViewController, UITableViewDelegate {
             
         }
         
-        let alert :UIAlertController = UIAlertController(title: "Agregar un comentario", message: "Obstengase de hacer comentarios ofensivos:", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alert.addTextFieldWithConfigurationHandler(addTextField)
-        let margin:CGFloat = 8.0
-        //let rect = CGRectMake(margin, margin, alert.view.bounds.size.width - margin * 4.0, 100.0)
-        let rect = CGRectMake(0, 0, 160, 40)
-        let rect2 = CGRectMake(0, 10, 100, 20)
-        var customView = UIView(frame: rect)
-        let rateview = RatingControl(frame: rect2)
-        customView.addSubview(rateview)
-        self.rating = rateview
-        
-        
-        customView.backgroundColor = UIColor.greenColor()
-        alert.view.addSubview(customView)
+        let alert :UIAlertController = UIAlertController(title: "Agregar un comentario", message: "Abstengase de hacer comentarios ofensivos, desea continuar:", preferredStyle: UIAlertControllerStyle.Alert)
+     
         let OkButton : UIAlertAction = UIAlertAction(title: "SI.", style: UIAlertActionStyle.Default, handler: AddFavorite)
         let CancelButton : UIAlertAction = UIAlertAction(title: "NO.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
         
@@ -159,15 +149,18 @@ class comentariosview: UIViewController, UITableViewDelegate {
     }
 
     func AgregaCom(){
-      print(self.newWordField.text!)
-        print(self.rating.rating)
+        print(self.labelComentarios.text)
+        print(self.ratingControl.rating)
+    
     }
     
+    /*
     func addTextField(textField: UITextField!){
         // add the text field and make the result global
         textField.placeholder = "Definition"
         self.newWordField = textField
         
     }
+*/
 
 }
