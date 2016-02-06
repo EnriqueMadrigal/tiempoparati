@@ -45,10 +45,19 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     }
     
     @IBAction func getPeinados(sender: UIButton) {
-        print("Peinados")
         //performSegueWithIdentifier("showServicios", sender: nil)
        // let vc :serviciosview = self.storyboard?.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
          //      self.presentViewController(vc, animated: true, completion: nil)
+        
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+
         
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -57,6 +66,55 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         self.showViewController(vc, sender: nil)
             //.showViewController(vc, animated: true, completion: nil)
         
+    }
+    
+    
+    @IBAction func getPromociones(sender: AnyObject) {
+      
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Promociones") as! promocionesview
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+
+        
+        
+        
+    }
+    
+    @IBAction func getComentarios(sender: AnyObject) {
+    
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Comentarios") as! comentariosview
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+        
+
+        
+    
+    
     }
     
     

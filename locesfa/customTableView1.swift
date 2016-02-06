@@ -48,7 +48,13 @@ class customTableView1: UITableViewCell {
         self.campo1.translatesAutoresizingMaskIntoConstraints = false
         self.campo1.text = ""
         self.campo1.font = UIFont(name: "System Font", size: 12)
+        self.campo1.numberOfLines = 0
+        self.campo1.lineBreakMode = .ByWordWrapping
+        //self.campo1.textAlignment = NSTextAlignment.Center;
+      
+        
         contentView.addSubview(self.campo1)
+        
         
         
         

@@ -88,7 +88,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
-            return CGSize(width: 80, height: 120)
+            return CGSize(width: 60, height: 100)
     }
     
     //3
@@ -147,8 +147,8 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         //print(curCatalogo.descripcion)
         let datosImage = SentRequest_image(curaction: "getimagecatalogo.php")
         datosImage.AddPosData(DataPost(newItem: "idcatalogo", newValue: "\(curCatalogo.id!)"))
-        datosImage.AddPosData(DataPost(newItem: "width", newValue: "80"))
-        datosImage.AddPosData(DataPost(newItem: "height", newValue: "120"))
+        datosImage.AddPosData(DataPost(newItem: "width", newValue: "60"))
+        datosImage.AddPosData(DataPost(newItem: "height", newValue: "100"))
             
         datosImage.ObtenData()
            

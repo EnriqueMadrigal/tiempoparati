@@ -65,6 +65,12 @@
 		CDB9D2B51C61692500EAAF28 /* extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B41C61692500EAAF28 /* extras.swift */; };
 		CDB9D2B61C61692500EAAF28 /* extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B41C61692500EAAF28 /* extras.swift */; };
 		CDB9D2B71C61692500EAAF28 /* extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B41C61692500EAAF28 /* extras.swift */; };
+		CDC17CAC1C65132E00CAC1F3 /* comentariosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */; };
+		CDC17CAD1C65132E00CAC1F3 /* comentariosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */; };
+		CDC17CAE1C65132E00CAC1F3 /* comentariosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */; };
+		CDC17CB01C65293400CAC1F3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC17CAF1C65293400CAC1F3 /* RatingControl.swift */; };
+		CDC17CB11C65293400CAC1F3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC17CAF1C65293400CAC1F3 /* RatingControl.swift */; };
+		CDC17CB21C65293400CAC1F3 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC17CAF1C65293400CAC1F3 /* RatingControl.swift */; };
 		CDC706A41C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */; };
 		CDC706A51C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */; };
 		CDC706A61C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */; };
@@ -86,6 +92,12 @@
 		CDC93CC31C64234100818782 /* catalogoviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC21C64234100818782 /* catalogoviewImage.swift */; };
 		CDC93CC41C64234100818782 /* catalogoviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC21C64234100818782 /* catalogoviewImage.swift */; };
 		CDC93CC51C64234100818782 /* catalogoviewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC21C64234100818782 /* catalogoviewImage.swift */; };
+		CDC93CC71C64669B00818782 /* promocionesview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC61C64669B00818782 /* promocionesview.swift */; };
+		CDC93CC81C64669B00818782 /* promocionesview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC61C64669B00818782 /* promocionesview.swift */; };
+		CDC93CC91C64669B00818782 /* promocionesview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CC61C64669B00818782 /* promocionesview.swift */; };
+		CDC93CCF1C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */; };
+		CDC93CD01C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */; };
+		CDC93CD11C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +148,8 @@
 		CD7182021C5B2A54004734E4 /* esteticaview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = esteticaview.swift; sourceTree = "<group>"; };
 		CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObtenPersona.swift; sourceTree = "<group>"; };
 		CDB9D2B41C61692500EAAF28 /* extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extras.swift; sourceTree = "<group>"; };
+		CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = comentariosview.swift; sourceTree = "<group>"; };
+		CDC17CAF1C65293400CAC1F3 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceServiciosFixed.swift; sourceTree = "<group>"; };
 		CDC706A71C5F013B00AC1275 /* customTableView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView1.swift; sourceTree = "<group>"; };
 		CDC706AB1C5F2E4E00AC1275 /* customTableView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView2.swift; sourceTree = "<group>"; };
@@ -143,6 +157,8 @@
 		CDC93CBA1C63CF9400818782 /* catalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catalogViewController.swift; sourceTree = "<group>"; };
 		CDC93CBE1C63D78D00818782 /* CollectionViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell1.swift; sourceTree = "<group>"; };
 		CDC93CC21C64234100818782 /* catalogoviewImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = catalogoviewImage.swift; sourceTree = "<group>"; };
+		CDC93CC61C64669B00818782 /* promocionesview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = promocionesview.swift; sourceTree = "<group>"; };
+		CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourcePromocionesFixed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +226,8 @@
 				CD7182021C5B2A54004734E4 /* esteticaview.swift */,
 				CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */,
 				CD41C6B21C6017EF0023C520 /* preferencias.swift */,
+				CDC93CC61C64669B00818782 /* promocionesview.swift */,
+				CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */,
 				CD7181F91C5AF5FA004734E4 /* dataSources */,
 				CD7181F01C5AF583004734E4 /* customCells */,
 				CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */,
@@ -241,6 +259,7 @@
 		CD7181F01C5AF583004734E4 /* customCells */ = {
 			isa = PBXGroup;
 			children = (
+				CDC17CAF1C65293400CAC1F3 /* RatingControl.swift */,
 				CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */,
 				CD7181F11C5AF5AF004734E4 /* customTableView4.swift */,
 				CDC706A71C5F013B00AC1275 /* customTableView1.swift */,
@@ -254,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */,
+				CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */,
 				CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */,
 				CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */,
 				CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */,
@@ -398,6 +418,7 @@
 				CDC93CBB1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CD7181F61C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */,
+				CDC93CCF1C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */,
 				CDC706B01C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */,
 				CD7181FF1C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181EA1C5AF56F004734E4 /* getdata.swift in Sources */,
@@ -409,6 +430,7 @@
 				CD7181FB1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CDB9D2B11C6110AD00EAAF28 /* ObtenPersona.swift in Sources */,
 				CD7181B81C5AF4FA004734E4 /* locesfa.xcdatamodeld in Sources */,
+				CDC17CAC1C65132E00CAC1F3 /* comentariosview.swift in Sources */,
 				CD7182031C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706AC1C5F2E4E00AC1275 /* customTableView2.swift in Sources */,
 				CDC706A81C5F013B00AC1275 /* customTableView1.swift in Sources */,
@@ -419,6 +441,8 @@
 				CD4D9D071C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181ED1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */,
+				CDC93CC71C64669B00818782 /* promocionesview.swift in Sources */,
+				CDC17CB01C65293400CAC1F3 /* RatingControl.swift in Sources */,
 				CD7181E11C5AF551004734E4 /* dataAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC17CB11C65293400CAC1F3 /* RatingControl.swift in Sources */,
 				CD4D9D0A1C5BF4B9005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CDC706AD1C5F2E4E00AC1275 /* customTableView2.swift in Sources */,
 				CDC706B11C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */,
@@ -442,12 +467,15 @@
 				CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706A91C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EB1C5AF56F004734E4 /* getdata.swift in Sources */,
+				CDC93CC81C64669B00818782 /* promocionesview.swift in Sources */,
 				CD7182001C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD41C6B41C6017EF0023C520 /* preferencias.swift in Sources */,
+				CDC17CAD1C65132E00CAC1F3 /* comentariosview.swift in Sources */,
 				CD41C6AE1C5FD0EB0023C520 /* privacidad.swift in Sources */,
 				CD7181F71C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD53A1A21C5C96BF00A426C2 /* serviciosview.swift in Sources */,
 				CDB9D2B61C61692500EAAF28 /* extras.swift in Sources */,
+				CDC93CD01C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */,
 				CD7181EE1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD4D9D081C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181E21C5AF551004734E4 /* dataAccess.swift in Sources */,
@@ -458,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC17CB21C65293400CAC1F3 /* RatingControl.swift in Sources */,
 				CD4D9D0B1C5BF4BA005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CDC706AE1C5F2E4E00AC1275 /* customTableView2.swift in Sources */,
 				CDC706B21C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */,
@@ -473,12 +502,15 @@
 				CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706AA1C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EC1C5AF56F004734E4 /* getdata.swift in Sources */,
+				CDC93CC91C64669B00818782 /* promocionesview.swift in Sources */,
 				CD7182011C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD41C6B51C6017EF0023C520 /* preferencias.swift in Sources */,
+				CDC17CAE1C65132E00CAC1F3 /* comentariosview.swift in Sources */,
 				CD41C6AF1C5FD0EB0023C520 /* privacidad.swift in Sources */,
 				CD7181F81C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD53A1A31C5C96BF00A426C2 /* serviciosview.swift in Sources */,
 				CDB9D2B71C61692500EAAF28 /* extras.swift in Sources */,
+				CDC93CD11C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */,
 				CD7181EF1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD4D9D091C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD7181E31C5AF551004734E4 /* dataAccess.swift in Sources */,
