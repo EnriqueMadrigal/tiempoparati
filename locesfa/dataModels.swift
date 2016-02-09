@@ -215,3 +215,39 @@ class Servicios_Estetica{
     }
     
 }
+
+
+
+class Localizacion{
+    
+    var idestetica: Int?
+    var title: String?
+    var lat: Double?
+    var lng: Double?
+    var calle: String?
+    var exterior: String?
+    var interior: String?
+    var colonia: String?
+    var cp: String?
+    var municipio: String?
+    var ciudad: String?
+    var estado: String?
+    
+    // (Wage.text as NSString).floatValue
+    
+    
+    init(json: NSDictionary) {
+        self.idestetica = Int((json["idestetica"] as? String)!)!
+        self.title = json["title"] as? String
+        self.calle = json["calle"] as? String
+        self.exterior = json["exterior"] as? String
+        self.interior = json["interior"] as? String
+        self.colonia = json["colonia"] as? String
+        self.ciudad = json["ciudad"] as? String
+        self.estado = json["estado"] as? String
+        self.lng = Double((json["lng"] as? String)!)!
+        self.lat = Double((json["lat"] as? String)!)!
+        
+    }
+}
+

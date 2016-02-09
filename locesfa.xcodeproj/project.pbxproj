@@ -59,6 +59,10 @@
 		CD7182031C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
+		CD759DEE1C6A61F000BB60CF /* mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD759DED1C6A61F000BB60CF /* mapview.swift */; };
+		CD759DEF1C6A61F000BB60CF /* mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD759DED1C6A61F000BB60CF /* mapview.swift */; };
+		CD759DF01C6A61F000BB60CF /* mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD759DED1C6A61F000BB60CF /* mapview.swift */; };
+		CD759DF21C6A633D00BB60CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD759DF11C6A633D00BB60CF /* MapKit.framework */; };
 		CDB9D2B11C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
 		CDB9D2B21C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
 		CDB9D2B31C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
@@ -146,6 +150,8 @@
 		CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceEsteticasFixed.swift; sourceTree = "<group>"; };
 		CD7181FE1C5B285F004734E4 /* mainscene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainscene.swift; sourceTree = "<group>"; };
 		CD7182021C5B2A54004734E4 /* esteticaview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = esteticaview.swift; sourceTree = "<group>"; };
+		CD759DED1C6A61F000BB60CF /* mapview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapview.swift; sourceTree = "<group>"; };
+		CD759DF11C6A633D00BB60CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObtenPersona.swift; sourceTree = "<group>"; };
 		CDB9D2B41C61692500EAAF28 /* extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extras.swift; sourceTree = "<group>"; };
 		CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = comentariosview.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD759DF21C6A633D00BB60CF /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +196,7 @@
 		CD7181A31C5AF4FA004734E4 = {
 			isa = PBXGroup;
 			children = (
+				CD759DF11C6A633D00BB60CF /* MapKit.framework */,
 				CD7181AE1C5AF4FA004734E4 /* locesfa */,
 				CD7181C61C5AF4FA004734E4 /* locesfaTests */,
 				CD7181D11C5AF4FA004734E4 /* locesfaUITests */,
@@ -228,6 +236,7 @@
 				CD41C6B21C6017EF0023C520 /* preferencias.swift */,
 				CDC93CC61C64669B00818782 /* promocionesview.swift */,
 				CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */,
+				CD759DED1C6A61F000BB60CF /* mapview.swift */,
 				CD7181F91C5AF5FA004734E4 /* dataSources */,
 				CD7181F01C5AF583004734E4 /* customCells */,
 				CD7181B61C5AF4FA004734E4 /* locesfa.xcdatamodeld */,
@@ -349,6 +358,11 @@
 				TargetAttributes = {
 					CD7181AB1C5AF4FA004734E4 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					CD7181C21C5AF4FA004734E4 = {
 						CreatedOnToolsVersion = 7.2;
@@ -439,6 +453,7 @@
 				CD41C6AD1C5FD0EB0023C520 /* privacidad.swift in Sources */,
 				CDC706A41C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD4D9D071C5BF4B4005DD971 /* customTableView3.swift in Sources */,
+				CD759DEE1C6A61F000BB60CF /* mapview.swift in Sources */,
 				CD7181ED1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD7181B01C5AF4FA004734E4 /* AppDelegate.swift in Sources */,
 				CDC93CC71C64669B00818782 /* promocionesview.swift in Sources */,
@@ -467,6 +482,7 @@
 				CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706A91C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EB1C5AF56F004734E4 /* getdata.swift in Sources */,
+				CD759DEF1C6A61F000BB60CF /* mapview.swift in Sources */,
 				CDC93CC81C64669B00818782 /* promocionesview.swift in Sources */,
 				CD7182001C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD41C6B41C6017EF0023C520 /* preferencias.swift in Sources */,
@@ -502,6 +518,7 @@
 				CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706AA1C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EC1C5AF56F004734E4 /* getdata.swift in Sources */,
+				CD759DF01C6A61F000BB60CF /* mapview.swift in Sources */,
 				CDC93CC91C64669B00818782 /* promocionesview.swift in Sources */,
 				CD7182011C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD41C6B51C6017EF0023C520 /* preferencias.swift in Sources */,

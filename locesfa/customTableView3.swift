@@ -69,6 +69,7 @@ class customTableView3: UITableViewCell {
         self.campo2.font = UIFont(name: "System Font", size: 12)
         self.campo2.numberOfLines = 0
         self.campo2.lineBreakMode = .ByWordWrapping
+        self.campo2.backgroundColor = UIColor.lightGrayColor()
         contentView.addSubview(self.campo2)
         
         
@@ -98,7 +99,7 @@ class customTableView3: UITableViewCell {
         self.campo0.frame = CGRect(x: 48, y: 0, width: 240, height: 14)
         self.campo1.frame = CGRect(x: 48, y: 33, width: 240, height: 12)
         
-        self.campo2.frame = CGRect(x: 0, y: 48, width: 200, height: 32)
+        self.campo2.frame = CGRect(x: 0, y: 48, width: 248, height: 32)
         self.image1.frame = CGRect(x: 0, y: 0, width: 48, height: 48)
       
         for (index, image) in ratingImages.enumerate() {

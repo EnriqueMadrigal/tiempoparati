@@ -11,7 +11,7 @@ import CoreData
 import UIKit
 
 
-class ObtenPesona {
+class ObtenPersona {
     
     private var curPersona: Persona!
 
@@ -58,6 +58,11 @@ class ObtenPesona {
             
         
         }
+        else {
+      //
+            self.curPersona = Persona(newName: "", newemail: "", newsexo: 0)
+        }
+        
         
         
         }

@@ -63,7 +63,8 @@ class comentariosview: UIViewController, UITableViewDelegate {
     
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 128
+        
+               return 48 + 32
     }
 
     

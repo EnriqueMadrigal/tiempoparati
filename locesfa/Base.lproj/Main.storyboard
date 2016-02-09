@@ -655,7 +655,10 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Qvr-3C-Qfi" secondAttribute="height" multiplier="1:1" id="fqw-cR-NV3"/>
                                                         </constraints>
-                                                        <state key="normal" image="wwwicon"/>
+                                                        <state key="normal" image="mapicon"/>
+                                                        <connections>
+                                                            <action selector="getLocation:" destination="vP2-y6-8m2" eventType="touchUpInside" id="L4h-Go-nel"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHV-dx-OBM">
                                                         <rect key="frame" x="353" y="0.0" width="66" height="66"/>
@@ -805,6 +808,39 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
             </objects>
             <point key="canvasLocation" x="2535" y="373"/>
         </scene>
+        <!--Localización-->
+        <scene sceneID="LZN-C9-ydD">
+            <objects>
+                <viewController storyboardIdentifier="MapView" id="8gh-sg-2p3" customClass="mapview" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nJQ-Qk-LqE"/>
+                        <viewControllerLayoutGuide type="bottom" id="042-ki-0IO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kDa-oo-Rmp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8eS-9h-ZIx">
+                                <rect key="frame" x="20" y="64" width="560" height="536"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="042-ki-0IO" firstAttribute="top" secondItem="8eS-9h-ZIx" secondAttribute="bottom" id="BVy-13-roe"/>
+                            <constraint firstItem="8eS-9h-ZIx" firstAttribute="top" secondItem="nJQ-Qk-LqE" secondAttribute="bottom" id="awd-LX-c4e"/>
+                            <constraint firstItem="8eS-9h-ZIx" firstAttribute="leading" secondItem="kDa-oo-Rmp" secondAttribute="leadingMargin" id="fBf-zi-gbb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8eS-9h-ZIx" secondAttribute="trailing" id="xAr-np-V7L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Localización" id="YUC-06-NcR"/>
+                    <connections>
+                        <outlet property="mapView" destination="8eS-9h-ZIx" id="hHc-qU-RiH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iay-0k-xyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4196" y="-2707"/>
+        </scene>
         <!--Comentarios-->
         <scene sceneID="deC-0F-PIu">
             <objects>
@@ -820,10 +856,10 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gJL-v7-aFf">
                                 <rect key="frame" x="28" y="72" width="544" height="520"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ir4-Xr-rTd">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ir4-Xr-rTd">
                                         <rect key="frame" x="0.0" y="0.0" width="544" height="0.0"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agregar comentario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhE-y8-REY">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Agregar comentario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhE-y8-REY">
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1353,6 +1389,24 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdl-9a-ayI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3503" y="-2010"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vtd-35-mcQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mU1-X7-y8J" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rO8-nf-SuE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8gh-sg-2p3" kind="relationship" relationship="rootViewController" id="hpJ-Og-BWm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fo-1p-rGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3503" y="-2707"/>
         </scene>
     </scenes>
     <resources>
