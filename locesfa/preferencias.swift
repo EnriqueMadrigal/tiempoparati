@@ -273,27 +273,6 @@ class preferencias: UIViewController {
             recibir_email = 1
         }
         
-        /*
-        datos.setURL("http://192.168.15.201/nailsalon/app/updateuser.php")
-        posdata += "uuid=" + uuid + "&name=" + newPersona.Nombre!
-        posdata += "&sexo=\(newPersona.sexo!)"
-        posdata += "&email=" + newPersona.email!
-        posdata += "&recibir_prom=\(recibir_prom)&recibir_email=\(recibir_email)"
-        print(posdata)
-       
-        
-        datos.setPostData(posdata)
-        datos.ObtenData()
-        
-        let curtime = NSDate()
-        var passedTime: Double = 0
-        
-        
-        while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
-            passedTime = curtime.timeIntervalSinceNow * -1000.0
-        }
-        
-        */
         
         let datos = SentRequest(curaction: "updateuser.php")
         datos.AddPosData(DataPost(newItem: "uuid", newValue: uuid))

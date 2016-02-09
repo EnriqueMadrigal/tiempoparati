@@ -84,12 +84,13 @@ init(cururl: String, posdata: NSString) {
         }
         
         cell.rating = item.rate!
-        
+        cell.clipsToBounds = true
+        cell.setNeedsLayout()
         return cell
     }
   
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 64
+        return 128
     }
 
     

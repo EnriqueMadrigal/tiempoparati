@@ -49,8 +49,8 @@ class comentariosview: UIViewController, UITableViewDelegate {
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refreshdata:", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(self.refreshControl)
-        tableView.rowHeight = 60
-        tableView.estimatedRowHeight = 60
+        //tableView.rowHeight = 60
+        //tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
 
@@ -62,6 +62,11 @@ class comentariosview: UIViewController, UITableViewDelegate {
     }
     
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 128
+    }
+
+    
     /*
     // MARK: - Navigation
 
@@ -127,33 +132,68 @@ class comentariosview: UIViewController, UITableViewDelegate {
     //// Agregar comentario
  
     func AgregarComentario(){
+     
+        
+        let uuid: String = dataAccess.sharedInstance.UIID
+        let name: String = dataAccess.sharedInstance.curPersona.Nombre!
+        let comentario: String = self.labelComentarios.text!
+        let curEstetica: Int = dataAccess.sharedInstance.currentEstetica
+        let sexo: Int = dataAccess.sharedInstance.curPersona.sexo!
+        let rating: Int = self.ratingControl.rating
         
         
-        let AddFavorite = { (action:UIAlertAction!) -> Void in
-            self.AgregaCom()
+        if (name.characters.count<4){
+            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su nombre en preferencias!:", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+            return
+        }
+        
+        
+        if (comentario.characters.count<4){
+            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Debe de ser un comentario valido!:", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+            return
+        }
+        
+        
+        
+        let datos = SentRequest(curaction: "addcomentario.php")
+        datos.AddPosData(DataPost(newItem: "uuid", newValue: uuid))
+        datos.AddPosData(DataPost(newItem: "name", newValue: name))
+        datos.AddPosData(DataPost(newItem: "comentario", newValue: comentario))
+        datos.AddPosData(DataPost(newItem: "sexo", newValue: "\(sexo)" ))
+        datos.AddPosData(DataPost(newItem: "idestetica", newValue: "\(curEstetica)"))
+        datos.AddPosData(DataPost(newItem: "rate", newValue: "\(rating)"))
+        
+        datos.ObtenData()
+        
+        if (datos.result==1){
+            print ("No se encontro el servidor")
+            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
             
             
             
         }
-        
-        let alert :UIAlertController = UIAlertController(title: "Agregar un comentario", message: "Abstengase de hacer comentarios ofensivos, desea continuar:", preferredStyle: UIAlertControllerStyle.Alert)
-     
-        let OkButton : UIAlertAction = UIAlertAction(title: "SI.", style: UIAlertActionStyle.Default, handler: AddFavorite)
-        let CancelButton : UIAlertAction = UIAlertAction(title: "NO.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
-        
-        alert.addAction(OkButton)
-        alert.addAction(CancelButton)
-        self.presentViewController(alert, animated: false, completion: nil)
-        
-        
-    }
 
-    func AgregaCom(){
-        print(self.labelComentarios.text)
-        print(self.ratingControl.rating)
-    
+        self.ratingControl.rating = 0
+        self.labelComentarios.text = ""
+        
+        self.refreshControl.beginRefreshing()
+        LoadData()
+        self.refreshControl.endRefreshing()
+        
+        
     }
-    
+        
+        
+        
     /*
     func addTextField(textField: UITextField!){
         // add the text field and make the result global
