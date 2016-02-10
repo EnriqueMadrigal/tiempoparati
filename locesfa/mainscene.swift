@@ -218,6 +218,15 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     }
     
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+       
+        let curHeight:CGFloat = (14.0 + 16.0 + 12.0) * dataAccess.sharedInstance.multiplier
+        return curHeight
+    }
+
+    
+    //////
+    
     func RegisterUser(){
         
         let uuid: String = dataAccess.sharedInstance.UIID

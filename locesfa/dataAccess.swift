@@ -14,7 +14,9 @@ class dataAccess {
     
     let testvar = 100
     var currentEstetica = 0
-   
+    
+    var multiplier: CGFloat = 1.0
+    
    var UIID: String = ""
     var curPersona: Persona!
     var curScreen: ScreenBounds!

@@ -155,6 +155,17 @@ calculateVars()
     dataAccess.sharedInstance.curScreen = ScreenBounds(newWidth: self.physicalx, newHeight: self.physicaly, typeDevice: self.deviceType)
     ////
     
+        //// Multiplier
+        
+        if (self.deviceType == "Ipad"){
+            dataAccess.sharedInstance.multiplier = 2.0
+            
+        }
+        
+
+        
+        
+        
     }
     
 
