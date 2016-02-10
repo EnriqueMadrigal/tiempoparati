@@ -51,10 +51,12 @@ class mapview: UIViewController {
         
         if let item = data.firstObject{
             
-            print(item)
+            
+            
             let curLocation = Localizacion(json: item as! NSDictionary)
            // let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
            
+            if (curLocation.lat != 0.0 || curLocation.lng != 0.0){
         
             let initialLocation = CLLocation(latitude: curLocation.lng!, longitude: curLocation.lat!)
             //let initialLocation = CLLocation(latitude: -103.425331, longitude: 20.638838)
@@ -67,6 +69,15 @@ class mapview: UIViewController {
                 coordinate: CLLocationCoordinate2D(latitude: curLocation.lng!, longitude: curLocation.lat!))
             
             mapView.addAnnotation(artwork)
+            }
+            
+            else{
+                
+                let alert :UIAlertController = UIAlertController(title: "!Advertencia", message: "No se ha definido, la ubicación:", preferredStyle: UIAlertControllerStyle.Alert)
+                let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+                alert.addAction(OkButton)
+                self.presentViewController(alert, animated: false, completion: nil)
+             }
             
         }
         

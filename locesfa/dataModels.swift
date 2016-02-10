@@ -26,6 +26,23 @@ class Persona {
     
 }
 
+class ScreenBounds{
+    
+    var width: Int = 0
+    var height: Int = 0
+    var deviceType: String?
+    
+    init(newWidth: Int, newHeight: Int, typeDevice: String?)
+    {
+        self.width = newWidth
+        self.height = newHeight
+        self.deviceType = typeDevice
+        
+    }
+    
+    
+    
+}
 
 class DataPost {
     var item: String?
@@ -250,4 +267,15 @@ class Localizacion{
         
     }
 }
+
+
+struct ScreenSize
+{
+    static let SCREEN_WIDTH         = UIScreen.mainScreen().bounds.size.width
+    static let SCREEN_HEIGHT        = UIScreen.mainScreen().bounds.size.height
+    static let scale                = UIScreen.mainScreen().scale
+    static let SCREEN_MAX_LENGTH    = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
+    static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
+}
+
 

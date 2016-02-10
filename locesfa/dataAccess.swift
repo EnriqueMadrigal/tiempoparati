@@ -17,6 +17,7 @@ class dataAccess {
    
    var UIID: String = ""
     var curPersona: Persona!
+    var curScreen: ScreenBounds!
     
     static let sharedInstance = dataAccess()
     
