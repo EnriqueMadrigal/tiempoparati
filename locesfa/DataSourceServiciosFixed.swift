@@ -107,10 +107,15 @@ class DataSourceServiciosFixed: NSObject, UITableViewDataSource {
         }
         
         cell.image1.image = UIImage(named: imagename)
+        cell.setWidth(self.tableView.bounds.width)
         return cell
     }
     
-    
+    func setTableView (newtableView: UITableView)
+    {
+        self.tableView = newtableView
+    }
+
     
       
     /*

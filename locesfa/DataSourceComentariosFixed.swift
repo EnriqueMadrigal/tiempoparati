@@ -63,13 +63,13 @@ init(cururl: String, posdata: NSString) {
         
       //  let cell = tableView.dequeueReusableCellWithIdentifier(self.CellIdentifier, forIndexPath: indexPath) as! customTableView3
       
-        let cell = customTableView3(style: UITableViewCellStyle.Default, reuseIdentifier: "myIdentifier")
+        let cell = customTableView5(style: UITableViewCellStyle.Default, reuseIdentifier: "myIdentifier")
         
         cell.campo0.text = item.nombre!
         cell.campo1.text = item.created!
         cell.campo2.text = item.comentarios!
-        cell.campo2.numberOfLines = 0
-        cell.campo2.lineBreakMode = .ByWordWrapping
+        //cell.campo2.numberOfLines = 0
+        //cell.campo2.lineBreakMode = .ByWordWrapping
         
         cell.id = item.id!
         
@@ -85,6 +85,9 @@ init(cururl: String, posdata: NSString) {
         
         cell.rating = item.rate!
         cell.clipsToBounds = true
+        cell.setWidth(self.tableView.bounds.width)
+        
+        
         cell.setNeedsLayout()
         return cell
     }

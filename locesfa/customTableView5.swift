@@ -1,5 +1,5 @@
 //
-//  customTableView3.swift
+//  customTableView5.swift
 //  studioSalon
 //
 //  Created by Enrique Madrigal Gutierrez on 15/01/16.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class customTableView3: UITableViewCell {
+class customTableView5: UITableViewCell {
 
     let campo0 = UILabel()
     let campo1 = UILabel()
+    //let campo2 = UITextView()
     let campo2 = UILabel()
-
     let image1 = UIImageView()
     var id: Int?
 
@@ -30,7 +30,7 @@ class customTableView3: UITableViewCell {
     var campo1_fontsize: CGFloat = 12
     
     var campo2_width:CGFloat = 240
-    var campo2_height: CGFloat = 12
+    var campo2_height: CGFloat = 36
     var campo2_fontsize: CGFloat = 12
     
     var rating_widht: CGFloat = 16
@@ -39,7 +39,7 @@ class customTableView3: UITableViewCell {
     var image1_width:CGFloat = 42
     var image1_height: CGFloat = 42
     
-    
+    var tableView_Width: CGFloat = 0
     ///
 
     
@@ -175,7 +175,7 @@ class customTableView3: UITableViewCell {
     func GetMultiplier(){
         
         let multiplier:CGFloat = dataAccess.sharedInstance.multiplier
-        ////
+        
         
         self.campo0_width = self.campo0_width * multiplier
         self.campo0_height = self.campo0_height * multiplier
@@ -189,6 +189,8 @@ class customTableView3: UITableViewCell {
         self.campo2_height = self.campo2_height * multiplier
         self.campo2_fontsize = self.campo2_fontsize * multiplier
         
+        self.rating_widht = self.rating_widht * multiplier
+        self.rating_height = self.rating_height * multiplier
         
         self.image1_width = self.image1_width * multiplier
         self.image1_height = self.image1_height * multiplier
@@ -198,6 +200,14 @@ class customTableView3: UITableViewCell {
         
         
     }
-
-    
+  
+    func setWidth(newWidth: CGFloat)
+    {
+        self.tableView_Width = newWidth
+        self.campo0_width = newWidth - self.image1_width
+        self.campo1_width = newWidth - self.image1_width
+        self.campo2_width = newWidth
+        
+        layoutSubviews()
+    }
 }

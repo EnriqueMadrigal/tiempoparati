@@ -45,8 +45,8 @@ class promocionesview: UIViewController , UITableViewDelegate{
         tableView.addSubview(self.refreshControl)
         tableView.rowHeight = 60
         tableView.estimatedRowHeight = 60
-        tableView.rowHeight = UITableViewAutomaticDimension
-
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
 
     }
@@ -67,7 +67,15 @@ class promocionesview: UIViewController , UITableViewDelegate{
     }
     */
 
+    ///Delegate
     
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let curHeight:CGFloat = (42.0) * dataAccess.sharedInstance.multiplier
+        return curHeight
+    }
+
     
     func LoadData(){
         
@@ -75,7 +83,7 @@ class promocionesview: UIViewController , UITableViewDelegate{
         let datapost: String = "idestetica=\(IdEstetica)"
         
         self.dataSource = DataSourcePromocionesFixed(cururl: "http://192.168.15.201/nailsalon/app/getpromociones.php", posdata: datapost)
-        
+        self.dataSource.setTableView(self.tableView)
         
         if (self.dataSource.promociones.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")

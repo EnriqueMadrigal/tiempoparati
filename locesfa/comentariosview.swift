@@ -51,7 +51,8 @@ class comentariosview: UIViewController, UITableViewDelegate {
         tableView.addSubview(self.refreshControl)
         //tableView.rowHeight = 60
         //tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = UITableViewAutomaticDimension
+         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
 
     }
@@ -62,10 +63,16 @@ class comentariosview: UIViewController, UITableViewDelegate {
     }
     
 
+    
+    ///Delegate
+    
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-               return 48 + 32
+        let curHeight:CGFloat = (42.0 + 36.0) * dataAccess.sharedInstance.multiplier
+        return curHeight
     }
+    
 
     
     /*
@@ -98,7 +105,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
             
         }
         
-        
+        self.dataSource.setTableView(self.tableView)
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
         

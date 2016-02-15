@@ -34,7 +34,7 @@ class customTableView4: UITableViewCell {
     var rating_height: CGFloat = 16
     
     ///
-    
+    var tableView_Width: CGFloat = 0
     
     let notavil = UIImage(named: "notavail")!
     var rating: Int = 0 {
@@ -191,7 +191,14 @@ class customTableView4: UITableViewCell {
         
         
     }
-    
+    func setWidth(newWidth: CGFloat)
+    {
+        self.tableView_Width = newWidth
+        self.campo0_width = newWidth - self.image1_width
+        self.campo1_width = newWidth - self.image1_width
+         layoutSubviews()
+    }
+
     
     
 }

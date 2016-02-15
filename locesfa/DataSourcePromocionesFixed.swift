@@ -74,8 +74,8 @@ class DataSourcePromocionesFixed: NSObject, UITableViewDataSource {
         //cell.campo2.text = item.colonia! + " " + item.ciudad!
       //  cell.campo2.text = ""
         cell.id = item.id!
-        
-               cell.image1.image = UIImage(named: "promocion")
+        cell.image1.image = UIImage(named: "promocion")
+        cell.setWidth(self.tableView.bounds.width)
         
   
         //cell.bounds = CGRect(x: 0, y: 0, width: CGRectGetWidth(tableView.bounds), height: 99999)
@@ -91,7 +91,12 @@ class DataSourcePromocionesFixed: NSObject, UITableViewDataSource {
         return cell
     }
     
+    func setTableView (newtableView: UITableView)
+    {
+        self.tableView = newtableView
+    }
     
+
     
       
     /*

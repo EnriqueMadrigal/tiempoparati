@@ -205,8 +205,9 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             self.refreshControl = UIRefreshControl()
             self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
             self.refreshControl.addTarget(self, action: "refreshdata:", forControlEvents: UIControlEvents.ValueChanged)
-            tableView.addSubview(self.refreshControl)
-            tableView.rowHeight = 48
+            self.tableView.addSubview(self.refreshControl)
+            
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
             
             
             
@@ -250,7 +251,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         let datapost: String = "idestetica=\(IdEstetica)"
         
         self.dataSource = DataSourceServiciosFixed(cururl: "http://192.168.15.201/nailsalon/app/getservicios.php", posdata: datapost)
-        
+         self.dataSource.setTableView(self.tableView)
               
         if (self.dataSource.servicios.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")
@@ -335,6 +336,14 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
         
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let curHeight:CGFloat = (42.0 ) * dataAccess.sharedInstance.multiplier
+        return curHeight
+    }
+
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)

@@ -90,13 +90,12 @@ calculateVars()
     
     if (self.deviceType == "Iphone")
     {
-    
-    
-    if (ScreenSize.SCREEN_HEIGHT == 320 && ScreenSize.SCREEN_WIDTH == 480)
+        
+    if (ScreenSize.SCREEN_HEIGHT == 480 && ScreenSize.SCREEN_WIDTH == 320)
     {
     // Iphone 4
-    self.physicalx = 960
-    self.physicaly = 640
+    self.physicalx = 640
+    self.physicaly = 960
     }
     
     
@@ -134,8 +133,8 @@ calculateVars()
     {
     // Ipad, Ipad2 , Ipad mini
     
-    self.physicalx = 1024
-    self.physicaly = 768
+    self.physicalx = 768
+    self.physicaly = 1024
     }
     
     if (ScreenSize.scale == 2.0)

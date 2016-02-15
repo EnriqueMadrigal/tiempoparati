@@ -51,7 +51,9 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "identifier")
         self.tableView.delegate = self
         self.tableView.addSubview(self.refreshControl)
- 
+        //self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
     LoadData()
     RegisterUser()
         
@@ -172,7 +174,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
      func LoadData(){
         self.dataSource = nil
     self.dataSource = DataSourceEsteticasFixed(cururl: "http://192.168.15.201/nailsalon/app/getsalons.php", posdata: "IdPersona=0")
-    
+    self.dataSource.setTableView(self.tableView)
     if (self.dataSource.esteticas.count==0 && self.dataSource.responsecode != 0) {
     print ("No se encontro el servidor")
     let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
@@ -220,7 +222,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
        
-        let curHeight:CGFloat = (14.0 + 16.0 + 12.0) * dataAccess.sharedInstance.multiplier
+        let curHeight:CGFloat = (42.0) * dataAccess.sharedInstance.multiplier
         return curHeight
     }
 

@@ -206,7 +206,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                             <constraint firstItem="hBj-Bv-18n" firstAttribute="width" secondItem="hBj-Bv-18n" secondAttribute="height" multiplier="1:1" id="frX-8I-cok"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-ks-L1H">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-ks-L1H">
                                         <rect key="frame" x="0.0" y="81" width="540" height="128"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-iz-yY7">
@@ -239,7 +239,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WH8-VC-MOc">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WH8-VC-MOc">
                                         <rect key="frame" x="0.0" y="214" width="540" height="127"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9X-UX-GfP">
@@ -272,7 +272,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-kP-HiD">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-kP-HiD">
                                         <rect key="frame" x="0.0" y="346" width="540" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona tu estetica favorita:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-ku-xOO">
@@ -301,18 +301,18 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                             <constraint firstItem="GKM-Ns-W9U" firstAttribute="width" secondItem="GKM-Ns-W9U" secondAttribute="height" multiplier="1:1" id="XmY-qb-EeG"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nyG-Jm-Qkr">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nyG-Jm-Qkr">
                                         <rect key="frame" x="0.0" y="432" width="540" height="128"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-nF-rjV">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-nF-rjV">
                                                 <rect key="frame" x="0.0" y="0.0" width="540" height="128"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myIdentifier" id="n2M-Cp-dYj">
-                                                        <rect key="frame" x="0.0" y="28" width="540" height="44"/>
+                                                        <rect key="frame" x="0.0" y="28" width="540" height="42"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2M-Cp-dYj" id="Ls7-Dh-MhF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="540" height="41"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
                                                         <connections>
@@ -356,11 +356,11 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jlN-Oj-eOK">
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jlN-Oj-eOK">
                                 <rect key="frame" x="28" y="74" width="544" height="406"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="s9P-cJ-Izs">
-                                        <rect key="frame" x="10" y="10" width="524" height="386"/>
+                                        <rect key="frame" x="10" y="10" width="524" height="430"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ums-hQ-oGM">
                                                 <rect key="frame" x="0.0" y="0.0" width="524" height="51"/>
@@ -388,10 +388,10 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-jx-dZl">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-jx-dZl">
                                                 <rect key="frame" x="0.0" y="56" width="524" height="28"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Preferencias:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jo4-hZ-jFf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferencias:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jo4-hZ-jFf">
                                                         <rect key="frame" x="0.0" y="0.0" width="262" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -410,10 +410,10 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                     <constraint firstItem="BeR-Hc-XL4" firstAttribute="width" secondItem="4Wq-jx-dZl" secondAttribute="width" multiplier="0.5" id="UvH-z6-iz1"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pe9-Ml-2Yp">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pe9-Ml-2Yp">
                                                 <rect key="frame" x="0.0" y="89" width="524" height="31"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recibir promociones:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o9W-ON-CPW">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recibir promociones:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o9W-ON-CPW">
                                                         <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -427,7 +427,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                     <constraint firstItem="o9W-ON-CPW" firstAttribute="width" secondItem="Pe9-Ml-2Yp" secondAttribute="width" multiplier="0.6" id="1ah-5h-5Cp"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdb-m1-TOd">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdb-m1-TOd">
                                                 <rect key="frame" x="0.0" y="125" width="524" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por correo electronico:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zML-6t-to9">
@@ -447,7 +447,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                     <constraint firstItem="zML-6t-to9" firstAttribute="width" secondItem="wdb-m1-TOd" secondAttribute="width" multiplier="0.6" id="8cs-TB-tpV"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-xi-0Ot">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-xi-0Ot">
                                                 <rect key="frame" x="0.0" y="161" width="524" height="51"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NOS-qj-8dd">
@@ -473,7 +473,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-ur-ZeS">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0l-ur-ZeS">
                                                 <rect key="frame" x="0.0" y="217" width="524" height="30"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="wYb-Nr-bkR">
@@ -493,11 +493,11 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-KW-nhs">
-                                                <rect key="frame" x="0.0" y="252" width="524" height="134"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T8X-KW-nhs">
+                                                <rect key="frame" x="0.0" y="252" width="524" height="178"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="150" verticalHuggingPriority="150" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fD3-L8-u9g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="524" height="134"/>
+                                                    <view contentMode="scaleToFill" horizontalHuggingPriority="150" verticalHuggingPriority="150" translatesAutoresizingMaskIntoConstraints="NO" id="fD3-L8-u9g">
+                                                        <rect key="frame" x="0.0" y="0.0" width="524" height="178"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -871,7 +871,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Agregar comentario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhE-y8-REY">
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

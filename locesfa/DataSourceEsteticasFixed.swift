@@ -131,7 +131,7 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
         
         cell.image1.image = curImage.imagedata!
         cell.rating = item.rate!
-        
+        cell.setWidth(self.tableView.bounds.width)
         return cell
     }
     
@@ -141,7 +141,11 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
     }
     
     
-  
+    func setTableView (newtableView: UITableView)
+    {
+        self.tableView = newtableView
+    }
+    
     
     
     func showWaitDialog()
@@ -152,7 +156,7 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
     }
 
    
-    //private var tableView: UITableView!
+   private var tableView: UITableView!
     private var esteticasImages = [Estetica_Images]()
     internal var esteticas = [Estetica]()
     //private var CellIdentifier: String

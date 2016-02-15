@@ -132,7 +132,7 @@ class DataSourceSubServiciosFixed: NSObject , UITableViewDataSource {
         
         cell.image1.image = curImage.imagedata!
         //cell.rating = item.rate!
-        
+        cell.setWidth(self.tableView.bounds.width)
         return cell
     }
     
@@ -142,18 +142,16 @@ class DataSourceSubServiciosFixed: NSObject , UITableViewDataSource {
     }
     
     
-  
-    
-    
-    func showWaitDialog()
+    func setTableView (newtableView: UITableView)
     {
-        print ("Fire")
-        
-        
+        self.tableView = newtableView
     }
-
+    
+    
+    
    
-    //private var tableView: UITableView!
+   
+    private var tableView: UITableView!
     private var serviciosImages = [Servicios_Images]()
     internal var subservicios = [SubServicio]()
     //private var CellIdentifier: String

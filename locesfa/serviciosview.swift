@@ -94,8 +94,8 @@ class serviciosview: UIViewController, UITableViewDelegate {
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refreshdata:", forControlEvents: UIControlEvents.ValueChanged)
-        tableView.addSubview(self.refreshControl)
-        tableView.rowHeight = 48
+        self.tableView.addSubview(self.refreshControl)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
         }
         
@@ -124,6 +124,16 @@ class serviciosview: UIViewController, UITableViewDelegate {
     }
     */
     
+    ///Delegate
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let curHeight:CGFloat = (42.0) * dataAccess.sharedInstance.multiplier
+        return curHeight
+    }
+    
+    ////////
     
     
     func LoadData(){
@@ -132,7 +142,7 @@ class serviciosview: UIViewController, UITableViewDelegate {
         let datapost: String = "idestetica=\(IdEstetica)&idservicio=\(self.idservicio)"
         
         self.dataSource = DataSourceSubServiciosFixed(cururl: "http://192.168.15.201/nailsalon/app/getsubservicios.php", posdata: datapost)
-        
+        self.dataSource.setTableView(self.tableView)
         
         if (self.dataSource.subservicios.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")
