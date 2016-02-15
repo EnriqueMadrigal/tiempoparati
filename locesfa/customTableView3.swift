@@ -42,6 +42,7 @@ class customTableView3: UITableViewCell {
     
     ///
 
+    var tableView_Width: CGFloat = 0
     
     let notavil = UIImage(named: "notavail")!
     
@@ -199,5 +200,16 @@ class customTableView3: UITableViewCell {
         
     }
 
+    func setWidth(newWidth: CGFloat)
+    {
+        self.tableView_Width = newWidth
+        self.campo0_width = newWidth - self.image1_width
+        self.campo1_width = newWidth - self.image1_width
+        self.campo2_width = newWidth - self.image1_width
+        
+        layoutSubviews()
+    }
+
+    
     
 }
