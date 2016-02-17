@@ -31,16 +31,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2")!)
-        
-        let navControllerheight: CGFloat = self.navigationController!.navigationBar.bounds.height
-        let frame1: CGRect = CGRect(x: 0, y: navControllerheight, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        
-        let backgroundImage = UIImageView(frame: frame1)
-        
-        backgroundImage.image = UIImage(named: "background1")
-        self.view.insertSubview(backgroundImage, atIndex: 0)
-        
+         SetBackGroundImage(self)        
         LoadData()
         tableView.dataSource = self.dataSource
         tableView.delegate = self
@@ -93,7 +84,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
         let IdEstetica = dataAccess.sharedInstance.currentEstetica
         let datapost: String = "idestetica=\(IdEstetica)"
         
-        self.dataSource = DataSourceComentariosFixed(cururl: "http://192.168.15.201/nailsalon/app/getcomentarios.php", posdata: datapost)
+        self.dataSource = DataSourceComentariosFixed(cururl: "getcomentarios.php", posdata: datapost)
         
         
         if (self.dataSource.comentarios.count == 0 && self.dataSource.responsecode != 0) {

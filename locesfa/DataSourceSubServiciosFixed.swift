@@ -32,31 +32,14 @@ class DataSourceSubServiciosFixed: NSObject , UITableViewDataSource {
         
         
         //////
-        let datos = GetData()
-       
-        datos.setURL(cururl)
+        let datos = SentRequest(curaction: cururl)
         datos.setPostData(posdata)
         
         datos.ObtenData()
-       
-        let curtime = NSDate()
-       
-        var passedTime: Double = 0
         
-        
-        while (datos.isDataReady == false && passedTime < self.maxWaitTime && datos.resulterror == 0 ){
-         
-          passedTime = curtime.timeIntervalSinceNow * -1000.0
-         
-            
-        }
-        
-        if (passedTime >= self.maxWaitTime){
-        self.responsecode = 2
-        }
-        else {
-            self.responsecode = datos.resulterror
-
+        if (datos.result==1){
+            self.responsecode = 1
+            return
         }
         
         let data = datos.GetJson()
@@ -71,7 +54,7 @@ class DataSourceSubServiciosFixed: NSObject , UITableViewDataSource {
         
         
         for subservicio in subservicios{
-            
+            /*
             let curid: Int = subservicio.id!
             let datosimage = GetImage()
             datosimage.setURL("http://192.168.15.201/nailsalon/app/getimagesubservicio.php")
@@ -93,10 +76,26 @@ class DataSourceSubServiciosFixed: NSObject , UITableViewDataSource {
             
             let newImage: Servicios_Images = Servicios_Images(idServicio: curid, newimage: datosimage.GetcurImage())
                 serviciosImages.append(newImage)
+            */
+            
+            let curid: Int = subservicio.id!
+            let datosImage = SentRequest_image(curaction: "getimagesubservicio.php")
+            datosImage.AddPosData(DataPost(newItem: "idsubservicio", newValue: "\(curid)"))
+            datosImage.AddPosData(DataPost(newItem: "width", newValue: "64"))
+            datosImage.AddPosData(DataPost(newItem: "height", newValue: "64"))
+            
+            datosImage.ObtenData()
+            
+            if (datosImage.result==1){
+                break
+            }
+                
+            let newImage: Servicios_Images = Servicios_Images(idServicio: curid, newimage: datosImage.curimage!)
+            serviciosImages.append(newImage)
             
         }
         
-        
+        self.responsecode = 0
         
     }
     

@@ -24,15 +24,7 @@ class promocionesview: UIViewController , UITableViewDelegate{
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2")!)
-        
-        let navControllerheight: CGFloat = self.navigationController!.navigationBar.bounds.height
-        let frame1: CGRect = CGRect(x: 0, y: navControllerheight, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        
-        let backgroundImage = UIImageView(frame: frame1)
-        
-        backgroundImage.image = UIImage(named: "background1")
-        self.view.insertSubview(backgroundImage, atIndex: 0)
+       SetBackGroundImage(self)
         
         LoadData()
         
@@ -82,9 +74,9 @@ class promocionesview: UIViewController , UITableViewDelegate{
         let IdEstetica = dataAccess.sharedInstance.currentEstetica
         let datapost: String = "idestetica=\(IdEstetica)"
         
-        self.dataSource = DataSourcePromocionesFixed(cururl: "http://192.168.15.201/nailsalon/app/getpromociones.php", posdata: datapost)
+        self.dataSource = DataSourcePromocionesFixed(cururl: "getpromociones.php", posdata: datapost)
         self.dataSource.setTableView(self.tableView)
-        
+    
         if (self.dataSource.promociones.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)

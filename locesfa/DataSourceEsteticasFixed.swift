@@ -32,36 +32,17 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
         
         
         //////
-        let datos = GetData()
-       
-        datos.setURL(cururl)
+        let datos = SentRequest(curaction: cururl)
         datos.setPostData(posdata)
         
         datos.ObtenData()
-       
-        let curtime = NSDate()
-       
-        var passedTime: Double = 0
         
-        
-        while (datos.isDataReady == false && passedTime < self.maxWaitTime && datos.resulterror == 0 ){
-         
-          passedTime = curtime.timeIntervalSinceNow * -1000.0
-         
-            
-        }
-        
-        if (passedTime >= self.maxWaitTime){
-        self.responsecode = 2
-        }
-        else {
-            self.responsecode = datos.resulterror
-
+        if (datos.result==1){
+            self.responsecode = 1
+            return
         }
         
         let data = datos.GetJson()
-        
-        //print(data.count)
         
         
         for item in data {
@@ -69,7 +50,7 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
         }
 
         
-        
+        /*
         for estetica in esteticas{
             
             let curid: Int = estetica.id!
@@ -95,9 +76,9 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
                 esteticasImages.append(newImage)
             
         }
+        */
         
-        
-        
+        self.responsecode = 0
     }
     
 
@@ -127,9 +108,20 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
         cell.id = item.id!
        // let imagename: NSString = item.imageFileName!
        // let filename = imagename.stringByDeletingPathExtension
-        let curImage = esteticasImages[indexPath.row]
         
-        cell.image1.image = curImage.imagedata!
+        let sexo = dataAccess.sharedInstance.curPersona.sexo
+        var curImage = UIImage(named: "notavail")
+        
+        if (sexo==1){
+            curImage = UIImage(named: "menicon1")
+        }
+        
+        //let curImage = esteticasImages[indexPath.row]
+        else {
+            curImage = UIImage(named: "womancomb")
+        }
+        
+        cell.image1.image = curImage
         cell.rating = item.rate!
         cell.setWidth(self.tableView.bounds.width)
         return cell

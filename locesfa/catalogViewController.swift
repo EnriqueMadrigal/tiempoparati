@@ -20,15 +20,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2")!)
-        
-        let navControllerheight: CGFloat = self.navigationController!.navigationBar.bounds.height
-        let frame1: CGRect = CGRect(x: 0, y: navControllerheight, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        
-        let backgroundImage = UIImageView(frame: frame1)
-        
-        backgroundImage.image = UIImage(named: "background1")
-        self.view.insertSubview(backgroundImage, atIndex: 0)
+      SetBackGroundImage(self)
         LoadData()
 
     self.collectionView.dataSource = self

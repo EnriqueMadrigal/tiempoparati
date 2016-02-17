@@ -10,39 +10,27 @@ import UIKit
 
 class DataSourceComentariosFixed: NSObject ,UITableViewDataSource {
     
-init(cururl: String, posdata: NSString) {
+init(cururl: String, posdata: String) {
         
       
-    let datos = GetData()
-    
-    datos.setURL(cururl)
+    let datos = SentRequest(curaction: cururl)
     datos.setPostData(posdata)
     
     datos.ObtenData()
     
-    let curtime = NSDate()
-    var passedTime: Double = 0
-
-    
-    while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
-        passedTime = curtime.timeIntervalSinceNow * -1000.0
+    if (datos.result==1){
+        self.responsecode = 1
+        return
     }
- 
-    self.responsecode = datos.resulterror
     
     let data = datos.GetJson()
-    //print(data)
-    //print(data.count)
 
     for item in data {
         self.comentarios.append(Comentarios_Esteticas(json: item as! NSDictionary))
     }
     
-
-    
-    
-    
-    
+   
+    datos.result==1
     
     
     }

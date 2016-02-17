@@ -12,28 +12,19 @@ class DataSourceServiciosFixed: NSObject, UITableViewDataSource {
     
     var maxWaitTime: Double = 40000.0
 
-    init(cururl: String, posdata: NSString) {
+    init(cururl: String, posdata: String) {
         
-       
-             
-            
-        //////
-        let datos = GetData()
-        datos.setURL(cururl)
+       /////
+        
+        let datos = SentRequest(curaction: cururl)
         datos.setPostData(posdata)
         
         datos.ObtenData()
         
-        let curtime = NSDate()
-        
-        var passedTime: Double = 0
-     
-        while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
-            passedTime = curtime.timeIntervalSinceNow * -1000.0
+        if (datos.result==1){
+            self.responsecode = 1
+            return
         }
-
-        
-        self.responsecode = datos.resulterror
         
         let data = datos.GetJson()
         
@@ -45,7 +36,7 @@ class DataSourceServiciosFixed: NSObject, UITableViewDataSource {
         }
         
         
-        
+        self.responsecode = 0
         
         
     }

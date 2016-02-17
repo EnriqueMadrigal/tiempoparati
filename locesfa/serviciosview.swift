@@ -28,16 +28,7 @@ class serviciosview: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2")!)
-        
-        let navControllerheight: CGFloat = self.navigationController!.navigationBar.bounds.height
-        let frame1: CGRect = CGRect(x: 0, y: navControllerheight, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        
-        let backgroundImage = UIImageView(frame: frame1)
-        
-        backgroundImage.image = UIImage(named: "background1")
-        self.view.insertSubview(backgroundImage, atIndex: 0)
-
+        SetBackGroundImage(self)
        
         if let curServicio = curServicio{
             self.labelNombre.text = curServicio.title!
@@ -141,7 +132,7 @@ class serviciosview: UIViewController, UITableViewDelegate {
         let IdEstetica = dataAccess.sharedInstance.currentEstetica
         let datapost: String = "idestetica=\(IdEstetica)&idservicio=\(self.idservicio)"
         
-        self.dataSource = DataSourceSubServiciosFixed(cururl: "http://192.168.15.201/nailsalon/app/getsubservicios.php", posdata: datapost)
+        self.dataSource = DataSourceSubServiciosFixed(cururl: "getsubservicios.php", posdata: datapost)
         self.dataSource.setTableView(self.tableView)
         
         if (self.dataSource.subservicios.count == 0 && self.dataSource.responsecode != 0) {

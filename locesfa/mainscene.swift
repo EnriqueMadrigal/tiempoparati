@@ -8,7 +8,7 @@
 
 import UIKit
 
-class mainscene: UIViewController ,UITableViewDelegate  {
+class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating, UISearchBarDelegate  {
 
     
      private lazy var dataSource: DataSourceEsteticasFixed! = nil
@@ -19,6 +19,17 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     
     var hasrefresh: Bool = false
     var hasWaitDialog: Bool = false
+    var searchController: UISearchController!
+    
+    
+    
+    //// search controls
+    var dataArray = [String]()
+    
+    var filteredArray = [String]()
+    
+    var shouldShowSearchResults = false
+    ////
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -37,7 +48,8 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
-        
+        SetBackGroundImage(self)
+        /*
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2")!)
         
         let navControllerheight: CGFloat = self.navigationController!.navigationBar.bounds.height
@@ -47,16 +59,28 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         
         backgroundImage.image = UIImage(named: "background1")
         self.view.insertSubview(backgroundImage, atIndex: 0)
-
+        */
+        
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "identifier")
         self.tableView.delegate = self
         self.tableView.addSubview(self.refreshControl)
         //self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        //let myCustomlabel = UILabel()
+        //myCustomlabel.text = "HOla Mundo"
+        //self.tableView.tableHeaderView?.addSubview(myCustomlabel)
+        
+        /*
+        var frame = CGRectMake(0, 0, self.view.frame.size.width, 60)
+        var headerImageView = UIImageView(frame: frame)
+        var image: UIImage = UIImage(named: "notavail")!
+        headerImageView.image = image
+    self.tableView.tableHeaderView = headerImageView
+        */
         
     LoadData()
     RegisterUser()
-        
+    configureSearchController()
         
         
         
@@ -66,7 +90,7 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         super.viewWillAppear(animated)
         //print("willAppear")
         self.labelNombre.text = "Hola " + dataAccess.sharedInstance.curPersona.Nombre!
-
+        SetBackGroundImage(self)
         
     }
     
@@ -80,11 +104,9 @@ class mainscene: UIViewController ,UITableViewDelegate  {
             view.userInteractionEnabled = true
             self.hasWaitDialog = false
         }
-       
-       
-        
-        
-    }
+       SetBackGroundImage(self)
+        LoadData()
+     }
     
     
     
@@ -172,8 +194,9 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     }
     
      func LoadData(){
-        self.dataSource = nil
-    self.dataSource = DataSourceEsteticasFixed(cururl: "http://192.168.15.201/nailsalon/app/getsalons.php", posdata: "IdPersona=0")
+    
+    self.dataSource = nil
+    self.dataSource = DataSourceEsteticasFixed(cururl: "getsalons.php", posdata: "IdPersona=0")
     self.dataSource.setTableView(self.tableView)
     if (self.dataSource.esteticas.count==0 && self.dataSource.responsecode != 0) {
     print ("No se encontro el servidor")
@@ -227,6 +250,51 @@ class mainscene: UIViewController ,UITableViewDelegate  {
     }
 
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 22.0
+    }
+    
+ 
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        /*
+        let myCustomlabel = UILabel()
+        
+        
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView!
+        header.addSubview(myCustomlabel)
+        return header
+        */
+        let items = ["Nombre", "Servicio", "Producto"]
+        let customSC = UISegmentedControl(items: items)
+        customSC.selectedSegmentIndex = 0
+        customSC.layer.cornerRadius = 5.0  // Don't let background bleed
+        customSC.backgroundColor = UIColor.blackColor()
+        customSC.tintColor = UIColor.whiteColor()
+        customSC.addTarget(self, action: "changeSearch:", forControlEvents: .ValueChanged)
+        //uilbl.numberOfLines = 0
+        //uilbl.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        //uilbl.text = "blablabla"
+        customSC.sizeToFit()
+        //uilbl.backgroundColor =  UIColor(patternImage: UIImage(named: "background1")!)
+        
+        return customSC
+
+
+    }
+
+    
+    func changeSearch(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            self.view.backgroundColor = UIColor.greenColor()
+        case 2:
+            self.view.backgroundColor = UIColor.blueColor()
+        default:
+            self.view.backgroundColor = UIColor.purpleColor()
+        }
+    }
+    
+    
     //////
     
     func RegisterUser(){
@@ -260,7 +328,64 @@ class mainscene: UIViewController ,UITableViewDelegate  {
         
         
     }
+   
     
+    ///// search bar
+    
+    
+    
+    func configureSearchController() {
+        // Initialize and perform a minimum configuration to the search controller.
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search here..."
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
+        
+        // Place the search bar view to the tableview headerview.
+        self.tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        shouldShowSearchResults = true
+        LoadData()
+    }
+    
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        shouldShowSearchResults = false
+        LoadData()
+    }
+    
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if !shouldShowSearchResults {
+            shouldShowSearchResults = true
+            LoadData()
+        }
+        
+        searchController.searchBar.resignFirstResponder()
+    }
+    
+    
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchString = searchController.searchBar.text
+        print(searchString)
+        // Filter the data array and get only those countries that match the search text.
+        filteredArray = dataArray.filter({ (country) -> Bool in
+            let countryText: NSString = country
+            
+            //return (countryText.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch).location) != NSNotFound
+            return true
+        })
+        
+        // Reload the tableview.
+        //LoadData()
+    }
+    
+    ///////
 
 }
 

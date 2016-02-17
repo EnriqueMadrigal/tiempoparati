@@ -289,8 +289,8 @@
 				CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */,
 				CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */,
 				CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */,
-				CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */,
 				CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */,
+				CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */,
 			);
 			name = dataSources;
 			sourceTree = "<group>";

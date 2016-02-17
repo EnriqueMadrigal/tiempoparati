@@ -10,10 +10,60 @@ import Foundation
 import UIKit
 
 
+func SetBackGroundImage (curController: UIViewController)
+{
+    
+    let menModel = UIImage(named: "background3")
+    let womanModel = UIImage(named: "background1")
+    let menBack = UIImage(named: "background4")
+    let womanBack = UIImage(named: "background1")
+    
+    var curImage: UIImage!
+    var curBack: UIImage!
+    
+    let sexo = dataAccess.sharedInstance.curPersona.sexo
+   
+    curImage = womanModel
+    curBack = womanBack
+    
+    if (sexo==1){
+        curImage = menModel
+        curBack = menBack
+    }
+        
+   
+    
+    
+    var frame1: CGRect = UIScreen.mainScreen().bounds
+    curController.view.backgroundColor = UIColor(patternImage: curBack!)
+    
+    if let curNavigationController = curController.navigationController{
+        
+        let navControllerheight: CGFloat = curNavigationController.navigationBar.bounds.height
+     frame1 = CGRect(x: 0, y: navControllerheight, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
+   
+    }
+    
+    let backgroundImage = UIImageView(frame: frame1)
+    
+    backgroundImage.image = curImage
+    backgroundImage.tag = 100
+    
+    if let viewWithTag = curController.view.viewWithTag(100) {
+        viewWithTag.removeFromSuperview()
+    }
+    
+    curController.view.insertSubview(backgroundImage, atIndex: 0)
+    
+    
+    
+}
+
 class SentRequest {
 
     private var CurAction: String!
-    let globalUrl: String = "http://192.168.15.201/nailsalon/app/"
+    let globalUrl: String = dataAccess.sharedInstance.curUrl
+    var posData: String!
     
     private var PostData = [DataPost]()
     var result: Int = 0
@@ -25,6 +75,10 @@ class SentRequest {
     
     func AddPosData(newdata: DataPost){
         PostData.append(newdata)
+    }
+    
+    func setPostData(newDataPost: String){
+        self.posData = newDataPost
     }
     
     func ObtenData(){
@@ -47,7 +101,13 @@ class SentRequest {
             
         }
         
-            print(posdata)
+        if (posdata.characters.count==0){
+            posdata = self.posData
+        }
+        
+        print(posdata)
+       
+        
         
         datos.setPostData(posdata)
         datos.ObtenData()
@@ -78,7 +138,8 @@ class SentRequest {
 class SentRequest_image {
     
     private var CurAction: String!
-    let globalUrl: String = "http://192.168.15.201/nailsalon/app/"
+    let globalUrl: String = dataAccess.sharedInstance.curUrl
+    
     
     private var PostData = [DataPost]()
     var result: Int = 0

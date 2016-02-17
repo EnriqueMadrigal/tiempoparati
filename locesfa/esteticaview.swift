@@ -155,16 +155,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2")!)
-        
-        let navControllerheight: CGFloat = self.navigationController!.navigationBar.bounds.height
-        let frame1: CGRect = CGRect(x: 0, y: navControllerheight, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        
-        let backgroundImage = UIImageView(frame: frame1)
-        
-        backgroundImage.image = UIImage(named: "background1")
-        self.view.insertSubview(backgroundImage, atIndex: 0)
-
+        SetBackGroundImage(self)
         
         if let CurEstetica = CurEstetica{
          self.labelNombre.text = CurEstetica.title!
@@ -179,23 +170,23 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             
             /////
             let curid: Int = CurEstetica.id!
-            let datosimage = GetImage()
-            datosimage.setURL("http://192.168.15.201/nailsalon/app/getimagesalon.php")
-            datosimage.setPostData("idestetica=\(curid)&width=240&height=240")
-            datosimage.ObtenData()
+            let datosImage = SentRequest_image(curaction: "getimagesalon.php")
+            datosImage.AddPosData(DataPost(newItem: "idestetica", newValue: "\(curid)"))
+            datosImage.AddPosData(DataPost(newItem: "width", newValue: "240"))
+            datosImage.AddPosData(DataPost(newItem: "height", newValue: "240"))
             
-            let curtime = NSDate()
+            datosImage.ObtenData()
             
-            var passedTime: Double = 0
-            let maxWaitTime: Double = 40000.0
-            
-            while (datosimage.isDataReady == false && passedTime < maxWaitTime && datosimage.resulterror == 0 ){
-                passedTime = curtime.timeIntervalSinceNow * -1000.0
-                
+            if (datosImage.result==1){
+                self.image1.image = UIImage(named: "notavail")
             }
             
-            let newImage: Estetica_Images = Estetica_Images(idEstetica: curid, newimage: datosimage.GetcurImage())
-           self.image1.image = newImage.imagedata
+            
+            else {
+            self.image1.image = datosImage.curimage!
+            }
+            
+            
             
         
             LoadData()
@@ -250,7 +241,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         let IdEstetica = dataAccess.sharedInstance.currentEstetica
         let datapost: String = "idestetica=\(IdEstetica)"
         
-        self.dataSource = DataSourceServiciosFixed(cururl: "http://192.168.15.201/nailsalon/app/getservicios.php", posdata: datapost)
+        self.dataSource = DataSourceServiciosFixed(cururl: "getservicios.php", posdata: datapost)
          self.dataSource.setTableView(self.tableView)
               
         if (self.dataSource.servicios.count == 0 && self.dataSource.responsecode != 0) {
@@ -354,7 +345,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             view.userInteractionEnabled = true
             self.hasWaitDialog = false
         }
-
+        SetBackGroundImage(self)
     }
     func AgregarFavorito(){
         

@@ -32,9 +32,7 @@ class GetData {
         let post: NSString = self.postdata
         let url = NSURL(string: self.cururl)
         
-        //let url = NSURL(string: "http://192.168.15.201/nailsalon/app/getsalons.php")!
-        //print(url)
-        
+              
         let postData = post.dataUsingEncoding(NSUTF8StringEncoding)!
         //print(postData)
         

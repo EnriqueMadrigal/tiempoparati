@@ -20,12 +20,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        /*
         let frame1: CGRect = UIScreen.mainScreen().bounds
 
         let backgroundImage = UIImageView(frame: frame1)
         backgroundImage.image = UIImage(named: "background1")
         self.view.insertSubview(backgroundImage, atIndex: 0)
+        */
+        
+        
         
         let UUIDValue = UIDevice.currentDevice().identifierForVendor!.UUIDString
         dataAccess.sharedInstance.UIID = UUIDValue
@@ -45,6 +48,8 @@ class ViewController: UIViewController {
 calculateVars()
         print(dataAccess.sharedInstance.curScreen.width)
         print(dataAccess.sharedInstance.curScreen.height)
+       
+        SetBackGroundImage(self)
         
     }
 

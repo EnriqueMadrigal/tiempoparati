@@ -20,6 +20,7 @@ class dataAccess {
    var UIID: String = ""
     var curPersona: Persona!
     var curScreen: ScreenBounds!
+    let curUrl: String = "http://192.168.15.201/nailsalon/app/"
     
     static let sharedInstance = dataAccess()
     
