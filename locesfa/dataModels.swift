@@ -174,6 +174,25 @@ class Promociones_Esteticas {
     
 }
 
+class Productos_Esteticas {
+    var id: Int?
+    var idestetica: Int?
+    //var created: String?
+    var title: String?
+    var descripcion: String?
+    var marca: String?
+    
+    
+    init(json: NSDictionary) {
+        self.id = Int((json["id"] as? String)!)!
+        self.idestetica = Int((json["idestetica"] as? String)!)!
+        self.title = json["title"] as? String
+        self.descripcion = json["descripcion"] as? String
+        self.marca = json["marca"] as? String
+        
+    }
+    
+}
 
 
 class Catalogos_Esteticas {

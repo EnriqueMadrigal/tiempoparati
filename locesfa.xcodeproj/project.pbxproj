@@ -63,6 +63,12 @@
 		CD759DEF1C6A61F000BB60CF /* mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD759DED1C6A61F000BB60CF /* mapview.swift */; };
 		CD759DF01C6A61F000BB60CF /* mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD759DED1C6A61F000BB60CF /* mapview.swift */; };
 		CD759DF21C6A633D00BB60CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD759DF11C6A633D00BB60CF /* MapKit.framework */; };
+		CDAB97611C758F53007DEBFA /* productosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97601C758F53007DEBFA /* productosview.swift */; };
+		CDAB97621C758F53007DEBFA /* productosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97601C758F53007DEBFA /* productosview.swift */; };
+		CDAB97631C758F53007DEBFA /* productosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97601C758F53007DEBFA /* productosview.swift */; };
+		CDAB97651C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */; };
+		CDAB97661C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */; };
+		CDAB97671C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */; };
 		CDB9D2B11C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
 		CDB9D2B21C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
 		CDB9D2B31C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
@@ -155,6 +161,8 @@
 		CD7182021C5B2A54004734E4 /* esteticaview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = esteticaview.swift; sourceTree = "<group>"; };
 		CD759DED1C6A61F000BB60CF /* mapview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapview.swift; sourceTree = "<group>"; };
 		CD759DF11C6A633D00BB60CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CDAB97601C758F53007DEBFA /* productosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productosview.swift; sourceTree = "<group>"; };
+		CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceProductosFixed.swift; sourceTree = "<group>"; };
 		CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObtenPersona.swift; sourceTree = "<group>"; };
 		CDB9D2B41C61692500EAAF28 /* extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extras.swift; sourceTree = "<group>"; };
 		CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = comentariosview.swift; sourceTree = "<group>"; };
@@ -231,6 +239,7 @@
 				CD7181B11C5AF4FA004734E4 /* ViewController.swift */,
 				CD41C6AC1C5FD0EB0023C520 /* privacidad.swift */,
 				CD7181B31C5AF4FA004734E4 /* Main.storyboard */,
+				CDAB97601C758F53007DEBFA /* productosview.swift */,
 				CD7181B91C5AF4FA004734E4 /* Assets.xcassets */,
 				CD7181BB1C5AF4FA004734E4 /* LaunchScreen.storyboard */,
 				CD7181BE1C5AF4FA004734E4 /* Info.plist */,
@@ -288,6 +297,7 @@
 			children = (
 				CDC706A31C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift */,
 				CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */,
+				CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */,
 				CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */,
 				CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */,
 				CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */,
@@ -439,6 +449,7 @@
 				CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CDD3E7571C6EC67F00A5F0CD /* customTableView5.swift in Sources */,
 				CDC93CCF1C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */,
+				CDAB97611C758F53007DEBFA /* productosview.swift in Sources */,
 				CDC706B01C5F303500AC1275 /* DataSourceSubServiciosFixed.swift in Sources */,
 				CD7181FF1C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD7181EA1C5AF56F004734E4 /* getdata.swift in Sources */,
@@ -457,6 +468,7 @@
 				CD7181F21C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E51C5AF55D004734E4 /* dataModels.swift in Sources */,
 				CD41C6AD1C5FD0EB0023C520 /* privacidad.swift in Sources */,
+				CDAB97651C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */,
 				CDC706A41C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
 				CD4D9D071C5BF4B4005DD971 /* customTableView3.swift in Sources */,
 				CD759DEE1C6A61F000BB60CF /* mapview.swift in Sources */,
@@ -495,9 +507,11 @@
 				CD41C6B41C6017EF0023C520 /* preferencias.swift in Sources */,
 				CDC17CAD1C65132E00CAC1F3 /* comentariosview.swift in Sources */,
 				CD41C6AE1C5FD0EB0023C520 /* privacidad.swift in Sources */,
+				CDAB97661C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */,
 				CD7181F71C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD53A1A21C5C96BF00A426C2 /* serviciosview.swift in Sources */,
 				CDB9D2B61C61692500EAAF28 /* extras.swift in Sources */,
+				CDAB97621C758F53007DEBFA /* productosview.swift in Sources */,
 				CDC93CD01C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */,
 				CD7181EE1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD4D9D081C5BF4B4005DD971 /* customTableView3.swift in Sources */,
@@ -532,9 +546,11 @@
 				CD41C6B51C6017EF0023C520 /* preferencias.swift in Sources */,
 				CDC17CAE1C65132E00CAC1F3 /* comentariosview.swift in Sources */,
 				CD41C6AF1C5FD0EB0023C520 /* privacidad.swift in Sources */,
+				CDAB97671C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */,
 				CD7181F81C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD53A1A31C5C96BF00A426C2 /* serviciosview.swift in Sources */,
 				CDB9D2B71C61692500EAAF28 /* extras.swift in Sources */,
+				CDAB97631C758F53007DEBFA /* productosview.swift in Sources */,
 				CDC93CD11C646A8A00818782 /* DataSourcePromocionesFixed.swift in Sources */,
 				CD7181EF1C5AF56F004734E4 /* getimage.swift in Sources */,
 				CD4D9D091C5BF4B4005DD971 /* customTableView3.swift in Sources */,

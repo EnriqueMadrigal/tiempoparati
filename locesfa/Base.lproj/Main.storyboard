@@ -206,74 +206,8 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                             <constraint firstItem="hBj-Bv-18n" firstAttribute="width" secondItem="hBj-Bv-18n" secondAttribute="height" multiplier="1:1" id="frX-8I-cok"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3iH-ks-L1H">
-                                        <rect key="frame" x="0.0" y="81" width="540" height="128"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2f-iz-yY7">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Z2f-iz-yY7" secondAttribute="height" multiplier="1:1" id="0ag-AJ-DND"/>
-                                                </constraints>
-                                                <state key="normal" image="womancut"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk3-5o-tlt">
-                                                <rect key="frame" x="138" y="0.0" width="127" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Bk3-5o-tlt" secondAttribute="height" multiplier="1:1" id="8YQ-Js-O4C"/>
-                                                </constraints>
-                                                <state key="normal" image="womancomb"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gb-BS-2dh">
-                                                <rect key="frame" x="275" y="0.0" width="128" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="7gb-BS-2dh" secondAttribute="height" multiplier="1:1" id="itP-De-rq9"/>
-                                                </constraints>
-                                                <state key="normal" image="womanmakeup"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aol-ZI-KHk">
-                                                <rect key="frame" x="413" y="0.0" width="127" height="128"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="aol-ZI-KHk" secondAttribute="height" multiplier="1:1" id="kKh-iQ-ETK"/>
-                                                </constraints>
-                                                <state key="normal" image="womantreatment"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WH8-VC-MOc">
-                                        <rect key="frame" x="0.0" y="214" width="540" height="127"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9X-UX-GfP">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="127"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="M9X-UX-GfP" secondAttribute="height" multiplier="1:1" id="bEg-6n-Y9a"/>
-                                                </constraints>
-                                                <state key="normal" image="womanfacial"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhV-lu-idN">
-                                                <rect key="frame" x="138" y="0.0" width="127" height="127"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="rhV-lu-idN" secondAttribute="height" multiplier="1:1" id="vlA-Ja-Eta"/>
-                                                </constraints>
-                                                <state key="normal" image="womannails"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtA-It-8v0">
-                                                <rect key="frame" x="275" y="0.0" width="128" height="127"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="BtA-It-8v0" secondAttribute="height" multiplier="1:1" id="SZF-PG-T8R"/>
-                                                </constraints>
-                                                <state key="normal" image="womanmassage"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aej-l1-fxn">
-                                                <rect key="frame" x="413" y="0.0" width="127" height="127"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="aej-l1-fxn" secondAttribute="height" multiplier="1:1" id="pro-DW-ehe"/>
-                                                </constraints>
-                                                <state key="normal" image="womanhair"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNO-kP-HiD">
-                                        <rect key="frame" x="0.0" y="346" width="540" height="81"/>
+                                        <rect key="frame" x="0.0" y="81" width="540" height="81"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona tu estetica favorita:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-ku-xOO">
                                                 <rect key="frame" x="0.0" y="0.0" width="378" height="81"/>
@@ -302,10 +236,10 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nyG-Jm-Qkr">
-                                        <rect key="frame" x="0.0" y="432" width="540" height="128"/>
+                                        <rect key="frame" x="0.0" y="167" width="540" height="393"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-nF-rjV">
-                                                <rect key="frame" x="0.0" y="0.0" width="540" height="128"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="540" height="393"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myIdentifier" id="n2M-Cp-dYj">
@@ -674,7 +608,10 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="xHV-dx-OBM" secondAttribute="height" multiplier="1:1" id="viz-1J-scN"/>
                                                         </constraints>
-                                                        <state key="normal" image="facebookicon"/>
+                                                        <state key="normal" image="products"/>
+                                                        <connections>
+                                                            <action selector="getProductos:" destination="vP2-y6-8m2" eventType="touchUpInside" id="Vna-eh-Xxn"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdb-I4-eRb">
                                                         <rect key="frame" x="424" y="0.0" width="65" height="66"/>
@@ -816,6 +753,71 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                 </stackView>
             </objects>
             <point key="canvasLocation" x="2535" y="373"/>
+        </scene>
+        <!--Productos-->
+        <scene sceneID="pMz-WJ-mQg">
+            <objects>
+                <viewController storyboardIdentifier="Productos" id="CFZ-fW-k9I" customClass="productosview" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jSB-u7-SkB"/>
+                        <viewControllerLayoutGuide type="bottom" id="noL-Te-6jX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M8u-QH-I6B">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2JZ-dj-ASr">
+                                <rect key="frame" x="28" y="72" width="544" height="520"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z2k-qs-Ylh">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Productos utilizados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMd-99-Nk3">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lHW-Zn-wfE">
+                                        <rect key="frame" x="0.0" y="21" width="544" height="499"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bbs-St-QXZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="499"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JpY-4x-VPx">
+                                                        <rect key="frame" x="0.0" y="28" width="544" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JpY-4x-VPx" id="qmx-zG-4kG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="544" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2JZ-dj-ASr" firstAttribute="leading" secondItem="M8u-QH-I6B" secondAttribute="leadingMargin" constant="8" id="Ptt-2H-1Jw"/>
+                            <constraint firstItem="noL-Te-6jX" firstAttribute="top" secondItem="2JZ-dj-ASr" secondAttribute="bottom" constant="8" id="WUl-On-pkN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2JZ-dj-ASr" secondAttribute="trailing" constant="8" id="fGb-Gj-ZYV"/>
+                            <constraint firstItem="2JZ-dj-ASr" firstAttribute="top" secondItem="jSB-u7-SkB" secondAttribute="bottom" constant="8" id="frl-Ui-OtL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Productos" id="YMm-bE-N1G"/>
+                    <connections>
+                        <outlet property="tableView" destination="Bbs-St-QXZ" id="wd3-eV-WpA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rau-ui-PYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4206" y="-3488"/>
         </scene>
         <!--Localización-->
         <scene sceneID="LZN-C9-ydD">
@@ -1417,6 +1419,24 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
             </objects>
             <point key="canvasLocation" x="3503" y="-2707"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fjT-Of-Zow">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zwn-UO-Xpt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yWl-f4-Dgf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CFZ-fW-k9I" kind="relationship" relationship="rootViewController" id="4kk-Se-AV7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gH-06-4kE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3510" y="-3488"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addcomments" width="128" height="128"/>
@@ -1430,18 +1450,11 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
         <image name="mapicon" width="128" height="128"/>
         <image name="notavail" width="256" height="256"/>
         <image name="privacidad" width="256" height="256"/>
+        <image name="products" width="192" height="192"/>
         <image name="promocion" width="256" height="256"/>
         <image name="settings" width="64" height="64"/>
         <image name="topstar" width="257" height="256"/>
         <image name="whatsappicon" width="128" height="128"/>
-        <image name="womancomb" width="256" height="256"/>
-        <image name="womancut" width="256" height="256"/>
-        <image name="womanfacial" width="256" height="256"/>
-        <image name="womanhair" width="256" height="256"/>
-        <image name="womanmakeup" width="256" height="256"/>
-        <image name="womanmassage" width="256" height="256"/>
-        <image name="womannails" width="256" height="256"/>
-        <image name="womantreatment" width="256" height="256"/>
         <image name="wwwicon" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
