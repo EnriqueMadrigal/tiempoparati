@@ -87,7 +87,20 @@ class serviciosview: UIViewController, UITableViewDelegate {
         self.refreshControl.addTarget(self, action: "refreshdata:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl)
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-
+            
+            let returnEsteticas = { (action:UIAlertAction!) -> Void in
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+            
+            if (self.dataSource.subservicios.count==0)
+            {
+                let alert :UIAlertController = UIAlertController(title: "Advertencia", message: "No se encontraron servicios", preferredStyle: UIAlertControllerStyle.Alert)
+                let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: returnEsteticas)
+                alert.addAction(OkButton)
+                self.presentViewController(alert, animated: false, completion: nil)
+            }
+   
+    
         }
         
         

@@ -31,8 +31,7 @@ init(cururl: String, posdata: String) {
     
    
     datos.result==1
-    
-    
+    self.responsecode = 0
     }
     
     

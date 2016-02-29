@@ -14,14 +14,16 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
      private lazy var dataSource: DataSourceEsteticasFixed! = nil
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelNombre: UILabel!
-   
- 
+    @IBOutlet weak var searchView: UIView!
+     
     
     var hasrefresh: Bool = false
     var hasWaitDialog: Bool = false
     var searchController: UISearchController!
     
     
+    var cadenaBusqueda: String = ""
+    var tipoBusqueda: Int = 0
     
     //// search controls
     var dataArray = [String]()
@@ -43,6 +45,31 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
 
     
     var Dialogo = Dialogs()
+    
+    
+    @IBAction func showMap(sender: AnyObject) {
+    
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("mapLocation1") as! mapLocation
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+ 
+        
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,9 +221,11 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     }
     
      func LoadData(){
-    
+        let datapost: String = "IdPersona=0&tipo=\(self.tipoBusqueda)&cadenabusqueda=" + self.cadenaBusqueda + "&uuid=" + dataAccess.sharedInstance.UIID + "&sexo=\(dataAccess.sharedInstance.curPersona.sexo!)"
+       print(datapost)
+        
     self.dataSource = nil
-    self.dataSource = DataSourceEsteticasFixed(cururl: "getsalons.php", posdata: "IdPersona=0")
+    self.dataSource = DataSourceEsteticasFixed(cururl: "getsalons.php", posdata: datapost)
     self.dataSource.setTableView(self.tableView)
     if (self.dataSource.esteticas.count==0 && self.dataSource.responsecode != 0) {
     print ("No se encontro el servidor")
@@ -251,10 +280,10 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
 
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 22.0
+        return 0
     }
     
- 
+ /*
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         /*
         let myCustomlabel = UILabel()
@@ -281,7 +310,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
 
 
     }
-
+*/
     
     func changeSearch(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -339,47 +368,86 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search here..."
+        searchController.obscuresBackgroundDuringPresentation = true
+   
+        searchController.searchBar.placeholder = "Busqueda..."
         searchController.searchBar.delegate = self
-        searchController.searchBar.sizeToFit()
+        //searchController.searchBar.sizeToFit()
+        
+        //let curSize = CGSize(width: self.searchView.bounds.width, height: self.searchView.bounds.height)
+        //searchController.searchBar.sizeThatFits(curSize)
+        var currentSize  = self.searchView.bounds.width
+
+        currentSize = currentSize / 2
+        print(currentSize)
+        searchController.searchBar.frame = CGRect(x: 0, y: 0, width: CGFloat(currentSize), height: self.searchView.bounds.height)
+    
+        searchController.searchBar.scopeButtonTitles = ["Nombre", "Servicios", "Productos"]
+    print(self.searchView.bounds.width)
+        
+        //searchController.searchBar.bounds.width = self.tableView.bounds.width
         
         // Place the search bar view to the tableview headerview.
-        self.tableView.tableHeaderView = searchController.searchBar
+        //self.tableView.tableHeaderView = searchController.searchBar
+        self.searchView.addSubview(searchController.searchBar)
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         shouldShowSearchResults = true
-        LoadData()
+        print("true")
+        //LoadData()
+       
     }
     
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         shouldShowSearchResults = false
+        //LoadData()
+        print("cancel")
+        self.cadenaBusqueda = ""
         LoadData()
+       
     }
     
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        /*
         if !shouldShowSearchResults {
-            shouldShowSearchResults = true
-            LoadData()
+            shouldShowSearchResults = false
+            //LoadData()
         }
+        */
+        shouldShowSearchResults = false
+        print("Click")
         
-        searchController.searchBar.resignFirstResponder()
+        //searchController.searchBar.resignFirstResponder()
     }
     
-    
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        updateSearchResultsForSearchController(searchController)
+        //print(selectedScope)
+        self.tipoBusqueda = selectedScope
+    }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         let searchString = searchController.searchBar.text
-        print(searchString)
+        
+        //print(searchString)
         // Filter the data array and get only those countries that match the search text.
-        filteredArray = dataArray.filter({ (country) -> Bool in
-            let countryText: NSString = country
-            
+        
+        //let countryText: NSString = country
+        
+        self.cadenaBusqueda = searchString!
+        //self.tipoBusqueda = 3
+        
+            //self.refreshControl.beginRefreshing()
+        
+        if shouldShowSearchResults {
+           // shouldShowSearchResults = true
+            LoadData()
+        }
+        //self.refreshControl.endRefreshing()
             //return (countryText.rangeOfString(searchString, options: NSStringCompareOptions.CaseInsensitiveSearch).location) != NSNotFound
-            return true
-        })
         
         // Reload the tableview.
         //LoadData()

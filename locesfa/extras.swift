@@ -16,7 +16,7 @@ func SetBackGroundImage (curController: UIViewController)
     let menModel = UIImage(named: "background3")
     let womanModel = UIImage(named: "background1")
     let menBack = UIImage(named: "background4")
-    let womanBack = UIImage(named: "background1")
+    let womanBack = UIImage(named: "background2")
     
     var curImage: UIImage!
     var curBack: UIImage!

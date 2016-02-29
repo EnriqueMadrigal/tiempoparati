@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class esteticaview: UIViewController ,UITableViewDelegate{
 
@@ -119,7 +120,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     @IBAction func getLocation(sender: AnyObject) {
      
-        
+        /*
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("MapView") as! mapview
         //vc.curServicio = 1
@@ -136,6 +137,61 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         self.showViewController(vc, sender: nil)
         //.showViewController(vc, animated: true, completion: nil)
 
+        */
+        
+        
+        let curEstetica: Int = dataAccess.sharedInstance.currentEstetica
+        let datos = SentRequest(curaction: "getlocation.php")
+        datos.AddPosData(DataPost(newItem: "idestetica", newValue: "\(curEstetica)"))
+        
+        datos.ObtenData()
+        
+        if (datos.result==1){
+            print ("No se encontro el servidor")
+            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+        }
+        
+        
+        let data = datos.GetJson()
+        print(data)
+        
+        if let item = data.firstObject{
+            
+           
+            let curLocation = Localizacion(json: item as! NSDictionary)
+            // let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+            
+            if (curLocation.lat != 0.0 || curLocation.lng != 0.0){
+                
+                //let initialLocation = CLLocation(latitude: curLocation.lng!, longitude: curLocation.lat!)
+                //let initialLocation = CLLocation(latitude: -103.425331, longitude: 20.638838)
+                //centerMapOnLocation(initialLocation)
+                
+                
+                let artwork = Artwork(title: curLocation.title!,
+                    locationName: curLocation.calle! + " " + curLocation.exterior! + " "  +  curLocation.interior!,
+                    discipline: "Estetica",
+                    coordinate: CLLocationCoordinate2D(latitude: curLocation.lng!, longitude: curLocation.lat!),
+                    id: curLocation.idestetica!)
+                
+                let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+                artwork.mapItem().openInMapsWithLaunchOptions(launchOptions)
+                
+            }
+               
+            else {
+                let alert :UIAlertController = UIAlertController(title: "!Advertencia", message: "No se ha definido, la ubicación:", preferredStyle: UIAlertControllerStyle.Alert)
+                let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+                alert.addAction(OkButton)
+                self.presentViewController(alert, animated: false, completion: nil)
+            }
+
+        
+        }
+        
         
         
     }
@@ -160,12 +216,62 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
     }
     
+    
+    @IBAction func getCalendario(sender: AnyObject) {
+
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("calendario") as! calendarioview
+        
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+  
+        
+        
+    }
+    
+    
+    @IBAction func getServices(sender: AnyObject) {
+     
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("ServiciosEstetica") as! serviciosestetica
+        
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        self.showViewController(vc, sender: nil)
+
+        
+        
+    }
+    
+    
+    
+    
     var CurEstetica: Estetica!
     private lazy var dataSource: DataSourceServiciosFixed! = nil
     var refreshControl:UIRefreshControl!
     var hasrefresh: Bool = false
     var hasWaitDialog: Bool = false
-
+    var IdEstetica: Int?
     
     
     
@@ -177,20 +283,51 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         SetBackGroundImage(self)
         
         if let CurEstetica = CurEstetica{
-         self.labelNombre.text = CurEstetica.title!
+            self.labelNombre.text = CurEstetica.title!
             self.labelDescripcion.text = CurEstetica.descripcion!
-            //let dir1: String = CurEstetica.calle! + " " + CurEstetica.exterior! + " " + CurEstetica.interior!
-            //let dir2: String =  CurEstetica.colonia! + "," + CurEstetica.ciudad! + "," + CurEstetica.estado!
             self.labelDescripcion.numberOfLines = 0
             self.labelDescripcion.lineBreakMode = .ByWordWrapping
-            //self.labelDireccion.text =  dir1 + "," + dir2
-            //self.labelTelefono1.text = CurEstetica.telefono1
+            self.IdEstetica = CurEstetica.id!
+             }
+        
+        
+        
+        ///// Si viene del Mapa
+        else if let IdEstetica = IdEstetica
+        {
+            
+         let datosEstetica = SentRequest(curaction: "getsalons.php")
+            datosEstetica.AddPosData(DataPost(newItem: "idestetica", newValue: "\(IdEstetica)"))
+            datosEstetica.AddPosData(DataPost(newItem: "tipo", newValue: "5"))
+     
+          datosEstetica.ObtenData()
+            if (datosEstetica.result == 1){
+                //print ("No se encontro el servidor")
+                let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
+                let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+                alert.addAction(OkButton)
+                self.presentViewController(alert, animated: false, completion: nil)
+            }
+            
+       let data = datosEstetica.GetJson()
+            if let item  = data.firstObject {
+                self.CurEstetica = Estetica(json: item as! NSDictionary)
+                self.labelNombre.text = CurEstetica.title!
+                self.labelDescripcion.text = CurEstetica.descripcion!
+                self.labelDescripcion.numberOfLines = 0
+                self.labelDescripcion.lineBreakMode = .ByWordWrapping
+                self.IdEstetica = CurEstetica.id!
+            }
             
             
-            /////
-            let curid: Int = CurEstetica.id!
+            
+            
+        }
+        
+        
+        
             let datosImage = SentRequest_image(curaction: "getimagesalon.php")
-            datosImage.AddPosData(DataPost(newItem: "idestetica", newValue: "\(curid)"))
+            datosImage.AddPosData(DataPost(newItem: "idestetica", newValue: "\(self.IdEstetica!)"))
             datosImage.AddPosData(DataPost(newItem: "width", newValue: "240"))
             datosImage.AddPosData(DataPost(newItem: "height", newValue: "240"))
             
@@ -206,25 +343,11 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             }
             
             
-            
         
-            LoadData()
-            tableView.dataSource = self.dataSource
-            tableView.delegate = self
-            
-            self.refreshControl = UIRefreshControl()
-            self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-            self.refreshControl.addTarget(self, action: "refreshdata:", forControlEvents: UIControlEvents.ValueChanged)
-            self.tableView.addSubview(self.refreshControl)
-            
-            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-            
-            
-            
             ////
             
             
-        }
+        
         
         
         
@@ -246,113 +369,19 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         // Pass the selected object to the new view controller.
         print(segue.identifier)
         
-       
-    
-    
     
     }
    
 
     
     
-    func LoadData(){
-        
-        let IdEstetica = dataAccess.sharedInstance.currentEstetica
-        let datapost: String = "idestetica=\(IdEstetica)"
-        
-        self.dataSource = DataSourceServiciosFixed(cururl: "getservicios.php", posdata: datapost)
-         self.dataSource.setTableView(self.tableView)
-              
-        if (self.dataSource.servicios.count == 0 && self.dataSource.responsecode != 0) {
-            print ("No se encontro el servidor")
-            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
-            alert.addAction(OkButton)
-            self.presentViewController(alert, animated: false, completion: nil)
-            
-        }
-        
-        
-        self.tableView.dataSource = self.dataSource
-        self.tableView.reloadData()
-        
-        
-        
-    }
-
-  
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        if (self.hasrefresh){
-            return
-        }
-        print("Scroll")
-        self.refreshControl.beginRefreshing()
-        LoadData()
-        self.refreshControl.endRefreshing()
-        
-        
-        
-    }
-    
-    
-    func refreshdata(sender:AnyObject) {
-        print("refresh")
-        self.hasrefresh = true
-        self.refreshControl.beginRefreshing()
-        LoadData()
-        self.refreshControl.endRefreshing()
-        
-    }
-
+   
     
     
     ////// Delegate
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        
-        let row = indexPath.row
-        let currentServicio = self.dataSource.servicios[row]
-        
-        
-        let cell: customTableView1 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView1
-        
-        print(cell.id)
-        
-        
-        
-        
-        //performSegueWithIdentifier("showEstetica", sender: cell)
-        
-        
-        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
-        view.userInteractionEnabled = false
-        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-        view.alpha=0.5
-        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
-        view.addSubview(messageDialog)
-        self.hasWaitDialog = true
-
-        
-        
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
-        vc.curServicio = currentServicio
-        self.showViewController(vc, sender: nil)
-        //.showViewController(vc, animated: true, completion: nil)
-
-        
-        
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        let curHeight:CGFloat = (42.0 ) * dataAccess.sharedInstance.multiplier
-        return curHeight
-    }
-
+   
     
     
     override func viewDidAppear(animated: Bool) {

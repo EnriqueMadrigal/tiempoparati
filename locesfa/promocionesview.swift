@@ -40,7 +40,18 @@ class promocionesview: UIViewController , UITableViewDelegate{
         //tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
+        let returnEsteticas = { (action:UIAlertAction!) -> Void in
+            self.navigationController?.popViewControllerAnimated(true)
+        }
 
+        if (self.dataSource.promociones.count==0)
+        {
+        let alert :UIAlertController = UIAlertController(title: "Advertencia", message: "No se encontraron promociones para el día de hoy", preferredStyle: UIAlertControllerStyle.Alert)
+        let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: returnEsteticas)
+        alert.addAction(OkButton)
+        self.presentViewController(alert, animated: false, completion: nil)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import MapKit
+import Contacts
 
 
 class Persona {
@@ -297,4 +299,43 @@ struct ScreenSize
     static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
 }
 
+
+class Artwork: NSObject, MKAnnotation {
+    let title: String?
+    let locationName: String?
+    let discipline: String?
+    let coordinate: CLLocationCoordinate2D
+    let id: Int?
+    
+    var subtitle: String? {
+        get {
+            return self.locationName!
+        }
+    }
+    
+    
+    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D, id: Int) {
+        self.title = title
+        self.locationName = locationName
+        self.discipline = discipline
+        self.coordinate = coordinate
+        self.id = id
+        super.init()
+    }
+    
+    func mapItem() -> MKMapItem {
+    //let addressDictionary = [String(kABPersonAddressStreetKey): subtitle]
+    let addressDictionary = [String(CNPostalAddressStreetKey): self.subtitle!]
+        //let addressDictionary = [CNPostalAddressStreetkey : subtitle]
+        
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary)
+    
+    let mapItem = MKMapItem(placemark: placemark)
+    mapItem.name = title
+    
+    return mapItem
+    }
+
+    
+}
 

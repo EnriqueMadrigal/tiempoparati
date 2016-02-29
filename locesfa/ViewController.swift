@@ -81,6 +81,7 @@ calculateVars()
     func calculateVars()
     {
     
+        
     if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
     {
     self.deviceType = "Ipad"
@@ -103,7 +104,17 @@ calculateVars()
     self.physicaly = 960
     }
     
-    
+   
+        
+        if (ScreenSize.SCREEN_HEIGHT == 568 && ScreenSize.SCREEN_WIDTH == 320)
+    {
+            // Iphone 5
+            self.physicalx = 1136
+            self.physicaly = 960
+    }
+        
+        
+        
     
     if (ScreenSize.SCREEN_HEIGHT == 320 && ScreenSize.SCREEN_WIDTH == 568)
     {

@@ -1,20 +1,22 @@
 //
-//  productosview.swift
+//  serviciosestetica.swift
 //  locesfa
 //
-//  Created by Enrique Madrigal Gutierrez on 17/02/16.
+//  Created by Enrique Madrigal Gutierrez on 26/02/16.
 //  Copyright © 2016 datalabor.com.mx. All rights reserved.
 //
 
 import UIKit
 
-class productosview: UIViewController, UITableViewDelegate {
+class serviciosestetica: UIViewController ,UITableViewDelegate{
 
-    @IBOutlet weak var tableView: UITableView!
-    private lazy var dataSource: DataSourceProductosFixed! = nil
+    private lazy var dataSource: DataSourceServiciosFixed! = nil
     var refreshControl:UIRefreshControl!
     var hasrefresh: Bool = false
     var hasWaitDialog: Bool = false
+    var Dialogo = Dialogs()
+    
+    @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class productosview: UIViewController, UITableViewDelegate {
         // Do any additional setup after loading the view.
         SetBackGroundImage(self)
         LoadData()
+        
         tableView.dataSource = self.dataSource
         tableView.delegate = self
         
@@ -30,22 +33,8 @@ class productosview: UIViewController, UITableViewDelegate {
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refreshdata:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(self.refreshControl)
+        
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-
-        
-        let returnEsteticas = { (action:UIAlertAction!) -> Void in
-            self.navigationController?.popViewControllerAnimated(true)
-        }
-        
-        if (self.dataSource.productos.count==0)
-        {
-            let alert :UIAlertController = UIAlertController(title: "Advertencia", message: "No se encontraron productos que mostrar", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: returnEsteticas)
-            alert.addAction(OkButton)
-            self.presentViewController(alert, animated: false, completion: nil)
-        }
-
-        
         
         
     }
@@ -65,29 +54,16 @@ class productosview: UIViewController, UITableViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
     
-    ///Delegate
-    
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        let curHeight:CGFloat = (42.0) * dataAccess.sharedInstance.multiplier
-        return curHeight
-    }
-    
-    ////////
-
-
     func LoadData(){
         
         let IdEstetica = dataAccess.sharedInstance.currentEstetica
         let datapost: String = "idestetica=\(IdEstetica)"
         
-        self.dataSource = DataSourceProductosFixed(cururl: "getproductos.php", posdata: datapost)
+        self.dataSource = DataSourceServiciosFixed(cururl: "getservicios.php", posdata: datapost)
         self.dataSource.setTableView(self.tableView)
         
-        if (self.dataSource.productos.count == 0 && self.dataSource.responsecode != 0) {
+        if (self.dataSource.servicios.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
@@ -103,7 +79,8 @@ class productosview: UIViewController, UITableViewDelegate {
         
         
     }
-
+    
+    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if (self.hasrefresh){
             return
@@ -127,7 +104,70 @@ class productosview: UIViewController, UITableViewDelegate {
         
     }
     
-  
     
     
+    ////// Delegate
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        
+        let row = indexPath.row
+        let currentServicio = self.dataSource.servicios[row]
+        
+        
+        let cell: customTableView1 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView1
+        
+        print(cell.id)
+        
+        
+        
+        
+        //performSegueWithIdentifier("showEstetica", sender: cell)
+        
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
+        vc.curServicio = currentServicio
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        let curHeight:CGFloat = (42.0 ) * dataAccess.sharedInstance.multiplier
+        return curHeight
+    }
+    
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("didAppear")
+        if (self.hasWaitDialog){
+            Dialogo.closeWaitDialog()
+            view.alpha = 1.0
+            view.userInteractionEnabled = true
+            self.hasWaitDialog = false
+        }
+        SetBackGroundImage(self)
+    }
+
+    
+    
+
 }

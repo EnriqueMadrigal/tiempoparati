@@ -30,6 +30,21 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         self.collectionView!.backgroundColor = UIColor.whiteColor()
         self.collectionView.alpha = 0.8
         //self.view.addSubview(collectionView!)
+        
+        
+        let returnEsteticas = { (action:UIAlertAction!) -> Void in
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        
+        if (self.catalogos.count==0)
+        {
+            let alert :UIAlertController = UIAlertController(title: "Advertencia", message: "No se encontraron catalogos para la estetica", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: returnEsteticas)
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+        }
+
+        
     
     }
 
@@ -80,7 +95,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             
-            return CGSize(width: 60, height: 100)
+            return CGSize(width: 80, height: 100)
     }
     
     //3
@@ -139,7 +154,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         //print(curCatalogo.descripcion)
         let datosImage = SentRequest_image(curaction: "getimagecatalogo.php")
         datosImage.AddPosData(DataPost(newItem: "idcatalogo", newValue: "\(curCatalogo.id!)"))
-        datosImage.AddPosData(DataPost(newItem: "width", newValue: "60"))
+        datosImage.AddPosData(DataPost(newItem: "width", newValue: "80"))
         datosImage.AddPosData(DataPost(newItem: "height", newValue: "100"))
             
         datosImage.ObtenData()
