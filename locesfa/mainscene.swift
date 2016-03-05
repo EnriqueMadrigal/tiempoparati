@@ -15,6 +15,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelNombre: UILabel!
     @IBOutlet weak var searchView: UIView!
+   
      
     
     var hasrefresh: Bool = false
@@ -222,7 +223,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     
      func LoadData(){
         let datapost: String = "IdPersona=0&tipo=\(self.tipoBusqueda)&cadenabusqueda=" + self.cadenaBusqueda + "&uuid=" + dataAccess.sharedInstance.UIID + "&sexo=\(dataAccess.sharedInstance.curPersona.sexo!)"
-       print(datapost)
+       //print(datapost)
         
     self.dataSource = nil
     self.dataSource = DataSourceEsteticasFixed(cururl: "getsalons.php", posdata: datapost)
@@ -376,20 +377,36 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         
         //let curSize = CGSize(width: self.searchView.bounds.width, height: self.searchView.bounds.height)
         //searchController.searchBar.sizeThatFits(curSize)
+        
+        print(self.searchView.bounds.width)
+        self.searchView.setNeedsLayout()
+        self.searchView.layoutIfNeeded()
+        print(self.searchView.bounds.width)
+        
         var currentSize  = self.searchView.bounds.width
-
-        currentSize = currentSize / 2
+        
+            
+        print(currentSize)
+        print(dataAccess.sharedInstance.multiplier)
+        currentSize = currentSize * (dataAccess.sharedInstance.multiplier / 2)
         print(currentSize)
         searchController.searchBar.frame = CGRect(x: 0, y: 0, width: CGFloat(currentSize), height: self.searchView.bounds.height)
-    
+        //searchController.searchBar.frame = curFrame
+        
         searchController.searchBar.scopeButtonTitles = ["Nombre", "Servicios", "Productos"]
-    print(self.searchView.bounds.width)
+   
         
         //searchController.searchBar.bounds.width = self.tableView.bounds.width
         
         // Place the search bar view to the tableview headerview.
         //self.tableView.tableHeaderView = searchController.searchBar
+        
+        
         self.searchView.addSubview(searchController.searchBar)
+        //self.searchView.setNeedsLayout()
+        //self.searchView.layoutIfNeeded()
+        searchController.searchBar.setNeedsLayout()
+        searchController.searchBar.layoutIfNeeded()
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {

@@ -21,6 +21,9 @@
 		CD4D9D091C5BF4B4005DD971 /* customTableView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */; };
 		CD4D9D0A1C5BF4B9005DD971 /* DataSourceComentariosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */; };
 		CD4D9D0B1C5BF4BA005DD971 /* DataSourceComentariosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */; };
+		CD5056FB1C87C3960086FCFF /* DataSourceCitasFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5056FA1C87C3960086FCFF /* DataSourceCitasFixed.swift */; };
+		CD5056FC1C87C3960086FCFF /* DataSourceCitasFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5056FA1C87C3960086FCFF /* DataSourceCitasFixed.swift */; };
+		CD5056FD1C87C3960086FCFF /* DataSourceCitasFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5056FA1C87C3960086FCFF /* DataSourceCitasFixed.swift */; };
 		CD53A1A11C5C96BF00A426C2 /* serviciosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */; };
 		CD53A1A21C5C96BF00A426C2 /* serviciosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */; };
 		CD53A1A31C5C96BF00A426C2 /* serviciosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */; };
@@ -102,6 +105,9 @@
 		CDAB97651C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */; };
 		CDAB97661C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */; };
 		CDAB97671C759012007DEBFA /* DataSourceProductosFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */; };
+		CDB667651C8774A2005067C0 /* citasview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB667641C8774A2005067C0 /* citasview.swift */; };
+		CDB667661C8774A2005067C0 /* citasview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB667641C8774A2005067C0 /* citasview.swift */; };
+		CDB667671C8774A2005067C0 /* citasview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB667641C8774A2005067C0 /* citasview.swift */; };
 		CDB9D2B11C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
 		CDB9D2B21C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
 		CDB9D2B31C6110AD00EAAF28 /* ObtenPersona.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */; };
@@ -168,6 +174,7 @@
 		CD41C6B21C6017EF0023C520 /* preferencias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = preferencias.swift; sourceTree = "<group>"; };
 		CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceComentariosFixed.swift; sourceTree = "<group>"; };
 		CD4D9D061C5BF4B4005DD971 /* customTableView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView3.swift; sourceTree = "<group>"; };
+		CD5056FA1C87C3960086FCFF /* DataSourceCitasFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceCitasFixed.swift; sourceTree = "<group>"; };
 		CD53A1A01C5C96BF00A426C2 /* serviciosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serviciosview.swift; sourceTree = "<group>"; };
 		CD5A6D151C80D52A001BB3F8 /* serviciosestetica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = serviciosestetica.swift; sourceTree = "<group>"; };
 		CD5F221F1C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+NWCalendarView.swift"; sourceTree = "<group>"; };
@@ -207,6 +214,7 @@
 		CD759DF11C6A633D00BB60CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CDAB97601C758F53007DEBFA /* productosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productosview.swift; sourceTree = "<group>"; };
 		CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceProductosFixed.swift; sourceTree = "<group>"; };
+		CDB667641C8774A2005067C0 /* citasview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = citasview.swift; sourceTree = "<group>"; };
 		CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObtenPersona.swift; sourceTree = "<group>"; };
 		CDB9D2B41C61692500EAAF28 /* extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extras.swift; sourceTree = "<group>"; };
 		CDC17CAB1C65132E00CAC1F3 /* comentariosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = comentariosview.swift; sourceTree = "<group>"; };
@@ -301,6 +309,7 @@
 				CD7181B11C5AF4FA004734E4 /* ViewController.swift */,
 				CD41C6AC1C5FD0EB0023C520 /* privacidad.swift */,
 				CD7181B31C5AF4FA004734E4 /* Main.storyboard */,
+				CDB667641C8774A2005067C0 /* citasview.swift */,
 				CD5A6D151C80D52A001BB3F8 /* serviciosestetica.swift */,
 				CD7086571C7B99590050C4AE /* mapLocation.swift */,
 				CDAB97601C758F53007DEBFA /* productosview.swift */,
@@ -362,6 +371,7 @@
 				CDC93CCE1C646A8A00818782 /* DataSourcePromocionesFixed.swift */,
 				CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */,
 				CD4D9D041C5BF45C005DD971 /* DataSourceComentariosFixed.swift */,
+				CD5056FA1C87C3960086FCFF /* DataSourceCitasFixed.swift */,
 				CDC706AF1C5F303500AC1275 /* DataSourceSubServiciosFixed.swift */,
 				CD7181FA1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift */,
 			);
@@ -535,9 +545,11 @@
 				CD7182031C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706AC1C5F2E4E00AC1275 /* customTableView2.swift in Sources */,
 				CDC706A81C5F013B00AC1275 /* customTableView1.swift in Sources */,
+				CDB667651C8774A2005067C0 /* citasview.swift in Sources */,
 				CD7181F21C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD7181E51C5AF55D004734E4 /* dataModels.swift in Sources */,
 				CD41C6AD1C5FD0EB0023C520 /* privacidad.swift in Sources */,
+				CD5056FB1C87C3960086FCFF /* DataSourceCitasFixed.swift in Sources */,
 				CD5F22281C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift in Sources */,
 				CD5F22441C7F8D7400597951 /* calendarioview.swift in Sources */,
 				CD5F222B1C7F8B8E00597951 /* NSDate+NWCalendarView.swift in Sources */,
@@ -566,11 +578,13 @@
 				CD7086591C7B99590050C4AE /* mapLocation.swift in Sources */,
 				CD5F22291C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift in Sources */,
 				CD5F223B1C7F8B8E00597951 /* NWCalendarMonthSelectorView.swift in Sources */,
+				CD5056FC1C87C3960086FCFF /* DataSourceCitasFixed.swift in Sources */,
 				CDC93CC01C63D78D00818782 /* CollectionViewCell1.swift in Sources */,
 				CD7181FC1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CD5F22451C7F8D7400597951 /* calendarioview.swift in Sources */,
 				CD5F222C1C7F8B8E00597951 /* NSDate+NWCalendarView.swift in Sources */,
 				CD5F223E1C7F8B8E00597951 /* NWCalendarMonthView.swift in Sources */,
+				CDB667661C8774A2005067C0 /* citasview.swift in Sources */,
 				CDB9D2B21C6110AD00EAAF28 /* ObtenPersona.swift in Sources */,
 				CDC93CBC1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CDC706A51C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,
@@ -616,11 +630,13 @@
 				CD70865A1C7B99590050C4AE /* mapLocation.swift in Sources */,
 				CD5F222A1C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift in Sources */,
 				CD5F223C1C7F8B8E00597951 /* NWCalendarMonthSelectorView.swift in Sources */,
+				CD5056FD1C87C3960086FCFF /* DataSourceCitasFixed.swift in Sources */,
 				CDC93CC11C63D78D00818782 /* CollectionViewCell1.swift in Sources */,
 				CD7181FD1C5AF61F004734E4 /* DataSourceEsteticasFixed.swift in Sources */,
 				CD5F22461C7F8D7400597951 /* calendarioview.swift in Sources */,
 				CD5F222D1C7F8B8E00597951 /* NSDate+NWCalendarView.swift in Sources */,
 				CD5F223F1C7F8B8E00597951 /* NWCalendarMonthView.swift in Sources */,
+				CDB667671C8774A2005067C0 /* citasview.swift in Sources */,
 				CDB9D2B31C6110AD00EAAF28 /* ObtenPersona.swift in Sources */,
 				CDC93CBD1C63CF9400818782 /* catalogViewController.swift in Sources */,
 				CDC706A61C5EFBAD00AC1275 /* DataSourceServiciosFixed.swift in Sources */,

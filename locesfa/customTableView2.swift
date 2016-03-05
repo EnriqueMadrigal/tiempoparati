@@ -14,6 +14,8 @@ class customTableView2: UITableViewCell {
     let campo1 = UILabel()
     let campo2 = UILabel()
     
+    let separator = UIView()
+    
     let image1 = UIImageView()
     var id: Int?
 
@@ -82,8 +84,9 @@ class customTableView2: UITableViewCell {
         self.campo2.font = UIFont(name: "System Font", size: self.campo2_fontsize)
         self.campo2.textColor = UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 1.0)
         contentView.addSubview(self.campo2)
-
         
+        self.separator.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        contentView.addSubview(self.separator)
         
          layoutSubviews()
         
@@ -100,8 +103,8 @@ class customTableView2: UITableViewCell {
         self.campo2.frame = CGRect(x: self.image1_width, y: self.campo0_height + self.campo1_height, width: self.campo1_width, height: self.campo1_height)
 
         self.image1.frame = CGRect(x: 0.0, y: 0.0, width: self.image1_width, height: self.image1_height)
+        self.separator.frame = CGRect(x: 0.0, y: self.image1_height - 2, width: self.image1_width + self.campo2_width, height: 1)
         
-             
     }
 
     

@@ -200,3 +200,42 @@ class SentRequest_image {
     
 }
 
+extension NSDate
+{
+    convenience
+    init(day: Int ,month: Int, year: Int, hour: Int, min: Int) {
+        let dateStringFormatter = NSDateFormatter()
+        let yearString = String(format: "%04d", year)
+        let monthString = String(format: "%02d", month)
+        let dayString = String(format: "%02d", day)
+        let hourString = String(format: "%02d", hour)
+        let minString = String(format: "%02d", min)
+        
+        let dateString = yearString + "-" + monthString + "-" + dayString + " " + hourString + ":" + minString + ":00"
+        //print (dateString)
+        
+        dateStringFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        let d = dateStringFormatter.dateFromString(dateString)!
+        self.init(timeInterval:0, sinceDate:d)
+    }
+}
+
+extension NSDate {
+    struct Date {
+        static let formatterISO8601: NSDateFormatter = {
+            let formatter = NSDateFormatter()
+            formatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierISO8601)
+            formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+            //formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+            formatter.timeZone = NSTimeZone(forSecondsFromGMT: ltzOffset())
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
+            return formatter
+        }()
+    }
+    var formattedISO8601: String { return Date.formatterISO8601.stringFromDate(self) }
+}
+
+func ltzOffset() -> Int { return NSTimeZone.localTimeZone().secondsFromGMT }
+
+

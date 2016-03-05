@@ -219,9 +219,12 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     @IBAction func getCalendario(sender: AnyObject) {
 
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("calendario") as! calendarioview
+        //let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        //let vc = mainStoryboard.instantiateViewControllerWithIdentifier("calendario") as! calendarioview
         
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("citas") as! citasview
         //vc.curServicio = 1
         
         Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)

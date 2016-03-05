@@ -389,7 +389,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HOD-uU-Vj2">
                                         <rect key="frame" x="0.0" y="171" width="544" height="341"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djU-Ti-jkJ">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="djU-Ti-jkJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="544" height="52"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pd-fb-qGv">
@@ -1042,6 +1042,74 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
             <point key="canvasLocation" x="2535" y="373"/>
         </scene>
         <!--Citas-->
+        <scene sceneID="N30-PP-v1T">
+            <objects>
+                <viewController storyboardIdentifier="citas" id="vNT-Xe-VbE" customClass="citasview" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yKc-NI-0QI"/>
+                        <viewControllerLayoutGuide type="bottom" id="mHk-VF-YJI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f1m-X9-cGg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2F4-F8-Yb2">
+                                <rect key="frame" x="28" y="78" width="560" height="514"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iug-wm-xEP">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="130"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agendar una cita:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="LmR-kE-t84">
+                                                <rect key="frame" x="0.0" y="0.0" width="420" height="130"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqJ-CK-Uih">
+                                                <rect key="frame" x="430" y="0.0" width="130" height="130"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="RqJ-CK-Uih" secondAttribute="height" multiplier="1:1" id="DKn-AK-UTS"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="appointment"/>
+                                                <connections>
+                                                    <action selector="agendaCita:" destination="vNT-Xe-VbE" eventType="touchUpInside" id="g7h-tZ-Srx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKb-C0-VI6">
+                                        <rect key="frame" x="0.0" y="140" width="560" height="374"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WuH-Lq-J0T">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="374"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Iug-wm-xEP" firstAttribute="height" secondItem="2F4-F8-Yb2" secondAttribute="height" multiplier="0.25" constant="1" id="M8M-Lx-0PM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2F4-F8-Yb2" firstAttribute="trailing" secondItem="f1m-X9-cGg" secondAttribute="trailingMargin" constant="8" id="LHb-Ao-qme"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="2F4-F8-Yb2" secondAttribute="bottom" constant="8" id="f15-QT-83M"/>
+                            <constraint firstItem="2F4-F8-Yb2" firstAttribute="top" secondItem="yKc-NI-0QI" secondAttribute="bottom" constant="14" id="hI7-Tg-MgP"/>
+                            <constraint firstItem="2F4-F8-Yb2" firstAttribute="leading" secondItem="f1m-X9-cGg" secondAttribute="leadingMargin" constant="8" id="nEx-Sh-qEo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Citas" id="7OS-WF-Jl3"/>
+                    <connections>
+                        <outlet property="tableView" destination="WuH-Lq-J0T" id="8Nf-zF-i1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTM-YP-nAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4206" y="-4138"/>
+        </scene>
+        <!--Agendar cita-->
         <scene sceneID="HXH-ii-Z0J">
             <objects>
                 <viewController storyboardIdentifier="calendario" id="ecJ-Yd-da2" customClass="calendarioview" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
@@ -1053,46 +1121,113 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" fixedFrame="YES" text="Seleccione el día:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-Fy-rzT">
-                                <rect key="frame" x="28" y="78" width="544" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" fixedFrame="YES" text="Seleccione la hora:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="BCK-wu-TVL">
-                                <rect key="frame" x="20" y="352" width="544" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="50" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Vx-0X-wLV" customClass="NWCalendarView" customModule="locesfa" customModuleProvider="target">
-                                <rect key="frame" x="28" y="97" width="250" height="174"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <datePicker contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="TZr-lh-hku">
-                                <rect key="frame" x="20" y="291" width="278" height="53"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <date key="date" timeIntervalSinceReferenceDate="478122306.42051798">
-                                    <!--2016-02-25 19:45:06 +0000-->
-                                </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-bI-adG">
-                                <rect key="frame" x="127" y="386" width="84" height="38"/>
-                                <color key="backgroundColor" red="0.0" green="0.49677805660000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Aceptar">
-                                    <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveData:" destination="HUl-rC-D9s" eventType="touchUpInside" id="Y0r-pn-fVX"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="FIj-xg-NxB">
+                                <rect key="frame" x="28" y="78" width="544" height="514"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4U-0D-iyN">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" text="Comentarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="FYG-oY-cUm">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="FYG-oY-cUm" secondAttribute="height" multiplier="12:1" constant="4" id="MVD-Cr-diY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i4O-La-fmX">
+                                        <rect key="frame" x="0.0" y="52" width="544" height="279"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2yP-gW-Ob7">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="279"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2yP-gW-Ob7" secondAttribute="height" multiplier="12:3" id="roI-ZW-pVh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wtx-Wm-6vF">
+                                        <rect key="frame" x="0.0" y="338" width="544" height="0.0"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="751" misplaced="YES" text="Seleccione el día y la hora:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-Fy-rzT">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6wF-hR-373">
+                                        <rect key="frame" x="0.0" y="345" width="544" height="0.0"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="50" translatesAutoresizingMaskIntoConstraints="NO" id="9Vx-0X-wLV">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="0.0"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="9Vx-0X-wLV" secondAttribute="height" multiplier="3:2" id="kBD-Ij-BFB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSB-Dx-hsM">
+                                        <rect key="frame" x="0.0" y="352" width="544" height="77"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="TZr-lh-hku">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="77"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TZr-lh-hku" secondAttribute="height" multiplier="7:1" id="HI9-Xv-Qd9"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="478122306.42051798">
+                                                    <!--2016-02-25 19:45:06 +0000-->
+                                                </date>
+                                                <connections>
+                                                    <action selector="setDate:" destination="ecJ-Yd-da2" eventType="valueChanged" id="vOc-c5-Yha"/>
+                                                </connections>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDn-1C-GLD">
+                                        <rect key="frame" x="0.0" y="436" width="544" height="78"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPg-bI-adG">
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="78"/>
+                                                <color key="backgroundColor" red="0.0" green="0.49677805660000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tPg-bI-adG" secondAttribute="height" multiplier="7" id="NeQ-ok-a4m"/>
+                                                </constraints>
+                                                <state key="normal" title="Aceptar">
+                                                    <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="Aceptar:" destination="ecJ-Yd-da2" eventType="touchUpInside" id="JxN-hV-S2m"/>
+                                                    <action selector="saveData:" destination="HUl-rC-D9s" eventType="touchUpInside" id="Y0r-pn-fVX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FIj-xg-NxB" firstAttribute="top" secondItem="2CP-KA-H2h" secondAttribute="bottom" constant="14" id="FIL-aB-fyR"/>
+                            <constraint firstItem="jMx-sn-mgL" firstAttribute="top" secondItem="FIj-xg-NxB" secondAttribute="bottom" constant="8" id="FSY-mL-nRe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FIj-xg-NxB" secondAttribute="trailing" constant="8" id="MGC-bk-8J5"/>
+                            <constraint firstItem="FIj-xg-NxB" firstAttribute="leading" secondItem="xnX-4k-E17" secondAttribute="leadingMargin" constant="8" id="gmI-7O-elL"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Citas" id="IAW-Ct-MU3"/>
+                    <navigationItem key="navigationItem" title="Agendar cita" id="IAW-Ct-MU3"/>
                     <connections>
-                        <outlet property="calendarView" destination="9Vx-0X-wLV" id="J9p-eu-aTc"/>
                         <outlet property="datePicker" destination="TZr-lh-hku" id="pO3-id-w78"/>
+                        <outlet property="textView" destination="2yP-gW-Ob7" id="hTi-AD-cYz"/>
+                        <outlet property="viewCalendar" destination="9Vx-0X-wLV" id="Gl3-D9-jgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFW-4e-0Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1785,9 +1920,28 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
             </objects>
             <point key="canvasLocation" x="1595" y="-2059"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oFy-6p-1f1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lg1-NZ-JXK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3IT-uQ-cZu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vNT-Xe-VbE" kind="relationship" relationship="rootViewController" id="n4N-UJ-uPd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ej3-GG-asx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3478" y="-4138"/>
+        </scene>
     </scenes>
     <resources>
         <image name="addcomments" width="128" height="128"/>
+        <image name="appointment" width="256" height="256"/>
         <image name="calicon" width="128" height="128"/>
         <image name="call" width="100" height="100"/>
         <image name="catalogicon" width="128" height="128"/>

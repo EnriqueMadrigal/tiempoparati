@@ -157,6 +157,25 @@ class Comentarios_Esteticas {
 }
 
 
+class Citas_Esteticas {
+    var id: Int?
+    var estatuscita: String?
+    var idestatuscita: Int?
+    var fecha: String?
+    var hora: String?
+    
+    init(json: NSDictionary) {
+        self.id = Int((json["id"] as? String)!)!
+        self.idestatuscita = Int((json["idestatuscita"] as? String)!)!
+        self.estatuscita = json["estatuscita"] as? String
+        self.fecha = json["fecha"] as? String
+        self.hora = json["hora"] as? String
+    }
+    
+}
+
+
+
 class Promociones_Esteticas {
     var id: Int?
     var idestetica: Int?
