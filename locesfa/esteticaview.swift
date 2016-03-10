@@ -149,7 +149,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
         }
@@ -184,7 +184,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
                
             else {
                 let alert :UIAlertController = UIAlertController(title: "!Advertencia", message: "No se ha definido, la ubicación:", preferredStyle: UIAlertControllerStyle.Alert)
-                let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+                let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
                 alert.addAction(OkButton)
                 self.presentViewController(alert, animated: false, completion: nil)
             }
@@ -307,7 +307,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             if (datosEstetica.result == 1){
                 //print ("No se encontro el servidor")
                 let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-                let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+                let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
                 alert.addAction(OkButton)
                 self.presentViewController(alert, animated: false, completion: nil)
             }
@@ -403,14 +403,18 @@ class esteticaview: UIViewController ,UITableViewDelegate{
      
          let AddFavorite = { (action:UIAlertAction!) -> Void in
             self.AgregaFav()
-            
-            
-            
+        }
+   
+        
+        let DelFavorite = { (action:UIAlertAction!) -> Void in
+            self.BorraFav()
         }
         
-        let alert :UIAlertController = UIAlertController(title: "Agregar a favoritos", message: "Desea añadir esta estetica en su lista de favoritos", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        
+        let alert :UIAlertController = UIAlertController(title: "Agregar a favoritos", message: "Desea que la estetica este su lista de favoritos", preferredStyle: UIAlertControllerStyle.Alert)
         let OkButton : UIAlertAction = UIAlertAction(title: "SI.", style: UIAlertActionStyle.Default, handler: AddFavorite)
-        let CancelButton : UIAlertAction = UIAlertAction(title: "NO.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+        let CancelButton : UIAlertAction = UIAlertAction(title: "NO.", style: UIAlertActionStyle.Default, handler: DelFavorite)
         
         alert.addAction(OkButton)
         alert.addAction(CancelButton)
@@ -421,7 +425,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     func AgregaFav(){
         
-        print("AgregandoFavorio")
+        //print("AgregandoFavorio")
         let uuid: String = dataAccess.sharedInstance.UIID
         let curestetica: Int = dataAccess.sharedInstance.currentEstetica
 
@@ -433,16 +437,36 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
-            
-            
-            
         }
-
+      
+    }
+  
+    
+    func BorraFav(){
         
+        //print("AgregandoFavorio")
+        let uuid: String = dataAccess.sharedInstance.UIID
+        let curestetica: Int = dataAccess.sharedInstance.currentEstetica
+        
+        let datos = SentRequest(curaction: "delfavorito.php")
+        datos.AddPosData(DataPost(newItem: "uuid", newValue: uuid))
+        datos.AddPosData(DataPost(newItem: "idestetica", newValue: "\(curestetica)"))
+        datos.ObtenData()
+        
+        if (datos.result==1){
+            print ("No se encontro el servidor")
+            let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+        }
         
     }
+    
+    
+    
     
 }

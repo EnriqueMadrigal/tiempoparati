@@ -110,16 +110,23 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
        // let filename = imagename.stringByDeletingPathExtension
         
         let sexo = dataAccess.sharedInstance.curPersona.sexo
-        var curImage = UIImage(named: "notavail")
+        let atencion = item.atencion!
+        var curImage = UIImage(named: "menwoman")
         
-        if (sexo==1){
-            curImage = UIImage(named: "menicon1")
+        
+        if (atencion==1){
+            curImage = UIImage(named: "woman")
         }
         
-        //let curImage = esteticasImages[indexPath.row]
-        else {
-            curImage = UIImage(named: "womancomb")
+        if (atencion==2){
+            curImage = UIImage(named: "men")
         }
+        
+        if (atencion==3){
+            curImage = UIImage(named: "childs")
+        }
+        
+        
         
         cell.image1.image = curImage
         cell.rating = item.rate!

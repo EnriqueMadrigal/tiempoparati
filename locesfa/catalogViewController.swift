@@ -39,7 +39,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         if (self.catalogos.count==0)
         {
             let alert :UIAlertController = UIAlertController(title: "Advertencia", message: "No se encontraron catalogos para la estetica", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: returnEsteticas)
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: returnEsteticas)
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
         }
@@ -136,7 +136,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             return

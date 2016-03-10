@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class preferencias: UIViewController {
+class preferencias: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var labelNombre: UITextField!
     @IBOutlet weak var labelEmail: UITextField!
@@ -47,6 +47,10 @@ class preferencias: UIViewController {
         
        SetBackGroundImage(self)        
         loadDatos()
+        
+        self.labelEmail.delegate = self
+        self.labelNombre.delegate = self
+        
         
         
     }
@@ -97,7 +101,7 @@ class preferencias: UIViewController {
         let nombre:String = self.labelNombre.text!
         if(nombre.characters.count < 5){
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Nombre invalido", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             return false
@@ -117,7 +121,7 @@ class preferencias: UIViewController {
             
             if (!result){
             let alert1 :UIAlertController = UIAlertController(title: "ERROR", message: "Direcciòn de correo invalida", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton1 : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton1 : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert1.addAction(OkButton1)
             self.presentViewController(alert1, animated: false, completion: nil)
             return false
@@ -233,6 +237,12 @@ class preferencias: UIViewController {
                 self.switch1.on = recibir_prom
                 self.switch2.on = recibir_email
                 
+                if (email.characters.count>5){
+                    
+                    self.labelEmail.enabled = true
+                    
+                }
+                
             }
             
             
@@ -278,7 +288,7 @@ class preferencias: UIViewController {
         if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             
@@ -291,6 +301,12 @@ class preferencias: UIViewController {
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        print("Enter")
+        return true;
+    }
 
     
 }

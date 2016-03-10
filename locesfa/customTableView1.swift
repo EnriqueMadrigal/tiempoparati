@@ -17,7 +17,8 @@ class customTableView1: UITableViewCell {
     var id: Int?
 
     let notavil = UIImage(named: "notavail")!
-   
+    let separator = UIView()
+    
     ///// default 1X
     
     var multiplier: CGFloat = 1.0
@@ -82,10 +83,10 @@ class customTableView1: UITableViewCell {
         
         contentView.addSubview(self.campo1)
         
+        self.separator.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        contentView.addSubview(self.separator)
         
-        
-        
-         layoutSubviews()
+        layoutSubviews()
         
         
         
@@ -95,10 +96,10 @@ class customTableView1: UITableViewCell {
     override func layoutSubviews() {
         
         
-        self.campo0.frame = CGRect(x: self.image1_width, y: 0.0, width: self.campo0_width, height: self.campo0_height)
+        self.campo0.frame = CGRect(x: self.image1_width + 1, y: 0.0, width: self.campo0_width, height: self.campo0_height)
+        self.campo1.frame = CGRect(x: self.image1_width + 1, y: self.campo0_height , width: self.campo1_width, height: self.campo1_height)
         self.image1.frame = CGRect(x: 0.0, y: 0.0, width: self.image1_width, height: self.image1_height)
-        self.campo1.frame = CGRect(x: self.image1_width, y: self.campo0_height , width: self.campo1_width, height: self.campo1_height)
-       
+         self.separator.frame = CGRect(x: 0.0, y: self.image1_height , width: self.image1_width + self.campo1_width, height: 1)
              
     }
 

@@ -68,6 +68,7 @@ class Estetica {
     var telefono1: String?
     var idhorario: Int?
     var rate: Int?
+    var atencion: Int?
     var imageFileName: String?
     var descripcion: String?
     
@@ -86,6 +87,7 @@ class Estetica {
         self.telefono1 = json["telefono1"] as? String
         self.idhorario = Int((json["idhorario"] as? String)!)!
         self.rate = Int((json["rate"] as? String)!)!
+        self.atencion = Int((json["atencion"] as? String)!)!
         self.imageFileName = json["imageFileName"] as? String
         self.descripcion = json["descripcion"] as? String
     }

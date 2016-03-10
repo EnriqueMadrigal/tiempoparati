@@ -74,9 +74,9 @@
 		CD7181E11C5AF551004734E4 /* dataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E01C5AF551004734E4 /* dataAccess.swift */; };
 		CD7181E21C5AF551004734E4 /* dataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E01C5AF551004734E4 /* dataAccess.swift */; };
 		CD7181E31C5AF551004734E4 /* dataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E01C5AF551004734E4 /* dataAccess.swift */; };
-		CD7181E51C5AF55D004734E4 /* dataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E41C5AF55D004734E4 /* dataModels.swift */; };
-		CD7181E61C5AF55D004734E4 /* dataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E41C5AF55D004734E4 /* dataModels.swift */; };
-		CD7181E71C5AF55D004734E4 /* dataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E41C5AF55D004734E4 /* dataModels.swift */; };
+		CD7181E51C5AF55D004734E4 /* datamodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E41C5AF55D004734E4 /* datamodels.swift */; };
+		CD7181E61C5AF55D004734E4 /* datamodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E41C5AF55D004734E4 /* datamodels.swift */; };
+		CD7181E71C5AF55D004734E4 /* datamodels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E41C5AF55D004734E4 /* datamodels.swift */; };
 		CD7181EA1C5AF56F004734E4 /* getdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E81C5AF56F004734E4 /* getdata.swift */; };
 		CD7181EB1C5AF56F004734E4 /* getdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E81C5AF56F004734E4 /* getdata.swift */; };
 		CD7181EC1C5AF56F004734E4 /* getdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181E81C5AF56F004734E4 /* getdata.swift */; };
@@ -203,7 +203,7 @@
 		CD7181D21C5AF4FA004734E4 /* locesfaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locesfaUITests.swift; sourceTree = "<group>"; };
 		CD7181D41C5AF4FA004734E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD7181E01C5AF551004734E4 /* dataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataAccess.swift; sourceTree = "<group>"; };
-		CD7181E41C5AF55D004734E4 /* dataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataModels.swift; sourceTree = "<group>"; };
+		CD7181E41C5AF55D004734E4 /* datamodels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = datamodels.swift; sourceTree = "<group>"; };
 		CD7181E81C5AF56F004734E4 /* getdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getdata.swift; sourceTree = "<group>"; };
 		CD7181E91C5AF56F004734E4 /* getimage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getimage.swift; sourceTree = "<group>"; };
 		CD7181F11C5AF5AF004734E4 /* customTableView4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customTableView4.swift; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 				CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */,
 				CD7181E81C5AF56F004734E4 /* getdata.swift */,
 				CD7181E91C5AF56F004734E4 /* getimage.swift */,
-				CD7181E41C5AF55D004734E4 /* dataModels.swift */,
+				CD7181E41C5AF55D004734E4 /* datamodels.swift */,
 				CD7181F51C5AF5C4004734E4 /* messages.swift */,
 				CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */,
 				CD7181B11C5AF4FA004734E4 /* ViewController.swift */,
@@ -547,7 +547,7 @@
 				CDC706A81C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CDB667651C8774A2005067C0 /* citasview.swift in Sources */,
 				CD7181F21C5AF5AF004734E4 /* customTableView4.swift in Sources */,
-				CD7181E51C5AF55D004734E4 /* dataModels.swift in Sources */,
+				CD7181E51C5AF55D004734E4 /* datamodels.swift in Sources */,
 				CD41C6AD1C5FD0EB0023C520 /* privacidad.swift in Sources */,
 				CD5056FB1C87C3960086FCFF /* DataSourceCitasFixed.swift in Sources */,
 				CD5F22281C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift in Sources */,
@@ -591,7 +591,7 @@
 				CD7181F31C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD5F22381C7F8B8E00597951 /* NWCalendarMonthContentView.swift in Sources */,
 				CDC93CC41C64234100818782 /* catalogoviewImage.swift in Sources */,
-				CD7181E61C5AF55D004734E4 /* dataModels.swift in Sources */,
+				CD7181E61C5AF55D004734E4 /* datamodels.swift in Sources */,
 				CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706A91C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EB1C5AF56F004734E4 /* getdata.swift in Sources */,
@@ -643,7 +643,7 @@
 				CD7181F41C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD5F22391C7F8B8E00597951 /* NWCalendarMonthContentView.swift in Sources */,
 				CDC93CC51C64234100818782 /* catalogoviewImage.swift in Sources */,
-				CD7181E71C5AF55D004734E4 /* dataModels.swift in Sources */,
+				CD7181E71C5AF55D004734E4 /* datamodels.swift in Sources */,
 				CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706AA1C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EC1C5AF56F004734E4 /* getdata.swift in Sources */,

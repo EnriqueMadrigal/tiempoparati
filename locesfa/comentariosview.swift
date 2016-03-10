@@ -19,7 +19,9 @@ class comentariosview: UIViewController, UITableViewDelegate {
     
 
     @IBOutlet weak var labelComentarios: UITextView!
-    @IBOutlet weak var ratingControl: RatingControl!
+    //@IBOutlet weak var ratingControl: RatingControl!
+    
+    @IBOutlet weak var ratingView: UIView!
     
     
     @IBAction func addComentario(sender: AnyObject) {
@@ -27,11 +29,20 @@ class comentariosview: UIViewController, UITableViewDelegate {
     }
     
     
+    var ratingControl: RatingControl!
+    var ratingwidth: CGFloat = 0.0
+    var ratingheight: CGFloat = 0.0
+    var hasratinginit: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-         SetBackGroundImage(self)        
+         SetBackGroundImage(self)
+        
+        self.ratingwidth = self.ratingView.frame.width
+        self.ratingheight = self.ratingView.frame.height
+        
         LoadData()
         tableView.dataSource = self.dataSource
         tableView.delegate = self
@@ -90,7 +101,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
         if (self.dataSource.comentarios.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             
@@ -143,7 +154,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
         
         if (name.characters.count<4){
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su nombre en preferencias!:", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             return
@@ -152,7 +163,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
         
         if (comentario.characters.count<4){
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Debe de ser un comentario valido!:", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             return
@@ -173,7 +184,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
         if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             
@@ -202,4 +213,28 @@ class comentariosview: UIViewController, UITableViewDelegate {
     }
 */
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        
+        if (self.ratingView.frame.width == self.ratingwidth)  // Todavia no se tiene el tamaño correcto
+        {
+            return
+        }
+        
+        if (self.hasratinginit == false){
+            self.hasratinginit = true
+            self.configureRatingControl()
+        }
+    }
+    
+    func configureRatingControl(){
+        
+        self.ratingControl = RatingControl(frame: self.ratingView.frame)
+        self.ratingView.addSubview(self.ratingControl)
+        
+    }
+
+    
+    
 }

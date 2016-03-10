@@ -73,7 +73,7 @@ public class NWCalendarView: UIView {
   
   func commonInit() {
     clipsToBounds = true
-    
+   
     let unitFlags: NSCalendarUnit = [.Year, .Month, .Day, .Weekday, .Calendar]
     visibleMonth = NSCalendar.usLocaleCurrentCalendar().components(unitFlags, fromDate: NSDate())
     

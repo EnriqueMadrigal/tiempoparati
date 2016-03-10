@@ -137,8 +137,8 @@ class customTableView3: UITableViewCell {
             image.frame = imageframe
         }
         */
-        self.campo0.frame = CGRect(x: self.image1_width, y: 0.0, width: self.campo0_width, height: self.campo0_height)
-        self.campo1.frame = CGRect(x: self.image1_width, y: self.campo0_height + self.rating_height, width: self.campo1_width, height: self.campo1_height)
+        self.campo0.frame = CGRect(x: self.image1_width + 1, y: 0.0, width: self.campo0_width, height: self.campo0_height)
+        self.campo1.frame = CGRect(x: self.image1_width + 1, y: self.campo0_height + self.rating_height, width: self.campo1_width, height: self.campo1_height)
         self.campo2.frame = CGRect(x: 0.0, y: self.image1_height, width: self.campo2_width, height: self.campo2_height)
         
         

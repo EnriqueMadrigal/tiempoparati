@@ -16,7 +16,9 @@ class customTableView5: UITableViewCell {
     let campo2 = UILabel()
     let image1 = UIImageView()
     var id: Int?
-
+    let separator1 = UIView()
+    let separator2 = UIView()
+    
     ///// default 1X
     
     var multiplier: CGFloat = 1.0
@@ -96,7 +98,7 @@ class customTableView5: UITableViewCell {
         self.campo2.font = UIFont(name: "System Font", size: self.campo2_fontsize)
         self.campo2.numberOfLines = 0
         self.campo2.lineBreakMode = .ByWordWrapping
-        self.campo2.backgroundColor = UIColor.lightGrayColor()
+        //self.campo2.backgroundColor = UIColor.lightGrayColor()
         contentView.addSubview(self.campo2)
         
         
@@ -108,6 +110,12 @@ class customTableView5: UITableViewCell {
             ratingImages.append(image)
         }
 
+        
+        self.separator1.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        contentView.addSubview(self.separator1)
+        
+        self.separator2.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        contentView.addSubview(self.separator2)
         
         layoutSubviews()
 
@@ -136,8 +144,8 @@ class customTableView5: UITableViewCell {
             image.frame = imageframe
         }
         */
-        self.campo0.frame = CGRect(x: self.image1_width, y: 0.0, width: self.campo0_width, height: self.campo0_height)
-        self.campo1.frame = CGRect(x: self.image1_width, y: self.campo0_height + self.rating_height, width: self.campo1_width, height: self.campo1_height)
+        self.campo0.frame = CGRect(x: self.image1_width + 1, y: 0.0, width: self.campo0_width, height: self.campo0_height)
+        self.campo1.frame = CGRect(x: self.image1_width + 1, y: self.campo0_height + self.rating_height, width: self.campo1_width, height: self.campo1_height)
         self.campo2.frame = CGRect(x: 0.0, y: self.image1_height, width: self.campo2_width, height: self.campo2_height)
         
         
@@ -152,6 +160,9 @@ class customTableView5: UITableViewCell {
 
         
         
+         self.separator1.frame = CGRect(x: 0.0, y: self.image1_height, width: self.image1_width + self.campo2_width, height: 1)
+        
+        self.separator2.frame = CGRect(x: 0.0, y: self.image1_height + self.campo2_height - 1, width: self.image1_width + self.campo2_width, height: 1)
         
         updateImageSelectionStates()
 

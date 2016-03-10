@@ -95,7 +95,7 @@ class serviciosview: UIViewController, UITableViewDelegate {
             if (self.dataSource.subservicios.count==0)
             {
                 let alert :UIAlertController = UIAlertController(title: "Advertencia", message: "No se encontraron servicios", preferredStyle: UIAlertControllerStyle.Alert)
-                let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: returnEsteticas)
+                let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: returnEsteticas)
                 alert.addAction(OkButton)
                 self.presentViewController(alert, animated: false, completion: nil)
             }

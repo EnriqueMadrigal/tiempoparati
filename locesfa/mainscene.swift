@@ -16,7 +16,15 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     @IBOutlet weak var labelNombre: UILabel!
     @IBOutlet weak var searchView: UIView!
    
+    @IBAction func showFavoritos(sender: AnyObject) {
+     self.ShowFav()
+    }
      
+    
+    @IBAction func showTop(sender: AnyObject) {
+     self.showTopEsteticas()
+    }
+    
     
     var hasrefresh: Bool = false
     var hasWaitDialog: Bool = false
@@ -71,12 +79,19 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     }
     
     
+    var searchBarWidth: CGFloat = 0
+    var searchBarHeight: CGFloat = 0
+    var hasSearchBarInit: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
         SetBackGroundImage(self)
+        self.searchBarWidth = self.searchView.frame.width
+        self.searchBarHeight = self.searchView.frame.height
+        
+        
         /*
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background2")!)
         
@@ -108,7 +123,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         
     LoadData()
     RegisterUser()
-    configureSearchController()
+    //configureSearchController()
         
         
         
@@ -231,7 +246,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     if (self.dataSource.esteticas.count==0 && self.dataSource.responsecode != 0) {
     print ("No se encontro el servidor")
     let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-    let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+    let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
     alert.addAction(OkButton)
     self.presentViewController(alert, animated: false, completion: nil)
     
@@ -346,7 +361,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         if (datos.resulterror==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             
@@ -390,7 +405,8 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         print(dataAccess.sharedInstance.multiplier)
         currentSize = currentSize * (dataAccess.sharedInstance.multiplier / 2)
         print(currentSize)
-        searchController.searchBar.frame = CGRect(x: 0, y: 0, width: CGFloat(currentSize), height: self.searchView.bounds.height)
+        searchController.searchBar.frame = self.searchView.frame
+        //searchController.searchBar.frame = CGRect(x: 0, y: 0, width: CGFloat(currentSize), height: self.searchView.bounds.height)
         //searchController.searchBar.frame = curFrame
         
         searchController.searchBar.scopeButtonTitles = ["Nombre", "Servicios", "Productos"]
@@ -472,6 +488,41 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     
     ///////
 
+    func ShowFav(){
+        self.cadenaBusqueda = ""
+        self.tipoBusqueda = 4
+        self.LoadData()
+        
+        
+    }
+    
+    func showTopEsteticas(){
+        self.cadenaBusqueda = ""
+        self.tipoBusqueda = 3
+        self.LoadData()
+   
+        
+    }
+    
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        
+        if (self.searchView.frame.width == self.searchBarWidth)  // Todavia no se tiene el tamaño correcto
+        {
+            return
+        }
+        
+        if (self.hasSearchBarInit == false){
+            self.hasSearchBarInit = true
+            self.configureSearchController()
+        }
+    }
+
+    
+    
 }
 
 

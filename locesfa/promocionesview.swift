@@ -47,7 +47,7 @@ class promocionesview: UIViewController , UITableViewDelegate{
         if (self.dataSource.promociones.count==0)
         {
         let alert :UIAlertController = UIAlertController(title: "Advertencia", message: "No se encontraron promociones para el día de hoy", preferredStyle: UIAlertControllerStyle.Alert)
-        let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: returnEsteticas)
+        let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: returnEsteticas)
         alert.addAction(OkButton)
         self.presentViewController(alert, animated: false, completion: nil)
         }
@@ -91,7 +91,7 @@ class promocionesview: UIViewController , UITableViewDelegate{
         if (self.dataSource.promociones.count == 0 && self.dataSource.responsecode != 0) {
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             
