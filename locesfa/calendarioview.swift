@@ -8,12 +8,13 @@
 
 import UIKit
 
-class calendarioview: UIViewController, UITextViewDelegate {
+class calendarioview: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var viewCalendar: UIView!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var textView: UITextView!
+       @IBOutlet weak var datePicker: UIDatePicker!
+   
+    @IBOutlet weak var textView: UITextField!
   
     @IBAction func Aceptar(sender: AnyObject) {
       AgregaCita()
@@ -35,24 +36,37 @@ class calendarioview: UIViewController, UITextViewDelegate {
     var hasSelectedDate: Bool = false
     
     
+    var hascalendarcreated: Bool = false
+    
+    var newCalendarWidth: CGFloat = 0.0
+    var newCalendarHeight: CGFloat = 0.0
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     SetBackGroundImage(self)
     
-        viewCalendar.setNeedsLayout()
-        viewCalendar.layoutIfNeeded()
+     
+           
+        //viewCalendar.setNeedsLayout()
+        //viewCalendar.layoutIfNeeded()
         
-        calendarView = NWCalendarView(frame: self.viewCalendar.frame)
-        calendarView.layer.borderWidth = 1
-        calendarView.layer.borderColor = UIColor.lightGrayColor().CGColor
-        calendarView.backgroundColor = UIColor.whiteColor()
-        calendarView.selectionRangeLength = 1
-        calendarView.delegate = self
-        calendarView.createCalendar()
-    
-        viewCalendar.addSubview(calendarView)
+        self.newCalendarWidth = self.viewCalendar.frame.width
+        self.newCalendarHeight = self.viewCalendar.frame.height
+        
+        
+        
+        
+        //viewCalendar.layer.borderWidth = 1
+        //viewCalendar.layer.borderColor = UIColor.lightGrayColor().CGColor
+        //viewCalendar.backgroundColor = UIColor.whiteColor()
+        //viewCalendar.selectionRangeLength = 1
+        //viewCalendar.delegate = self
+        //viewCalendar.createCalendar()
+        
         
         datePicker.setValue(UIColor.blackColor(), forKeyPath: "textColor")
         datePicker.backgroundColor = UIColor.brownColor()
@@ -94,7 +108,7 @@ class calendarioview: UIViewController, UITextViewDelegate {
         
         if (name.characters.count<4){
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su nombre en preferencias!:", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             return
@@ -103,7 +117,7 @@ class calendarioview: UIViewController, UITextViewDelegate {
         
         if (comentarios.characters.count<4){
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Debe de ser un comentario valido!:", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             return
@@ -111,7 +125,7 @@ class calendarioview: UIViewController, UITextViewDelegate {
         
         if (!hasSelectedDate){
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Debe seleccionar la fecha!:", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             return
@@ -141,7 +155,7 @@ class calendarioview: UIViewController, UITextViewDelegate {
         if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
             
@@ -187,8 +201,44 @@ extension calendarioview: NWCalendarViewDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
-        print("Enter")
+        //print("Enter")
         return true;
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        
+        if (self.viewCalendar.frame.width == self.newCalendarWidth)  // Todavia no se tiene el tamaño correcto
+        {
+            return
+        }
+     
+        if (self.hascalendarcreated == false){
+            self.CreateCorrectCalendar()
+        }
+    }
+    
+   
+    func CreateCorrectCalendar(){
+        
+    self.hascalendarcreated = true
+     
+        calendarView = NWCalendarView(frame: self.viewCalendar.frame)
+        calendarView.layer.borderWidth = 1
+        calendarView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        calendarView.backgroundColor = UIColor.whiteColor()
+        calendarView.selectionRangeLength = 1
+        calendarView.delegate = self
+        calendarView.createCalendar()
+        
+        
+        viewCalendar.addSubview(calendarView)
+        viewCalendar.layoutSubviews()
+        
+
+        
     }
     
     
