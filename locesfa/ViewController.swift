@@ -48,9 +48,10 @@ class ViewController: UIViewController {
 calculateVars()
         print(dataAccess.sharedInstance.curScreen.width)
         print(dataAccess.sharedInstance.curScreen.height)
-       
-        SetBackGroundImage(self)
+        print(dataAccess.sharedInstance.curScale)
+        //SetBackGroundImage(self)
         
+        setGradient1(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,36 +107,38 @@ calculateVars()
     
    
         
-        if (ScreenSize.SCREEN_HEIGHT == 568 && ScreenSize.SCREEN_WIDTH == 320)
+    if (ScreenSize.SCREEN_HEIGHT == 568 && ScreenSize.SCREEN_WIDTH == 320)
     {
-            // Iphone 5
-            self.physicalx = 1136
-            self.physicaly = 960
+    // Iphone 5
+    self.physicalx = 960
+    self.physicaly = 1136
     }
         
         
         
-    
+   /*
     if (ScreenSize.SCREEN_HEIGHT == 320 && ScreenSize.SCREEN_WIDTH == 568)
     {
     // Iphone 5
     self.physicalx = 1136
     self.physicaly = 640
     }
-    
+   */
+        
+        
     if (ScreenSize.SCREEN_HEIGHT == 375 && ScreenSize.SCREEN_WIDTH == 667)
     {
     // Iphone 6
-    self.physicalx = 1134
-    self.physicaly = 750
+    self.physicalx = 750
+    self.physicaly = 1134
     }
     
     
     if (ScreenSize.SCREEN_HEIGHT == 414 && ScreenSize.SCREEN_WIDTH == 763)
     {
     // Iphone 6
-    self.physicalx = 1920
-    self.physicaly = 1080
+    self.physicalx = 1080
+    self.physicaly = 1920
     }
     
     
@@ -149,7 +152,7 @@ calculateVars()
     {
     // Ipad, Ipad2 , Ipad mini
     
-    self.physicalx = 768
+    self.physicalx = 760
     self.physicaly = 1024
     }
     
@@ -157,8 +160,8 @@ calculateVars()
     {
     // Ipad Air, Ipad Mini Retina
     
-    self.physicalx = 2048
-    self.physicaly = 1536
+    self.physicalx = 1536
+    self.physicaly = 2048
     }
     
     
@@ -177,8 +180,9 @@ calculateVars()
             
         }
         
-
-        
+        dataAccess.sharedInstance.curOrientation = getDeviceOrientation()
+        dataAccess.sharedInstance.curScale = ScreenSize.scale
+       
         
         
     }

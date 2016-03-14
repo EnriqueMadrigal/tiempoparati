@@ -219,9 +219,8 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     @IBAction func getCalendario(sender: AnyObject) {
 
-        //let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        //let vc = mainStoryboard.instantiateViewControllerWithIdentifier("calendario") as! calendarioview
-        
+      
+        if (self.CurEstetica.citas == 1){
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("citas") as! citasview
@@ -238,7 +237,16 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
         self.showViewController(vc, sender: nil)
         //.showViewController(vc, animated: true, completion: nil)
-  
+        }
+        
+        else {
+            
+            let alert :UIAlertController = UIAlertController(title: "!Advertencia", message: "No disponible servicio de citas", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+            
+        }
         
         
     }
@@ -284,7 +292,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         // Do any additional setup after loading the view.
         
         SetBackGroundImage(self)
-        
+        //SetBackGroundImage2(self)
         if let CurEstetica = CurEstetica{
             self.labelNombre.text = CurEstetica.title!
             self.labelDescripcion.text = CurEstetica.descripcion!
@@ -397,6 +405,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             self.hasWaitDialog = false
         }
         SetBackGroundImage(self)
+        //SetBackGroundImage2(self)
     }
     func AgregarFavorito(){
         
@@ -456,6 +465,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         datos.AddPosData(DataPost(newItem: "idestetica", newValue: "\(curestetica)"))
         datos.ObtenData()
         
+               
         if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)

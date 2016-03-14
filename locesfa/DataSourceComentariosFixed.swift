@@ -60,8 +60,10 @@ init(cururl: String, posdata: String) {
         
         cell.id = item.id!
         
-        let sexo: Int = item.sexo!
+        //let sexo: Int = item.sexo!
+        cell.image1.image = UIImage(named: "comments")
         
+        /*
         if (sexo==1) {
             cell.image1.image = UIImage(named: "men")
         }
@@ -69,7 +71,7 @@ init(cururl: String, posdata: String) {
         else {
             cell.image1.image = UIImage(named: "woman")
         }
-        
+        */
         cell.rating = item.rate!
         cell.clipsToBounds = true
         cell.setWidth(self.tableView.bounds.width)

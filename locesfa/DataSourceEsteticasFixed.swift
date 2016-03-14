@@ -109,26 +109,26 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
        // let imagename: NSString = item.imageFileName!
        // let filename = imagename.stringByDeletingPathExtension
         
-        let sexo = dataAccess.sharedInstance.curPersona.sexo
-        let atencion = item.atencion!
-        var curImage = UIImage(named: "menwoman")
+        //let sexo = dataAccess.sharedInstance.curPersona.sexo
+        //let atencion = item.atencion!
+        //var curImage = UIImage(named: "menwoman")
         
         
-        if (atencion==1){
-            curImage = UIImage(named: "woman")
-        }
+        //if (atencion==1){
+        //    curImage = UIImage(named: "woman")
+        //}
         
-        if (atencion==2){
-            curImage = UIImage(named: "men")
-        }
+        //if (atencion==2){
+        //    curImage = UIImage(named: "men")
+        //}
         
-        if (atencion==3){
-            curImage = UIImage(named: "childs")
-        }
+        //if (atencion==3){
+        //    curImage = UIImage(named: "childs")
+        //}
         
         
         
-        cell.image1.image = curImage
+        //cell.image1.image = curImage
         cell.rating = item.rate!
         cell.setWidth(self.tableView.bounds.width)
         return cell

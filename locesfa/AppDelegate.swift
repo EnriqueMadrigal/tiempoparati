@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
         return true
     }
 
@@ -115,5 +117,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func rotated()  // Added Enrique
+    {
+        if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
+        {
+            print("landscape")
+        }
+        
+        if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
+        {
+            print("Portrait")
+        }
+        
+        dataAccess.sharedInstance.curOrientation = getDeviceOrientation()
+        
+    }
+
+    
 }
 

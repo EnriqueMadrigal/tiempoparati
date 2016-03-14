@@ -87,7 +87,9 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
-        SetBackGroundImage(self)
+        //SetBackGroundImage(self)
+        setGradient2(self)
+        //SetBackGroundImage2(self)
         self.searchBarWidth = self.searchView.frame.width
         self.searchBarHeight = self.searchView.frame.height
         
@@ -132,8 +134,10 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //print("willAppear")
-        self.labelNombre.text = "Hola " + dataAccess.sharedInstance.curPersona.Nombre!
-        SetBackGroundImage(self)
+        self.labelNombre.text = dataAccess.sharedInstance.curPersona.Nombre!
+        //SetBackGroundImage(self)
+        setGradient2(self)
+        //SetBackGroundImage2(self)
         
     }
     
@@ -147,7 +151,9 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
             view.userInteractionEnabled = true
             self.hasWaitDialog = false
         }
-       SetBackGroundImage(self)
+       //SetBackGroundImage(self)
+        setGradient2(self)
+        //SetBackGroundImage2(self)
         LoadData()
      }
     
@@ -345,29 +351,24 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     func RegisterUser(){
         
         let uuid: String = dataAccess.sharedInstance.UIID
-        let datos = GetData()
-        datos.setURL("http://192.168.15.201/nailsalon/app/registeruser.php")
-        datos.setPostData("uuid=" + uuid)
+        
+        
+        
+        
+        let datos = SentRequest(curaction: "registeruser.php")
+        datos.AddPosData(DataPost(newItem: "uuid", newValue: uuid))
+        
         datos.ObtenData()
         
-        let curtime = NSDate()
-        var passedTime: Double = 0
-        
-        
-        while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
-            passedTime = curtime.timeIntervalSinceNow * -1000.0
-        }
-        
-        if (datos.resulterror==1){
+        if (datos.result==1){
             print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
             self.presentViewController(alert, animated: false, completion: nil)
-            
-            
-            
         }
+
+        
         
         
         
@@ -519,10 +520,26 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
             self.hasSearchBarInit = true
             self.configureSearchController()
         }
+        //SetBackGroundImage2(self)
+
     }
 
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        print("presented size")
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        print("Rotation")
+    }
     
-    
+   /*
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animateAlongsideTransition(nil, completion: {
+            print("rotation")
+        }
+*/
+        
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
 }
 
 

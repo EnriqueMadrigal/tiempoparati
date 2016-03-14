@@ -21,12 +21,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-HT-1Ik">
-                                <rect key="frame" x="40" y="157" width="520" height="288"/>
+                                <rect key="frame" x="40" y="41" width="520" height="520"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-1M-W0N">
-                                        <rect key="frame" x="0.0" y="0.0" width="520" height="288"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="520"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="P0w-1M-W0N" secondAttribute="height" multiplier="9:5" id="OPf-Xi-wU0"/>
+                                            <constraint firstAttribute="width" secondItem="P0w-1M-W0N" secondAttribute="height" multiplier="1:1" id="OPf-Xi-wU0"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -165,76 +165,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyd-lP-fV8">
-                                <rect key="frame" x="13" y="36" width="567" height="532"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyd-lP-fV8">
+                                <rect key="frame" x="13" y="34" width="567" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Aviso de privacidad
 
-Con fundamento en el articulo 16 de la ley de protección de datos personales, hacemos de su consentimiento que Data Labor S.A. De C.V.   Es responsable del tratamiento de sus datos personales, con domicilio en en Susana Gomez Palafox #5187, en la colonia Paseos del sol, en la ciudad de Zapopan en el estado de Jalisco.
+Con fundamento en el articulo 16 de la ley de protección de datos personales, hacemos de su consentimiento que Data Labor S.A. De C.V. Es responsable del tratamiento de sus datos personales, con domicilio en en Susana Gomez Palafox #5187, en la colonia Paseos del sol, en la ciudad de Zapopan en el estado de Jalisco.
 
-Para las finalidades señaladas en el presente aviso de privacidad, podemos recabar sus datos personales de distintas formas: cuando usted nos la proporcione directamente o al utilizar el servicio de expediente médico electrónico y cuando obtenemos información a través de otras fuentes que estén permitidas por la ley.
+Para las finalidades señaladas en el presente aviso de privacidad, podemos recabar sus datos personales,  cuando usted nos la proporcione directamente o al utilizar nuestra aplicación móvil.
 
-Lo datos personales que recabamos de forma directa cuando usted mismo nos la proporcione dentro del expediente médico electrónico, con el objeto de que le prestemos el servicio. Los datos personales que obtenemos por este medio pueden ser, entre otros:
+Lo datos personales que recabamos de forma directa cuando usted mismo nos la proporcione dentro de la aplicación, con el objeto de que le prestemos el servicio. Los datos personales que obtenemos por este medio pueden ser, entre otros:
 
 Nombre Completo.
-
 Dirección de correo electrónico.
-
-Especialidad médica.
-
-Domicilio de sus consultorios.
-
-Los datos personales de sus pacientes que recabamos de forma directa cuando usted mismo nos la proporcione dentro del expediente médico electrónico, con el objeto de que le prestemos el servicio. Los datos personales de sus pacientes que obtenemos por este medio pueden ser, entre otros:
-
-Nombre completo
-
-Fecha de nacimiento.
-
-Domicilio particular (opcional).
-
-Los datos personales que recabamos cuando visita nuestro sitio de Internet o utiliza nuestros servicio en  línea:
-
-Dirección de correo electrónico.
-
-Los cookies son archivos de texto que son descargados automáticamente y almacenados en el disco duro del equipo de cómputo del usuario al navegar en una página de Internet especifica, que permiten recordar al servidor de Internet algunos datos sobre este usuario, entre ellos sus preferencias para la visualización  de las páginas en ese servidor, nombre  y contraseña.
-
-Por su parte, las web beacons son imágenes insertadas en una página de Internet o correo electrónico, que puede ser utilizado para monitorear el comportamiento de un visitante, como almacenar información sobre la dirección IP del usuario, duración del tiempo de interacción en dicha página y el tipo de navegador utilizado, entre otros.
-
-Le informamos que utilizamos cookies y web beacons para obtener información personal de usted, como la siguiente:
-
-
+Número de teléfono.
 
 Sus datos personales serán utilizados para las siguientes finalidades:
 
-
-
 Proveer nuestros servicios y productos requeridos;
-Informar sobre nuestros productos y servicios que estén relacionados con el contrato adquirido por el cliente.
+Informar sobre nuestros productos y servicios que estén relacionados con el contrato adquirido por los negocios adscritos al sistema.
 Dar cumplimiento a las obligaciones contraídas con nuestros clientes.
 Informar sobre cambios de nuestros productos y servicios.
 
+Usted puede dejar de recibir correos electrónicos promocionales a través de alguno de los siguientes pasos.
+Ir a la parte de preferencias personales y haciendo click en la parte de “Recibir promociones” para desactivar la casilla.
+Ir a la parte de preferencias personales y haciendo click en la parte de “Por correo electrónico” desactivar la casilla.
 
-Usted puede dejar de recibir correos electrónicos promocionales a través de alguno de los siguientes pasos. 
-
-
-
-Haciendo click en la parte “Si usted no desea recibir este correo haga click aqui”.
 Enviar un correo electrónico a soporte@datalabor.com.mx, con el sujeto “Deseo de recibir mensajes de correo”
-
 
 Nosotros no realizamos transferencias de sus datos personales a terceros.
 
-En todo momento usted podrá revocar el consentimiento que nos ha otorgado para el tratamiento de sus datos personales, a fin de que dejemos de hacer uso de los mismos. Piara ello, es necesario que presente su petición a la siguiente dirección de correo electrónico: soporte@datalabor.com.mx
-Su petición debe de ir acompañada con la siguiente información: Nombre Completo, dirección de correo de la cuenta de gmail que esta utilizando y los nombres y correos de las asistentes, de así requerirlo. Tendremos un plazo máximo de 5 días para atender su petición por medio del correo que nos proporcionó.
+Nos reservamos el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad, para la extensión de novedades legislativas o jurisprudenciales, políticas internas, nuevos requerimientos para la prestación u ofrecimiento de nuestros servicios o productos y prácticas del mercado.
 
-
-Nos reservamos el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad, para la extensión de novedades legislativas o jurisprudenciales, pol                íticas internas, nuevos requerimientos para la prestación u ofrecimiento de nuestros servicios o productos y prácticas del mercado. 
-
-
-Estas modificaciones estarán disponibles al público a través de los siguientes medios:
-
-En nuestra página de Internet[www.expimed.com.mx], en la parte de aviso de privacidad.
-Se las haremos llegar al último correo electrónico que nos haya proporcionado.</string>
+Estas modificaciones estarán disponibles al público en esta aplicación móvil en la parte de aviso de privacidad.
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -272,29 +236,35 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                 <rect key="frame" x="28" y="80" width="544" height="512"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mrH-F4-UXE">
-                                        <rect key="frame" x="0.0" y="0.0" width="544" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="55"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6u-xv-aRv">
-                                                <rect key="frame" x="0.0" y="0.0" width="273" height="80"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="G6u-xv-aRv">
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="55"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenida(o):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="74u-Ri-x8j">
-                                                        <rect key="frame" x="0.0" y="0.0" width="273" height="80"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido(a):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ztS-zj-ZvQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="164" height="28"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Bienvenida(o):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="74u-Ri-x8j">
+                                                        <rect key="frame" x="0.0" y="28" width="164" height="27"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="idK-Kp-ZMD">
-                                                <rect key="frame" x="283" y="0.0" width="261" height="80"/>
+                                                <rect key="frame" x="174" y="0.0" width="370" height="55"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bfD-69-Vlv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bfD-69-Vlv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="55"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK8-8h-q8N">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK8-8h-q8N">
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="55"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="PK8-8h-q8N" secondAttribute="height" multiplier="1:1" id="MB9-3f-POD"/>
+                                                                    <constraint firstAttribute="width" secondItem="PK8-8h-q8N" secondAttribute="height" multiplier="8:3" id="MB9-3f-POD"/>
                                                                 </constraints>
                                                                 <state key="normal" image="privacidad"/>
                                                                 <connections>
@@ -303,13 +273,13 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-uM-gP9">
-                                                        <rect key="frame" x="90" y="0.0" width="81" height="80"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-uM-gP9">
+                                                        <rect key="frame" x="157" y="0.0" width="148" height="55"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7a-NU-zlq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="81" height="80"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7a-NU-zlq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="d7a-NU-zlq" secondAttribute="height" multiplier="1:1" id="0az-A4-bq4"/>
+                                                                    <constraint firstAttribute="width" secondItem="d7a-NU-zlq" secondAttribute="height" multiplier="8:3" id="0az-A4-bq4"/>
                                                                 </constraints>
                                                                 <state key="normal" image="terminos"/>
                                                                 <connections>
@@ -319,10 +289,10 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-Q0-c7x">
-                                                        <rect key="frame" x="181" y="0.0" width="80" height="80"/>
+                                                        <rect key="frame" x="315" y="0.0" width="55" height="55"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-Bv-18n">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="hBj-Bv-18n" secondAttribute="height" multiplier="1:1" id="4Vc-gA-X15"/>
                                                                 </constraints>
@@ -337,19 +307,19 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="G6u-xv-aRv" firstAttribute="width" secondItem="mrH-F4-UXE" secondAttribute="width" multiplier="0.5" constant="1" id="72N-2j-g6G"/>
+                                            <constraint firstItem="G6u-xv-aRv" firstAttribute="width" secondItem="mrH-F4-UXE" secondAttribute="width" multiplier="0.3" constant="1" id="72N-2j-g6G"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fnh-bT-KGW">
-                                        <rect key="frame" x="0.0" y="90" width="544" height="81"/>
+                                        <rect key="frame" x="0.0" y="65" width="544" height="81"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dox-nm-VUs">
                                                 <rect key="frame" x="0.0" y="0.0" width="273" height="81"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona tu estetica favorita:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-ku-xOO">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directorio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-ku-xOO">
                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="81"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -410,21 +380,21 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HOD-uU-Vj2">
-                                        <rect key="frame" x="0.0" y="181" width="544" height="331"/>
+                                        <rect key="frame" x="0.0" y="156" width="544" height="356"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="djU-Ti-jkJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="544" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="544" height="54"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pd-fb-qGv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="544" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="544" height="54"/>
                                                     </view>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Utk-3R-dr5">
-                                                <rect key="frame" x="0.0" y="55" width="544" height="276"/>
+                                                <rect key="frame" x="0.0" y="59" width="544" height="297"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvV-nF-rjV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="544" height="276"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="544" height="297"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myIdentifier" id="n2M-Cp-dYj">
@@ -870,7 +840,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                                     <action selector="getLocation:" destination="vP2-y6-8m2" eventType="touchUpInside" id="L4h-Go-nel"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Localización" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Jcr-so-9Gb">
+                                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ubicación" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Jcr-so-9Gb">
                                                                 <rect key="frame" x="61" y="0.0" width="491" height="51"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1383,7 +1353,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                                                             <constraint firstAttribute="height" constant="42" id="7KV-l7-AR4"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1786,7 +1756,7 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
         <!--Terminos y condiciones-->
         <scene sceneID="Sou-bh-UoG">
             <objects>
-                <viewController id="aJk-Oa-Qt7" sceneMemberID="viewController">
+                <viewController id="aJk-Oa-Qt7" customClass="terminos" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8x1-dh-lmJ"/>
                         <viewControllerLayoutGuide type="bottom" id="a6e-8f-2G6"/>
@@ -1795,9 +1765,56 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Terminos y condiciones" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeP-pw-1WZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeP-pw-1WZ">
                                 <rect key="frame" x="29" y="73" width="542" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Esto es un resumen de los términos y condiciones de utilización de nuestra aplicación.
+
+Contenido
+La compañía no se hace responsable por el contenido mostrado por los diferentes negocios de salón de belleza ,estética , spa, masajes, entre otros. Siendo responsabilidad exclusiva  de cada negocio adscrito al sistema, de la propiedad  la información mostrada como pueden ser, logotipos, fotografías, productos, servicios.
+
+La compañía no se hace responsable de los costos mostrados para los servicios ofrecidos por los negocios adscritos al sistema. Siendo responsabilidad de cada negocio administrar los costos mostrados en esta aplicación.
+
+La compañía no se hace responsable de las citas o visitas ofrecidas por los negocios adscritos al sistema. Siendo responsabilidad de cada negocio dar la atención adecuada de las citas a cada uno de sus usuarios.
+
+La compañía no se hace responsable por los comentarios subidos por los usuarios. La compañía puede remover cualquier comentario ofensivo, vulgar o fuera del contexto de esta aplicación. Así mismo la compañía también puede remover partes del comentario como palabras ofensivas.
+
+Un usuario no puede: (a) separar ningún Contenido individual o componente de la Aplicación Móvil para otro uso que el indicado en relación a la Aplicación Móvil; (b) incorporar una porción del mismo a los propios programas del Usuario o recopilar cualquier porción en combinación con los propios programas del Usuario; (c) transferirlo para ser utilizado por otro servicio; o (d) vender, arrendar, ceder, prestar, distribuir, comunicar públicamente, transformar o sublicenciar la Aplicación Móvil o conceder en modo alguno cualquier derecho a la Aplicación Móvil absoluta o parcialmente. La Compañía será responsable de todo mantenimiento o soporte técnico de la Aplicación Móvil; ningún Tercero (como se define en el presente documento) será responsable de brindar servicios de mantenimiento o soporte técnico para la Aplicación Móvil. 
+
+La Compañía se reserva el derecho de enmendar, complementar o suspender total o parcialmente la Aplicación Móvil en forma ocasional. Asimismo, la Compañía se reserva el derecho de cambiar los Términos y Condiciones en cualquier momento, con vigencia inmediata a partir del momento que se actualiza la Aplicación Móvil. Los términos “Usuario” y “Usuarios” se refieren a todo individuo o entidad que use, acceda, descargue, instale, obtenga o brinde información desde y hacia esta Aplicación Móvil. 
+
+
+Uso
+Al usar, acceder, descargar, instalar, obtener o brindar información desde y hacia esta Aplicación Móvil, se considerará que los Usuarios han leído y aceptado estos Términos y Condiciones (incluyendo nuestra Política de privacidad)
+Los Usuarios deben suspender el uso de esta Aplicación Móvil inmediatamente si no están de acuerdo o no aceptan todos estos Términos y Condiciones. La Compañía se reserva el derecho de eliminar o prohibir a cualquier Usuario la utilización de esta Aplicación Móvil a su sola discreción.
+
+Terceros
+Los prestadores de servicio de telefonía inalámbrica de los Usuarios, los fabricantes y vendedores de los dispositivos móviles en los que el Usuario descargue, instale, utilice o acceda a la Aplicación Móvil, el creador del sistema operativo para los dispositivos móviles de los Usuarios y el operador de cualquier tienda de aplicaciones o servicios similares mediante los cuales los usuarios obtengan la Aplicación Móvil, si existieran, (en conjunto, los “Terceros”) no son parte de estos Términos y Condiciones y no son propietarios ni responsables de la Aplicación Móvil. Los Terceros no brindan ninguna garantía en relación con la Aplicación Móvil. No son responsables del mantenimiento u otros servicios de soporte técnico de la Aplicación Móvil y no serán responsables ante ningún otro reclamo, pérdidas, imputación de responsabilidades, daños y perjuicios, costos o gastos vinculados con la Aplicación Móvil.
+Los Usuarios reconocen y aceptan que los Terceros y sus empresas subsidiarias son terceros beneficiarios de estos Términos y Condiciones y que ellos tienen el derecho (y se asumirá que han aceptado tal derecho) de ejercer estos Términos y Condiciones ante los usuarios como terceros beneficiarios.
+La Aplicación Móvil fue creada para la versión más reciente disponible en el mercado de los sistemas operativos de los dispositivos móviles de los Usuarios y pueden surgir inconvenientes de compatibilidad cuando se utilicen versiones anteriores. La cobertura de la red inalámbrica y la velocidad de la red de Wi-Fi varían según el proveedor y la ubicación geográfica. La Compañía no se responsabiliza por las limitaciones y/o fallas en el funcionamiento de ningún servicio inalámbrico o Wi-FI que se use para acceder a esta Aplicación Móvil ni por la seguridad de los servicios inalámbricos o Wi-Fi. Asimismo, la Compañía no se responsabiliza de los cargos o tarifas por uso de redes de datos, que son exclusiva responsabilidad del Usuario.
+
+Actualizaciones.
+La Compañía puede solicitar a los Usuarios que actualicen su versión de la Aplicación Móvil en cualquier momento. Aunque se harán todos los esfuerzos por conservar las configuraciones y preferencias personales de los Usuarios, seguirá existiendo la posibilidad de que las mismas se pierdan. 
+
+
+Responsabilidad
+Los terceros, la compañía y afiliadas, junto con los respectivos directivos, directores, personal, empleados y representantes (en conjunto referidos como las “partes exentas”) no serán responsables ni estarán sujetos a acciones legales, y por la presente el usuario renuncia a todo reclamo, demanda, imputación de responsabilidades, causa legal, querella, reclamación de daños y perjuicios, por razón de, entre otros, daños directos, indirectos, accidentales, incidentales, derivados, circunstanciales, extraordinarios, especiales o punitivos de cualquier naturaleza con respecto a esta aplicación móvil (incluyendo los productos, servicios y contenidos de las partes exentas), aún cuando las partes exentas hubieran sido advertidas de la posibilidad de dichos daños. el único recurso de los usuarios ante tales reclamos, demandas, imputación de responsabilidades, causas legales, querellas o reclamos de daños y perjuicios es poner fin al uso de esta aplicación móvil. 
+
+
+Funciones de localización
+Ciertas funciones de localización (por ejemplo, localizar la estética mas cercana) disponibles en la Aplicación Móvil son provistas por terceros. El uso que hagan los usuarios de esa funcionalidad está sujeta a los términos y condiciones del tercero (y a sus actualizaciones ocasionales). Los usuarios deben utilizar su propio juicio sobre la adecuación e idoneidad de la información. Toda la información de localización es brindada por completo en las condiciones en que se encuentra, sin garantías de ninguna naturaleza. 
+
+
+
+Términos adicionales para dispositivos Apple
+Esta sección se aplica exclusivamente a los Usuarios que utilicen la Aplicación Móvil en un dispositivo Apple (por ejemplo, iPhone, iPad, iPod Touch) (en adelante, denominados “Dispositivo Apple”). La Compañía solamente es responsable de la Aplicación Móvil que usted utiliza en su Dispositivo Apple, y los Usuarios pueden utilizar la Aplicación Móvil en su Dispositivo Apple solamente como se permite en estos Términos y Condiciones y en las “Normas de uso” establecidas en los Términos y Condiciones de la Tienda de Aplicaciones (http://www.apple.com/legal/itunes/appstore/us/terms.html). En relación con el deslinde de responsabilidades entre la Compañía y Apple Inc., en la medida en que: (a) la Compañía debe atender todo reclamo vinculado con el uso o posesión por parte del Usuario o de un tercero de la Aplicación Móvil en el Dispositivo Apple del Usuario, y la compañía será responsable de atender, investigar o defender el reclamo; y (b) la Compañía no ha renunciado efectivamente a ninguna garantía vinculada con la Aplicación Móvil en el Dispositivo Apple del Usuario, se desprende que la Compañía será responsable exclusiva en relación con cualquier garantía del producto u otros reclamos, pérdidas, imputación de responsabilidades, daños y perjuicios, costos o gastos si la Aplicación Móvil no se ajusta a ninguna de las garantías. Si la Aplicación Móvil en el Dispositivo Apple del Usuario no se ajusta a ninguna de las garantías pertinentes, el Usuario puede solicitar a Apple Inc. un reembolso por la suma de la compra de la Aplicación Móvil en el Dispositivo Apple del Usuario, si la hubiera. Apple Inc. no tendrá obligaciones de garantía de ninguna otra naturaleza con respecto a la Aplicación Móvil en el Dispositivo Apple del Usuario. Apple Inc. y sus filiales son terceros exentos de estos Términos y Condiciones, y Apple Inc. y sus filiales pueden hacer valer estos Términos y Condiciones contra los Usuarios en calidad de terceros exentos de estos Términos y Condiciones. 
+
+Preguntas y comentarios.
+Los Usuarios que tengan alguna pregunta o duda sobre los Términos y Condiciones para Aplicaciones Móviles pueden ponerse en contacto con el desarrollador en relación con esta Aplicación Móvil escribiendo al siguiente correo electrónico:
+
+soporte@datalabor.com.mx
+
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1811,6 +1828,9 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Terminos y condiciones" id="J90-lX-klE"/>
+                    <connections>
+                        <outlet property="textView" destination="xeP-pw-1WZ" id="mEc-Fb-Y5b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rrf-mQ-c79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2024,23 +2044,23 @@ Se las haremos llegar al último correo electrónico que nos haya proporcionado.
         <image name="comments" width="128" height="128"/>
         <image name="facebookicon" width="128" height="128"/>
         <image name="favoritos" width="128" height="128"/>
-        <image name="logo1" width="160" height="120"/>
+        <image name="logo1" width="256" height="256"/>
         <image name="mapicon" width="128" height="128"/>
         <image name="notavail" width="256" height="256"/>
-        <image name="privacidad" width="256" height="256"/>
+        <image name="privacidad" width="160" height="60"/>
         <image name="products" width="192" height="192"/>
         <image name="promocion" width="256" height="256"/>
         <image name="services" width="256" height="256"/>
         <image name="settings" width="128" height="128"/>
-        <image name="terminos" width="256" height="256"/>
+        <image name="terminos" width="160" height="60"/>
         <image name="topstar" width="257" height="256"/>
         <image name="whatsappicon" width="128" height="128"/>
         <image name="wwwicon" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nC6-Km-LVz"/>
-        <segue reference="PBu-WG-Z9T"/>
         <segue reference="v7G-du-GiN"/>
         <segue reference="EAb-1B-7NU"/>
+        <segue reference="nC6-Km-LVz"/>
+        <segue reference="PBu-WG-Z9T"/>
     </inferredMetricsTieBreakers>
 </document>

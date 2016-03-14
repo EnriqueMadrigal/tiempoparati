@@ -1,32 +1,20 @@
 //
-//  privacidad.swift
+//  terminos.swift
 //  locesfa
 //
-//  Created by Enrique Madrigal Gutierrez on 01/02/16.
+//  Created by Enrique Madrigal Gutierrez on 11/03/16.
 //  Copyright © 2016 datalabor.com.mx. All rights reserved.
 //
 
 import UIKit
 
-class privacidad: UIViewController {
+class terminos: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
          setGradient2(self)
-        
-        
-        
-       
-        
-        // read aviso de privacidad
-        
-        
-        
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,11 +23,6 @@ class privacidad: UIViewController {
     }
     
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.textView.setContentOffset(CGPointZero, animated: false)
-    }
-    
     /*
     // MARK: - Navigation
 
@@ -50,4 +33,11 @@ class privacidad: UIViewController {
     }
     */
 
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.textView.setContentOffset(CGPointZero, animated: false)
+    }
+
+    
 }

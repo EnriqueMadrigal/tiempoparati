@@ -12,7 +12,7 @@ class customTableView4: UITableViewCell {
     
     let campo0 = UILabel()
     let campo1 = UILabel()
-    let image1 = UIImageView()
+    //let image1 = UIImageView()
     var id: Int?
     let separator = UIView()
     
@@ -74,8 +74,8 @@ class customTableView4: UITableViewCell {
     
         GetMultiplier()
         
-        self.image1.image = self.notavil
-        contentView.addSubview(self.image1)
+        //self.image1.image = self.notavil
+        //contentView.addSubview(self.image1)
         
         
         self.campo0.translatesAutoresizingMaskIntoConstraints = false
@@ -127,9 +127,9 @@ class customTableView4: UITableViewCell {
     
     override func layoutSubviews() {
         
-        self.campo0.frame = CGRect(x: self.image1_width + 1, y: 0.0, width: self.campo0_width, height: self.campo0_height)
-        self.campo1.frame = CGRect(x: self.image1_width + 1, y: self.campo0_height + self.rating_height, width: self.campo1_width, height: self.campo1_height)
-        self.image1.frame = CGRect(x: 0.0, y: 0.0, width: self.image1_width, height: self.image1_height)
+        self.campo0.frame = CGRect(x: 0, y: 0.0, width: self.campo0_width, height: self.campo0_height)
+        self.campo1.frame = CGRect(x: 0, y: self.campo0_height + self.rating_height, width: self.campo1_width, height: self.campo1_height)
+        //self.image1.frame = CGRect(x: 0.0, y: 0.0, width: self.image1_width, height: self.image1_height)
         
         
         //self.campo0.frame = CGRect(x: 42, y: 0, width: 240, height: 14)
@@ -149,7 +149,7 @@ class customTableView4: UITableViewCell {
         for (index, image) in ratingImages.enumerate() {
             
             let imagesize = (CGFloat(index) * (self.rating_widht + spacing) )
-            let imageframe = CGRect(x: self.image1_width + imagesize, y: self.campo0_height, width: self.rating_widht, height: self.rating_height)
+            let imageframe = CGRect(x: imagesize, y: self.campo0_height, width: self.rating_widht, height: self.rating_height)
             image.frame = imageframe
         }
         
