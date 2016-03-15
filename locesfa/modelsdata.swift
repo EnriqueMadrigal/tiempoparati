@@ -66,6 +66,7 @@ class Estetica {
     var ciudad: String?
     var estado: String?
     var telefono1: String?
+    var telefono2: String?
     var idhorario: Int?
     var rate: Int?
     var citas: Int?
@@ -85,6 +86,7 @@ class Estetica {
         self.ciudad = json["ciudad"] as? String
         self.estado = json["estado"] as? String
         self.telefono1 = json["telefono1"] as? String
+        self.telefono2 = json["telefono2"] as? String
         self.idhorario = Int((json["idhorario"] as? String)!)!
         self.rate = Int((json["rate"] as? String)!)!
         self.citas = Int((json["citas"] as? String)!)!

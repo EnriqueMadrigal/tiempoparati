@@ -14,8 +14,12 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var labelNombre: UILabel!
     @IBOutlet weak var labelDescripcion: UILabel!
+    @IBOutlet weak var labelDireccion: UILabel!
    
-   
+    @IBOutlet weak var tel1: CustomButton2!
+    @IBOutlet weak var tel2: CustomButton2!
+    @IBOutlet weak var tel3: CustomButton1!
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func Favoritos(sender: AnyObject) {
@@ -275,7 +279,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     }
     
     
-    
+     
     
     var CurEstetica: Estetica!
     private lazy var dataSource: DataSourceServiciosFixed! = nil
@@ -299,6 +303,23 @@ class esteticaview: UIViewController ,UITableViewDelegate{
             self.labelDescripcion.numberOfLines = 0
             self.labelDescripcion.lineBreakMode = .ByWordWrapping
             self.IdEstetica = CurEstetica.id!
+            
+            let calle = self.CurEstetica.calle! + " " + self.CurEstetica.exterior! + " " + self.CurEstetica.interior!
+            let colonia = self.CurEstetica.colonia!
+            let ciudad = self.CurEstetica.ciudad!
+            let estado = self.CurEstetica.estado!
+            
+            let direccion = calle + " " + colonia + " " + ciudad + " " + estado
+            
+            self.labelDireccion.text = direccion
+            
+            let telefono1 = self.CurEstetica.telefono1
+            tel1.setTitle(telefono1, forState: UIControlState.Normal)
+
+            let telefono2 = self.CurEstetica.telefono2
+            tel2.setTitle(telefono2, forState: UIControlState.Normal)
+
+            
              }
         
         
@@ -328,6 +349,20 @@ class esteticaview: UIViewController ,UITableViewDelegate{
                 self.labelDescripcion.numberOfLines = 0
                 self.labelDescripcion.lineBreakMode = .ByWordWrapping
                 self.IdEstetica = CurEstetica.id!
+                
+                let calle = self.CurEstetica.calle! + " " + self.CurEstetica.exterior! + " " + self.CurEstetica.interior!
+                let colonia = self.CurEstetica.colonia!
+                let ciudad = self.CurEstetica.ciudad!
+                let estado = self.CurEstetica.estado!
+                
+                let direccion = calle + colonia + ciudad + estado
+                
+                self.labelDireccion.text = direccion
+               let telefono1 = self.CurEstetica.telefono1
+                tel1.setTitle(telefono1, forState: UIControlState.Normal)
+                let telefono2 = self.CurEstetica.telefono2
+                tel2.setTitle(telefono2, forState: UIControlState.Normal)
+                
             }
             
             

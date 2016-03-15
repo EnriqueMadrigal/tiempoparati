@@ -63,6 +63,9 @@
 		CD63A68E1C9685B9009D62A4 /* modelsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63A68D1C9685B9009D62A4 /* modelsdata.swift */; };
 		CD63A68F1C9685B9009D62A4 /* modelsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63A68D1C9685B9009D62A4 /* modelsdata.swift */; };
 		CD63A6901C9685B9009D62A4 /* modelsdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63A68D1C9685B9009D62A4 /* modelsdata.swift */; };
+		CD63A6921C968D30009D62A4 /* CustomButton1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63A6911C968D30009D62A4 /* CustomButton1.swift */; };
+		CD63A6931C968D30009D62A4 /* CustomButton1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63A6911C968D30009D62A4 /* CustomButton1.swift */; };
+		CD63A6941C968D30009D62A4 /* CustomButton1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD63A6911C968D30009D62A4 /* CustomButton1.swift */; };
 		CD6F72681C93A34000CAA805 /* terminos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F72671C93A34000CAA805 /* terminos.swift */; };
 		CD6F72691C93A34000CAA805 /* terminos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F72671C93A34000CAA805 /* terminos.swift */; };
 		CD6F726A1C93A34000CAA805 /* terminos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F72671C93A34000CAA805 /* terminos.swift */; };
@@ -102,6 +105,9 @@
 		CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD759DF21C6A633D00BB60CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD759DF11C6A633D00BB60CF /* MapKit.framework */; };
+		CD9F802C1C97D58B008A1D88 /* CustomButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F802B1C97D58B008A1D88 /* CustomButton2.swift */; };
+		CD9F802D1C97D58B008A1D88 /* CustomButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F802B1C97D58B008A1D88 /* CustomButton2.swift */; };
+		CD9F802E1C97D58B008A1D88 /* CustomButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F802B1C97D58B008A1D88 /* CustomButton2.swift */; };
 		CDAB97611C758F53007DEBFA /* productosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97601C758F53007DEBFA /* productosview.swift */; };
 		CDAB97621C758F53007DEBFA /* productosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97601C758F53007DEBFA /* productosview.swift */; };
 		CDAB97631C758F53007DEBFA /* productosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB97601C758F53007DEBFA /* productosview.swift */; };
@@ -191,6 +197,7 @@
 		CD5F22271C7F8B8E00597951 /* NWCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWCalendarView.swift; sourceTree = "<group>"; };
 		CD5F22431C7F8D7400597951 /* calendarioview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calendarioview.swift; sourceTree = "<group>"; };
 		CD63A68D1C9685B9009D62A4 /* modelsdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = modelsdata.swift; sourceTree = "<group>"; };
+		CD63A6911C968D30009D62A4 /* CustomButton1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton1.swift; sourceTree = "<group>"; };
 		CD6F72671C93A34000CAA805 /* terminos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = terminos.swift; sourceTree = "<group>"; };
 		CD7086571C7B99590050C4AE /* mapLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapLocation.swift; sourceTree = "<group>"; };
 		CD7181AC1C5AF4FA004734E4 /* locesfa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locesfa.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +223,7 @@
 		CD7181FE1C5B285F004734E4 /* mainscene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainscene.swift; sourceTree = "<group>"; };
 		CD7182021C5B2A54004734E4 /* esteticaview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = esteticaview.swift; sourceTree = "<group>"; };
 		CD759DF11C6A633D00BB60CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CD9F802B1C97D58B008A1D88 /* CustomButton2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton2.swift; sourceTree = "<group>"; };
 		CDAB97601C758F53007DEBFA /* productosview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productosview.swift; sourceTree = "<group>"; };
 		CDAB97641C759012007DEBFA /* DataSourceProductosFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceProductosFixed.swift; sourceTree = "<group>"; };
 		CDB667641C8774A2005067C0 /* citasview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = citasview.swift; sourceTree = "<group>"; };
@@ -303,6 +311,8 @@
 			children = (
 				CD5F221E1C7F8B3600597951 /* calendarview */,
 				CD7181E01C5AF551004734E4 /* dataAccess.swift */,
+				CD63A6911C968D30009D62A4 /* CustomButton1.swift */,
+				CD9F802B1C97D58B008A1D88 /* CustomButton2.swift */,
 				CD5F22431C7F8D7400597951 /* calendarioview.swift */,
 				CDB9D2B01C6110AD00EAAF28 /* ObtenPersona.swift */,
 				CD7181E81C5AF56F004734E4 /* getdata.swift */,
@@ -522,7 +532,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDC93CC31C64234100818782 /* catalogoviewImage.swift in Sources */,
+				CD9F802C1C97D58B008A1D88 /* CustomButton2.swift in Sources */,
 				CDC93CBB1C63CF9400818782 /* catalogViewController.swift in Sources */,
+				CD63A6921C968D30009D62A4 /* CustomButton1.swift in Sources */,
 				CD7181F61C5AF5C4004734E4 /* messages.swift in Sources */,
 				CD4D9D051C5BF45C005DD971 /* DataSourceComentariosFixed.swift in Sources */,
 				CDD3E7571C6EC67F00A5F0CD /* customTableView5.swift in Sources */,
@@ -599,6 +611,7 @@
 				CD7181F31C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD5F22381C7F8B8E00597951 /* NWCalendarMonthContentView.swift in Sources */,
 				CDC93CC41C64234100818782 /* catalogoviewImage.swift in Sources */,
+				CD9F802D1C97D58B008A1D88 /* CustomButton2.swift in Sources */,
 				CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706A91C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EB1C5AF56F004734E4 /* getdata.swift in Sources */,
@@ -606,6 +619,7 @@
 				CDC93CC81C64669B00818782 /* promocionesview.swift in Sources */,
 				CDD3E7581C6EC77800A5F0CD /* customTableView5.swift in Sources */,
 				CD7182001C5B285F004734E4 /* mainscene.swift in Sources */,
+				CD63A6931C968D30009D62A4 /* CustomButton1.swift in Sources */,
 				CD41C6B41C6017EF0023C520 /* preferencias.swift in Sources */,
 				CDC17CAD1C65132E00CAC1F3 /* comentariosview.swift in Sources */,
 				CD5F22411C7F8B8E00597951 /* NWCalendarView.swift in Sources */,
@@ -652,6 +666,7 @@
 				CD7181F41C5AF5AF004734E4 /* customTableView4.swift in Sources */,
 				CD5F22391C7F8B8E00597951 /* NWCalendarMonthContentView.swift in Sources */,
 				CDC93CC51C64234100818782 /* catalogoviewImage.swift in Sources */,
+				CD9F802E1C97D58B008A1D88 /* CustomButton2.swift in Sources */,
 				CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */,
 				CDC706AA1C5F013B00AC1275 /* customTableView1.swift in Sources */,
 				CD7181EC1C5AF56F004734E4 /* getdata.swift in Sources */,
@@ -659,6 +674,7 @@
 				CDC93CC91C64669B00818782 /* promocionesview.swift in Sources */,
 				CDD3E7591C6EC77900A5F0CD /* customTableView5.swift in Sources */,
 				CD7182011C5B285F004734E4 /* mainscene.swift in Sources */,
+				CD63A6941C968D30009D62A4 /* CustomButton1.swift in Sources */,
 				CD41C6B51C6017EF0023C520 /* preferencias.swift in Sources */,
 				CDC17CAE1C65132E00CAC1F3 /* comentariosview.swift in Sources */,
 				CD5F22421C7F8B8E00597951 /* NWCalendarView.swift in Sources */,
