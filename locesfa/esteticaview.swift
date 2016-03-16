@@ -278,8 +278,70 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
     }
     
+    @IBAction func callPhone1(sender: AnyObject) {
+        
+        let telefono1 = self.CurEstetica.telefono1!
+        if (telefono1.characters.count > 7){
+            
+            UIApplication.sharedApplication().openURL(NSURL(string: "tel://" + telefono1)!)
+            
+         }
+        
+        else {
+            let alert :UIAlertController = UIAlertController(title: "!Advertencia", message: "No se ha definido el número de teléfono", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+
+            
+        }
+        
+    }
     
-     
+    @IBAction func callPhone2(sender: AnyObject) {
+        
+        let telefono2 = self.CurEstetica.telefono2!
+        if (telefono2.characters.count > 7){
+            UIApplication.sharedApplication().openURL(NSURL(string: "tel://" + telefono2)!)
+  
+        }
+            
+        else {
+            let alert :UIAlertController = UIAlertController(title: "!Advertencia", message: "No se ha definido el número de teléfono", preferredStyle: UIAlertControllerStyle.Alert)
+            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+            alert.addAction(OkButton)
+            self.presentViewController(alert, animated: false, completion: nil)
+            
+            
+        }
+  
+        
+    }
+    
+    
+    @IBAction func getHorarios(sender: AnyObject) {
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("HorariosEstetica") as! horariosview
+        
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        self.showViewController(vc, sender: nil)
+
+        
+    }
+    
+    
+    
     
     var CurEstetica: Estetica!
     private lazy var dataSource: DataSourceServiciosFixed! = nil

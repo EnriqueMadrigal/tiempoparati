@@ -96,6 +96,27 @@ class Estetica {
     
 }
 
+
+
+class horarios_estetica{
+    var dia: String?
+    var turno1: String?
+    var turno2: String?
+    var turno3: String?
+    var turno4: String?
+   
+    init(json: NSDictionary) {
+    self.dia = json["dia"] as? String
+    self.turno1 = json["turno1"] as? String
+    self.turno2 = json["turno2"] as? String
+    self.turno3 = json["turno3"] as? String
+    self.turno4 = json["turno4"] as? String
+        
+    }
+    
+}
+
+
 class Servicio {
     var id: Int?
     var title: String?

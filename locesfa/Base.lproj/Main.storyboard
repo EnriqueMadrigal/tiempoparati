@@ -21,23 +21,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-HT-1Ik">
-                                <rect key="frame" x="40" y="41" width="520" height="520"/>
+                                <rect key="frame" x="172" y="172" width="256" height="256"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-1M-W0N">
-                                        <rect key="frame" x="0.0" y="0.0" width="520" height="520"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="P0w-1M-W0N" secondAttribute="height" multiplier="1:1" id="OPf-Xi-wU0"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mDd-HT-1Ik" secondAttribute="height" multiplier="1:1" id="hrW-LO-YSm"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="mDd-HT-1Ik" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="1" id="6gT-os-0Au"/>
-                            <constraint firstItem="mDd-HT-1Ik" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="af9-hq-pUv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mDd-HT-1Ik" secondAttribute="trailing" constant="20" id="urc-he-13F"/>
+                            <constraint firstItem="mDd-HT-1Ik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3yF-KP-sXO"/>
+                            <constraint firstItem="mDd-HT-1Ik" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gr2-RI-EpG"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="5fR-1g-fUr" appends="YES" id="TCt-II-jXa"/>
@@ -52,6 +51,45 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139" y="346"/>
+        </scene>
+        <!--Horarios-->
+        <scene sceneID="gCZ-nD-y41">
+            <objects>
+                <viewController storyboardIdentifier="HorariosEstetica" id="cIf-mK-fh6" customClass="horariosview" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xhI-05-txx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uby-Iu-xbr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hNw-cT-0Em">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="V3N-Cl-vOo">
+                                <rect key="frame" x="40" y="84" width="520" height="496"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yma-8q-XS5">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="496"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="V3N-Cl-vOo" secondAttribute="trailing" constant="20" id="Rgn-xl-aEa"/>
+                            <constraint firstItem="Uby-Iu-xbr" firstAttribute="top" secondItem="V3N-Cl-vOo" secondAttribute="bottom" constant="20" id="VA2-wt-SeM"/>
+                            <constraint firstItem="V3N-Cl-vOo" firstAttribute="leading" secondItem="hNw-cT-0Em" secondAttribute="leadingMargin" constant="20" id="oPS-Zq-u0T"/>
+                            <constraint firstItem="V3N-Cl-vOo" firstAttribute="top" secondItem="xhI-05-txx" secondAttribute="bottom" constant="20" id="y4Q-6x-GIn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Horarios" id="A3a-fv-IXJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="Yma-8q-XS5" id="GWo-Zb-yIE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nb-YZ-A0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2263" y="-3115"/>
         </scene>
         <!--Servicios-->
         <scene sceneID="kYu-MG-xCd">
@@ -715,26 +753,35 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8qg-0n-t4f">
                                                         <rect key="frame" x="0.0" y="75" width="552" height="70"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1f-nA-PjR" customClass="CustomButton2" customModule="locesfa" customModuleProvider="target">
+                                                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1f-nA-PjR" customClass="CustomButton2" customModule="locesfa" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="181" height="70"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" title="Número Tel." image="call">
                                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="callPhone1:" destination="vP2-y6-8m2" eventType="touchUpInside" id="WHU-fv-Isq"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjH-Br-z7C" customClass="CustomButton2" customModule="locesfa" customModuleProvider="target">
+                                                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjH-Br-z7C" customClass="CustomButton2" customModule="locesfa" customModuleProvider="target">
                                                                 <rect key="frame" x="185" y="0.0" width="182" height="70"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" title="Número Tel." image="call">
                                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="callPhone2:" destination="vP2-y6-8m2" eventType="touchUpInside" id="wGG-8V-QfV"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwV-mU-LMe" customClass="CustomButton1" customModule="locesfa" customModuleProvider="target">
+                                                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwV-mU-LMe" customClass="CustomButton2" customModule="locesfa" customModuleProvider="target">
                                                                 <rect key="frame" x="371" y="0.0" width="181" height="70"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <state key="normal" title="Hor." image="appointment">
+                                                                <state key="normal" title="Horarios" image="appointment">
                                                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="getHorarios:" destination="vP2-y6-8m2" eventType="touchUpInside" id="Kj1-Mj-Lne"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -937,7 +984,7 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                     </constraints>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="2535" y="373"/>
+            <point key="canvasLocation" x="2571" y="267"/>
         </scene>
         <!--Citas-->
         <scene sceneID="N30-PP-v1T">
@@ -1129,7 +1176,7 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFW-4e-0Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4206" y="-3416"/>
+            <point key="canvasLocation" x="5018" y="-3416"/>
         </scene>
         <!--Productos-->
         <scene sceneID="pMz-WJ-mQg">
@@ -1194,7 +1241,7 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rau-ui-PYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4196" y="-2716"/>
+            <point key="canvasLocation" x="5008" y="-2716"/>
         </scene>
         <!--Comentarios-->
         <scene sceneID="deC-0F-PIu">
@@ -1857,7 +1904,7 @@ soporte@datalabor.com.mx
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0gH-06-4kE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="-2716"/>
+            <point key="canvasLocation" x="4290" y="-2716"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O5w-65-KCv">
@@ -1893,7 +1940,7 @@ soporte@datalabor.com.mx
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZZ-rB-TPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="-3416"/>
+            <point key="canvasLocation" x="4290" y="-3416"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aix-KM-ehj">
@@ -1948,6 +1995,24 @@ soporte@datalabor.com.mx
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ed-kQ-E0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1491" y="-1094"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fHs-wu-DBQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="as4-da-YBD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KT9-a2-vJC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cIf-mK-fh6" kind="relationship" relationship="rootViewController" id="qKz-cQ-o8R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qyF-Ad-aHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1447" y="-3115"/>
         </scene>
     </scenes>
     <resources>

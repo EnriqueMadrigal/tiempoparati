@@ -39,17 +39,9 @@ class CustomButton2: UIButton {
         let totalWidth = buttomFrame.width
         let middlepos = totalWidth / 2
         let middleimage = buttonWidth / 2
-        let middletext = (self.titleLabel?.frame.width)! / 2
-        
-        var textFrame = self.titleLabel?.frame
         
         self.imageView?.frame = CGRectMake(middlepos - middleimage, 0, buttonWidth, buttonHeight)
         
-        textFrame?.origin.x = middlepos - middletext
-        textFrame?.origin.y = buttonHeight
-        
-        textFrame?.origin.x = 0
-        textFrame?.origin.y = 0
         
         
         //self.titleLabel?.frame = textFrame!
