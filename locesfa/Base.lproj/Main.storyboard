@@ -21,10 +21,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-HT-1Ik">
-                                <rect key="frame" x="172" y="172" width="256" height="256"/>
+                                <rect key="frame" x="60" y="60" width="481" height="481"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-1M-W0N">
-                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-1M-W0N">
+                                        <rect key="frame" x="0.0" y="0.0" width="481" height="481"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -36,6 +36,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="mDd-HT-1Ik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3yF-KP-sXO"/>
+                            <constraint firstItem="P0w-1M-W0N" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" constant="1" id="bzR-to-Xbm"/>
                             <constraint firstItem="mDd-HT-1Ik" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gr2-RI-EpG"/>
                         </constraints>
                         <connections>
