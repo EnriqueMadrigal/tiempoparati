@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         let UUIDValue = UIDevice.currentDevice().identifierForVendor!.UUIDString
         dataAccess.sharedInstance.UIID = UUIDValue
-        print("UUID: \(UUIDValue)")
+        //print("UUID: \(UUIDValue)")
         let curPersona = ObtenPersona()
         
         if let newPerson: Persona = curPersona.GetPerson()
@@ -46,10 +46,6 @@ class ViewController: UIViewController {
         }
         
 calculateVars()
-        print(dataAccess.sharedInstance.curScreen.width)
-        print(dataAccess.sharedInstance.curScreen.height)
-        print(dataAccess.sharedInstance.curScale)
-        //SetBackGroundImage(self)
         
         setGradient1(self)
     }
@@ -63,7 +59,7 @@ calculateVars()
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        print(segue.identifier)
+        //print(segue.identifier)
         
         Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
         view.userInteractionEnabled = false

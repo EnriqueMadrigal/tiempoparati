@@ -149,11 +149,11 @@ class calendarioview: UIViewController, UITextFieldDelegate {
         
         datos.ObtenData()
 
-        print(datos.GetJson())
+        //print(datos.GetJson())
 
 
         if (datos.result==1){
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
@@ -181,10 +181,10 @@ class calendarioview: UIViewController, UITextFieldDelegate {
 extension calendarioview: NWCalendarViewDelegate {
     
     func didChangeFromMonthToMonth(fromMonth: NSDateComponents, toMonth: NSDateComponents) {
-         let dateFormatter: NSDateFormatter = NSDateFormatter()
-        let months = dateFormatter.standaloneMonthSymbols
-        let fromMonthName = months[fromMonth.month-1] as String
-        let toMonthName = months[toMonth.month-1] as String
+         //let dateFormatter: NSDateFormatter = NSDateFormatter()
+        //let months = dateFormatter.standaloneMonthSymbols
+        //let fromMonthName = months[fromMonth.month-1] as String
+        //let toMonthName = months[toMonth.month-1] as String
          //print("Change From '\(fromMonthName)' to '\(toMonthName)'")
         
     }

@@ -138,12 +138,13 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         //SetBackGroundImage(self)
         setGradient2(self)
         //SetBackGroundImage2(self)
-        
+               
     }
     
     
     override func viewDidAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        //super.viewWillAppear(animated)
+        super.viewDidAppear(animated)
         //print("didAppear")
         if (self.hasWaitDialog){
              Dialogo.closeWaitDialog()
@@ -152,9 +153,10 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
             self.hasWaitDialog = false
         }
        //SetBackGroundImage(self)
-        setGradient2(self)
+        //setGradient2(self)
         //SetBackGroundImage2(self)
         LoadData()
+        
      }
     
     
@@ -177,15 +179,6 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
    
         //print(segue.identifier)
         
-        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
-        view.userInteractionEnabled = false
-        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-        view.alpha=0.5
-        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
-        view.addSubview(messageDialog)
-        self.hasWaitDialog = true
-
-    
         ////
         
         
@@ -204,11 +197,12 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
             }
             
             
+            
+            
+            
             let esteticaDetailViewController = segue.destinationViewController as! esteticaview
             
             esteticaDetailViewController.CurEstetica = currentEstetica
-            
-
             
             
         }
@@ -223,7 +217,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         if (self.hasrefresh){
             return
         }
-        print("Scroll")
+        
         self.refreshControl.beginRefreshing()
         LoadData()
         self.refreshControl.endRefreshing()
@@ -234,7 +228,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     
     
     func refreshdata(sender:AnyObject) {
-        print("refresh")
+        
         self.hasrefresh = true
         self.refreshControl.beginRefreshing()
         LoadData()
@@ -243,6 +237,9 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     }
     
      func LoadData(){
+        
+          dispatch_async(dispatch_get_main_queue())
+            {
         let datapost: String = "IdPersona=0&tipo=\(self.tipoBusqueda)&cadenabusqueda=" + self.cadenaBusqueda + "&uuid=" + dataAccess.sharedInstance.UIID + "&sexo=\(dataAccess.sharedInstance.curPersona.sexo!)"
        //print(datapost)
         
@@ -250,7 +247,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     self.dataSource = DataSourceEsteticasFixed(cururl: "getsalons.php", posdata: datapost)
     self.dataSource.setTableView(self.tableView)
     if (self.dataSource.esteticas.count==0 && self.dataSource.responsecode != 0) {
-    print ("No se encontro el servidor")
+    //print ("No se encontro el servidor")
     let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
     let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
     alert.addAction(OkButton)
@@ -260,7 +257,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     
     self.tableView.dataSource = self.dataSource
     self.tableView.reloadData()
-    
+        }
     
 }
 
@@ -272,6 +269,16 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+            self.Dialogo.setPos(self.view.frame.midX - 90, self.view.frame.midY - 25)
+            self.view.userInteractionEnabled = false
+            //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+            self.view.alpha=0.5
+            let messageDialog: UIView = self.Dialogo.showWaitDialog("Un momento")
+            self.view.addSubview(messageDialog)
+            self.hasWaitDialog = true
+            self.view.layoutIfNeeded()
+        self.view.layoutSubviews()
+
         
         let row = indexPath.row
         
@@ -287,8 +294,6 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         
         
         let cell: customTableView4 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView4
-        
-        print(cell.id)
         
         performSegueWithIdentifier("showEstetica", sender: cell)
     }
@@ -361,7 +366,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         datos.ObtenData()
         
         if (datos.result==1){
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
@@ -394,18 +399,12 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         //let curSize = CGSize(width: self.searchView.bounds.width, height: self.searchView.bounds.height)
         //searchController.searchBar.sizeThatFits(curSize)
         
-        print(self.searchView.bounds.width)
         self.searchView.setNeedsLayout()
         self.searchView.layoutIfNeeded()
-        print(self.searchView.bounds.width)
         
         var currentSize  = self.searchView.bounds.width
-        
-            
-        print(currentSize)
-        print(dataAccess.sharedInstance.multiplier)
+      
         currentSize = currentSize * (dataAccess.sharedInstance.multiplier / 2)
-        print(currentSize)
         searchController.searchBar.frame = self.searchView.frame
         //searchController.searchBar.frame = CGRect(x: 0, y: 0, width: CGFloat(currentSize), height: self.searchView.bounds.height)
         //searchController.searchBar.frame = curFrame
@@ -428,7 +427,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         shouldShowSearchResults = true
-        print("true")
+        
         //LoadData()
        
     }
@@ -437,7 +436,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         shouldShowSearchResults = false
         //LoadData()
-        print("cancel")
+        
         self.cadenaBusqueda = ""
         LoadData()
        
@@ -452,7 +451,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         }
         */
         shouldShowSearchResults = false
-        print("Click")
+       
         
         //searchController.searchBar.resignFirstResponder()
     }
@@ -525,9 +524,8 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
     }
 
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        print("presented size")
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-        print("Rotation")
+      
     }
     
    /*

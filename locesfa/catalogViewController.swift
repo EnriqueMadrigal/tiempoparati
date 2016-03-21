@@ -108,8 +108,8 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
             
-        let currentcell: CollectionViewCell1 = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell1
-        print(currentcell.id)
+        //let currentcell: CollectionViewCell1 = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell1
+        //print(currentcell.id)
         let currentCatalog = self.catalogos[indexPath.row]
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -134,7 +134,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         let Catalogos = datos.GetJson()
         
         if (datos.result==1){
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)

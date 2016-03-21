@@ -259,6 +259,19 @@ class Catalogos_Esteticas {
 }
 
 
+class Tips_Belleza{
+    var id: Int?
+    var title: String?
+    
+    init(json: NSDictionary) {
+        self.id = Int((json["id"] as? String)!)!
+        self.title = json["title"] as? String
+     }
+    
+}
+
+
+
 
 class Estetica_Images{
     
@@ -285,6 +298,23 @@ class Servicios_Images{
     }
 }
 
+
+class Tips_Images{
+    
+    var id: Int?
+    var imagedata: UIImage?
+    
+    init (idServicio: Int, newimage: UIImage){
+        self.id = idServicio
+        self.imagedata = newimage
+    }
+}
+
+
+
+
+
+
 class Servicios_Estetica{
     var id: Int?
     var descripcion: String?
@@ -297,6 +327,9 @@ class Servicios_Estetica{
     }
     
 }
+
+
+
 
 
 

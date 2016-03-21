@@ -88,7 +88,7 @@ class productosview: UIViewController, UITableViewDelegate {
         self.dataSource.setTableView(self.tableView)
         
         if (self.dataSource.productos.count == 0 && self.dataSource.responsecode != 0) {
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
@@ -108,7 +108,6 @@ class productosview: UIViewController, UITableViewDelegate {
         if (self.hasrefresh){
             return
         }
-        print("Scroll")
         self.refreshControl.beginRefreshing()
         LoadData()
         self.refreshControl.endRefreshing()
@@ -119,7 +118,7 @@ class productosview: UIViewController, UITableViewDelegate {
     
     
     func refreshdata(sender:AnyObject) {
-        print("refresh")
+      
         self.hasrefresh = true
         self.refreshControl.beginRefreshing()
         LoadData()

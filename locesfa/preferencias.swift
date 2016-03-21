@@ -34,7 +34,7 @@ class preferencias: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveData(sender: AnyObject) {
-        print("Saving")
+        //print("Saving")
         if (SavePreferences()){
           navigationController?.popViewControllerAnimated(true)
         }
@@ -147,7 +147,7 @@ class preferencias: UIViewController, UITextFieldDelegate {
         /////// delete first if exists
         if (people.count>0){
         managedContext.deleteObject(people.first!)
-        print("deleting")
+       
         }
         
         
@@ -286,7 +286,7 @@ class preferencias: UIViewController, UITextFieldDelegate {
         datos.ObtenData()
         
         if (datos.result==1){
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
@@ -304,7 +304,7 @@ class preferencias: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
     {
         textField.resignFirstResponder()
-        print("Enter")
+
         return true;
     }
 

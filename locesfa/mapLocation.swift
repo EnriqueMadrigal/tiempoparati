@@ -64,17 +64,17 @@ class mapLocation: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
     let location = manager.location
-        let latitude: Double = location!.coordinate.latitude
-        let longitude: Double = location!.coordinate.longitude
+        //let latitude: Double = location!.coordinate.latitude
+        //let longitude: Double = location!.coordinate.longitude
         
-        print("current latitude :: \(latitude)")
-        print("current longitude :: \(longitude)")
+        //print("current latitude :: \(latitude)")
+        //print("current longitude :: \(longitude)")
         
         if (self.firstTime){
             
              let region = MKCoordinateRegionMakeWithDistance(location!.coordinate, 4000, 4000)
                 mapView.setRegion(region, animated: true)
-                print("FirstTime")
+                //print("FirstTime")
                 self.firstTime = false
             
             //
@@ -92,7 +92,7 @@ class mapLocation: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate
         datos.ObtenData()
         
         if (datos.result==1){
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
@@ -122,9 +122,7 @@ class mapLocation: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate
                     id: curLocation.idestetica!)
                 
                 mapView.addAnnotation(artwork)
-                print(curLocation.idestetica)
-                print(artwork.id)
-            }
+               }
 
             
             
@@ -154,7 +152,7 @@ class mapLocation: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate
                 view.calloutOffset = CGPoint(x: -5, y: 5)
                 view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
                    // .buttonWithType(.DetailDisclosure) as UIView
-                print("annotation")
+                
             }
             return view
         }
@@ -168,10 +166,6 @@ class mapLocation: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate
             let location = view.annotation as! Artwork
             //let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
             //location.mapItem().openInMapsWithLaunchOptions(launchOptions)
-            print(location.id)
-        print(location.title)
-        
-        
         
         let oldEstetica = dataAccess.sharedInstance.currentEstetica
         let curEstetica = location.id

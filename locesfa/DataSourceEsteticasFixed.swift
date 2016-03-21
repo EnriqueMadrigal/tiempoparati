@@ -149,7 +149,7 @@ class DataSourceEsteticasFixed: NSObject , UITableViewDataSource {
     
     func showWaitDialog()
     {
-        print ("Fire")
+        //print ("Fire")
         
         
     }

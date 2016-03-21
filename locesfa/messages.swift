@@ -29,7 +29,7 @@ class Dialogs
 
     
     func progressBarDisplayer(msg:String, _ indicator:Bool )  {
-        print(msg)
+       
         self.strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
         self.strLabel.text = msg
         self.strLabel.textColor = UIColor.whiteColor()

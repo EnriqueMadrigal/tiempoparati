@@ -85,7 +85,6 @@ class serviciosestetica: UIViewController ,UITableViewDelegate{
         if (self.hasrefresh){
             return
         }
-        print("Scroll")
         self.refreshControl.beginRefreshing()
         LoadData()
         self.refreshControl.endRefreshing()
@@ -96,7 +95,7 @@ class serviciosestetica: UIViewController ,UITableViewDelegate{
     
     
     func refreshdata(sender:AnyObject) {
-        print("refresh")
+       
         self.hasrefresh = true
         self.refreshControl.beginRefreshing()
         LoadData()
@@ -117,9 +116,9 @@ class serviciosestetica: UIViewController ,UITableViewDelegate{
         let currentServicio = self.dataSource.servicios[row]
         
         
-        let cell: customTableView1 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView1
+        //let cell: customTableView1 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView1
         
-        print(cell.id)
+        //print(cell.id)
         
         
         
@@ -158,16 +157,21 @@ class serviciosestetica: UIViewController ,UITableViewDelegate{
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //print("didAppear")
-        if (self.hasWaitDialog){
-            Dialogo.closeWaitDialog()
-            view.alpha = 1.0
-            view.userInteractionEnabled = true
-            self.hasWaitDialog = false
-        }
-        SetBackGroundImage(self)
+             //SetBackGroundImage(self)
     }
 
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("willAppear")
+        //SetBackGroundImage(self)
+        setGradient2(self)
+        //SetBackGroundImage2(self)
+        
+        
+
+        
+    }
+
     
 
 }

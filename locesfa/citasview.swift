@@ -87,10 +87,10 @@ class citasview: UIViewController, UITableViewDelegate {
         let currentCita = self.dataSource.citas[row]
         
         
-        let cell: customTableView2 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView2
+        //let cell: customTableView2 = tableView.cellForRowAtIndexPath(indexPath) as! customTableView2
         
-        print(cell.id!)
-        print(currentCita.id!)
+        //print(cell.id!)
+        //print(currentCita.id!)
         let estatuscita: Int = currentCita.idestatuscita!
         let idcita: Int = currentCita.id!
         
@@ -99,21 +99,21 @@ class citasview: UIViewController, UITableViewDelegate {
     
        let ConfirmaCita = { (action:UIAlertAction!) -> Void in
                 //self.AgregaFav()
-                print("Confirmar Cita")
+                //print("Confirmar Cita")
                 self.ConfirmarCita(idcita)
             }
         
         
         let CancelaCita = { (action:UIAlertAction!) -> Void in
             //self.AgregaFav()
-            print("Cancelar Cita")
+            //print("Cancelar Cita")
             self.CancelarCita(idcita)
         }
         
        
         let Cancelar = { (action:UIAlertAction!) -> Void in
             //self.AgregaFav()
-            print("Cancelar")
+            //print("Cancelar")
         }
         
         
@@ -210,7 +210,7 @@ class citasview: UIViewController, UITableViewDelegate {
         
         
         if (self.dataSource.citas.count == 0 && self.dataSource.responsecode != 0) {
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "O.K.", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
@@ -232,7 +232,7 @@ class citasview: UIViewController, UITableViewDelegate {
         if (self.hasrefresh){
             return
         }
-        print("Scroll")
+        //print("Scroll")
         self.refreshControl.beginRefreshing()
         LoadData()
         self.refreshControl.endRefreshing()
@@ -242,7 +242,7 @@ class citasview: UIViewController, UITableViewDelegate {
     }
 
     func refreshdata(sender:AnyObject) {
-        print("refresh")
+        //print("refresh")
         self.hasrefresh = true
         self.refreshControl.beginRefreshing()
         LoadData()

@@ -54,7 +54,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
        // let vc :serviciosview = self.storyboard?.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
          //      self.presentViewController(vc, animated: true, completion: nil)
         
-        
+ 
         Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
         view.userInteractionEnabled = false
         //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
@@ -63,13 +63,22 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         view.addSubview(messageDialog)
         self.hasWaitDialog = true
 
-        
+
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
         //vc.curServicio = 1
-        self.showViewController(vc, sender: nil)
+        //self.showViewController(vc, sender: nil)
             //.showViewController(vc, animated: true, completion: nil)
+        
+        dispatch_async(dispatch_get_main_queue()) {
+        self.showViewController(vc, sender: nil)
+            
+            
+           // dispatch_async(dispatch_get_main_queue()) {
+          //  }
+        }
+        
         
     }
     
@@ -104,18 +113,19 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Comentarios") as! comentariosview
         //vc.curServicio = 1
         
-        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
-        view.userInteractionEnabled = false
+       
+        
+        self.self.Dialogo.setPos(self.view.frame.midX - 90, self.view.frame.midY - 25)
+        self.view.userInteractionEnabled = false
         //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-        view.alpha=0.5
-        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
-        view.addSubview(messageDialog)
+        self.view.alpha=0.5
+        let messageDialog: UIView = self.Dialogo.showWaitDialog("Un momento")
+        self.view.addSubview(messageDialog)
         self.hasWaitDialog = true
+       
         
         
         self.showViewController(vc, sender: nil)
-        //.showViewController(vc, animated: true, completion: nil)
-        
 
         
     
@@ -151,7 +161,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         datos.ObtenData()
         
         if (datos.result==1){
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)
@@ -160,7 +170,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
         
         let data = datos.GetJson()
-        print(data)
+        //print(data)
         
         if let item = data.firstObject{
             
@@ -475,9 +485,8 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print(segue.identifier)
+       //print(segue.identifier)
         
-    
     }
    
 
@@ -488,20 +497,38 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     ////// Delegate
     
-    
+    /*
+    Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+    view.userInteractionEnabled = false
+    //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+    view.alpha=0.5
+    let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+    view.addSubview(messageDialog)
+    self.hasWaitDialog = true
+
+*/
    
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("willAppear")
+        //SetBackGroundImage(self)
+        setGradient2(self)
+        //SetBackGroundImage2(self)
+        
+    }
+    
+ 
     
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //print("didAppear")
-        if (self.hasWaitDialog){
+               if (self.hasWaitDialog){
             Dialogo.closeWaitDialog()
             view.alpha = 1.0
             view.userInteractionEnabled = true
             self.hasWaitDialog = false
         }
-        SetBackGroundImage(self)
+        //SetBackGroundImage(self)
         //SetBackGroundImage2(self)
     }
     func AgregarFavorito(){
@@ -541,7 +568,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         datos.ObtenData()
         
         if (datos.result==1){
-            print ("No se encontro el servidor")
+            //print ("No se encontro el servidor")
             let alert :UIAlertController = UIAlertController(title: "ERROR", message: "Favor de verificar su conexiòn de datos", preferredStyle: UIAlertControllerStyle.Alert)
             let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
             alert.addAction(OkButton)

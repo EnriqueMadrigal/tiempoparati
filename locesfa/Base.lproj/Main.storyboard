@@ -23,7 +23,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-HT-1Ik">
                                 <rect key="frame" x="60" y="60" width="481" height="481"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-1M-W0N">
+                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="P0w-1M-W0N">
                                         <rect key="frame" x="0.0" y="0.0" width="481" height="481"/>
                                     </imageView>
                                 </subviews>
@@ -298,10 +298,10 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                                                 <rect key="frame" x="174" y="0.0" width="370" height="55"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bfD-69-Vlv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="147" height="55"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK8-8h-q8N">
-                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="PK8-8h-q8N" secondAttribute="height" multiplier="8:3" id="MB9-3f-POD"/>
                                                                 </constraints>
@@ -313,10 +313,10 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-uM-gP9">
-                                                        <rect key="frame" x="158" y="0.0" width="147" height="55"/>
+                                                        <rect key="frame" x="157" y="0.0" width="148" height="55"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7a-NU-zlq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="147" height="55"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="148" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="d7a-NU-zlq" secondAttribute="height" multiplier="8:3" id="0az-A4-bq4"/>
                                                                 </constraints>

@@ -121,12 +121,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         if(UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation))
         {
-            print("landscape")
+            //print("landscape")
         }
         
         if(UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation))
         {
-            print("Portrait")
+            //print("Portrait")
         }
         
         dataAccess.sharedInstance.curOrientation = getDeviceOrientation()

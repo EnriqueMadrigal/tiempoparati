@@ -99,11 +99,7 @@ func SetBackGroundImage2 (curController: UIViewController)
     backgroundImage.image = cropped
     
     curController.view.insertSubview(backgroundImage, atIndex: 0)
-    
-    print((collageImage?.size.width)! * curScale)
-    print((collageImage?.size.height)! * curScale)
-    
-}
+    }
 
 func SetBackGroundImage (curController: UIViewController)
 {
@@ -200,7 +196,7 @@ class SentRequest {
             posdata = self.posData
         }
         
-        print(posdata)
+        //print(posdata)
        
         
         
@@ -209,13 +205,51 @@ class SentRequest {
 
         let curtime = NSDate()
         var passedTime: Double = 0
-        
+       
+        /*
         while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
             passedTime = curtime.timeIntervalSinceNow * -1000.0
         }
 
         self.result = datos.resulterror
         self.datos = datos.GetJson()
+      */
+        
+        //////////
+      /*
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        
+        
+        dispatch_async(backgroundQueue, {
+            print("This is run on the background queue")
+        
+            while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
+                passedTime = curtime.timeIntervalSinceNow * -1000.0
+            }
+            print("End loop")
+       })
+        */
+        
+        //////////
+        
+        
+      
+        
+            while (datos.isDataReady == false && passedTime < 10000.0 && datos.resulterror == 0 ){
+                passedTime = curtime.timeIntervalSinceNow * -1000.0
+            }
+            
+            
+            
+      
+        
+        
+        
+        ///////
+        self.result = datos.resulterror
+        self.datos = datos.GetJson()
+       
         
     }
     
@@ -280,7 +314,7 @@ class SentRequest_image {
             passedTime = curtime.timeIntervalSinceNow * -1000.0
         }
         
-        print(datos.resulterror)
+        //print(datos.resulterror)
         self.result = datos.resulterror
         self.curimage = datos.GetcurImage()
         
