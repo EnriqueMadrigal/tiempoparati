@@ -382,7 +382,7 @@
 				CD7181C91C5AF4FA004734E4 /* Info.plist */,
 			);
 			name = locesfaTests;
-			path = "Tiempo para tiTests";
+			path = tiempoparatiTests;
 			sourceTree = "<group>";
 		};
 		CD7181D11C5AF4FA004734E4 /* locesfaUITests */ = {
@@ -392,7 +392,7 @@
 				CD7181D41C5AF4FA004734E4 /* Info.plist */,
 			);
 			name = locesfaUITests;
-			path = "Tiempo para tiUITests";
+			path = tiempoparatiUITests;
 			sourceTree = "<group>";
 		};
 		CD7181F01C5AF583004734E4 /* customCells */ = {
@@ -494,6 +494,7 @@
 				TargetAttributes = {
 					CD7181AB1C5AF4FA004734E4 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7S32YYNPLS;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -867,6 +868,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = tiempoparati/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;
@@ -878,6 +880,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = tiempoparati/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;
