@@ -17,7 +17,7 @@ class privacidad: UIViewController {
 
         // Do any additional setup after loading the view.
         
-         setGradient2(self)
+         SetGradient3(self)
         
         
         
@@ -50,4 +50,22 @@ class privacidad: UIViewController {
     }
     */
 
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetGradient3(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
+
+    
 }

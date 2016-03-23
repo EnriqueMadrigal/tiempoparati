@@ -91,13 +91,55 @@ class DataSourceServiciosFixed: NSObject, UITableViewDataSource {
             
         case 8:
             imagename = "womannails"
-         
+        
+        case 9:
+            imagename = "menicon1"
+        
+        case 10:
+            imagename = "menhaircut"
+            
+        case 11:
+            imagename = "menbeard"
+            
+        case 12:
+            imagename = "relajacion"
+        
+        case 13:
+            imagename = "spa"
+            
+        case 14:
+            imagename = "pedicure"
+            
+        case 15:
+            imagename = "childs"
+        
+        case 16:
+            imagename = "married"
+            
+        case 17:
+            imagename = "fisico"
+            
+        case 18:
+            imagename = "manicure"
+            
         default:
-            imagename = "notavail"
+            imagename = "services"
             
         }
         
-        cell.image1.image = UIImage(named: imagename)
+       
+        
+        if let newimage = UIImage(named: imagename) {
+            cell.image1.image = newimage
+            
+        }
+            
+        else {
+            cell.image1.image = UIImage(named: "servicios")
+        }
+
+        
+        
         cell.setWidth(self.tableView.bounds.width)
         return cell
     }

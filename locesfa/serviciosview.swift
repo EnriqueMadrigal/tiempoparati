@@ -28,7 +28,7 @@ class serviciosview: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        SetBackGroundImage(self)
+        SetBackGroundImage2(self)
        
         if let curServicio = curServicio{
             self.labelNombre.text = curServicio.title!
@@ -63,13 +63,50 @@ class serviciosview: UIViewController, UITableViewDelegate {
             case 8:
                 imagename = "womannails"
                 
+            case 9:
+                imagename = "menicon1"
+                
+            case 10:
+                imagename = "menhaircut"
+                
+            case 11:
+                imagename = "menbeard"
+                
+            case 12:
+                imagename = "relajacion"
+                
+            case 13:
+                imagename = "spa"
+                
+            case 14:
+                imagename = "pedicure"
+                
+            case 15:
+                imagename = "childs"
+                
+            case 16:
+                imagename = "married"
+                
+            case 17:
+                imagename = "fisico"
+                
+            case 18:
+                imagename = "manicure"
+                
             default:
                 imagename = "notavail"
                 
             }
             
-            self.image1.image = UIImage(named: imagename)
-
+            
+            if let newimage = UIImage(named: imagename) {
+                self.image1.image = newimage
+                
+            }
+            
+            else {
+            self.image1.image = UIImage(named: "servicios")
+            }
             
             
             
@@ -187,6 +224,42 @@ class serviciosview: UIViewController, UITableViewDelegate {
         LoadData()
         self.refreshControl.endRefreshing()
         
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        //print("didAppear")
+        //SetBackGroundImage(self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("willAppear")
+        SetBackGroundImage2(self)
+        //setGradient3(self)
+        //SetBackGroundImage2(self)
+        
+        
+        
+        
+    }
+
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+                self.LoadData()
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     }
     
 

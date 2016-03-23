@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         
 calculateVars()
         
-        setGradient1(self)
+        SetGradient3(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -184,5 +184,22 @@ calculateVars()
     }
     
 
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetGradient3(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
+    
+    
 }
 

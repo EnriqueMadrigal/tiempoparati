@@ -21,7 +21,7 @@ class productosview: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        SetBackGroundImage(self)
+        SetBackGroundImage2(self)
         LoadData()
         tableView.dataSource = self.dataSource
         tableView.delegate = self
@@ -127,6 +127,24 @@ class productosview: UIViewController, UITableViewDelegate {
     }
     
   
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+                self.LoadData()
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
+
+    
     
     
 }

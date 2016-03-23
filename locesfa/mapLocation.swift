@@ -20,7 +20,7 @@ class mapLocation: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SetBackGroundImage(self)
+        SetBackGroundImage2(self)
         
         if (CLLocationManager.locationServicesEnabled())
         {
@@ -183,6 +183,21 @@ class mapLocation: UIViewController,CLLocationManagerDelegate, MKMapViewDelegate
 
         
     }
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                SetBackGroundImage2(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
 
     
     

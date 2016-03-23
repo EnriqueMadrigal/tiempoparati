@@ -8,7 +8,7 @@
 
 import UIKit
 
-class comentariosview: UIViewController, UITableViewDelegate {
+class comentariosview: UIViewController, UITableViewDelegate,  UITextFieldDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     var hasrefresh: Bool = false
@@ -18,7 +18,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
     var refreshControl:UIRefreshControl!
     
 
-    @IBOutlet weak var labelComentarios: UITextView!
+   
     //@IBOutlet weak var ratingControl: RatingControl!
     
     @IBOutlet weak var ratingView: UIView!
@@ -29,6 +29,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
     }
     
     
+    @IBOutlet weak var labelComentarios: UITextField!
     var ratingControl: RatingControl!
     var ratingwidth: CGFloat = 0.0
     var ratingheight: CGFloat = 0.0
@@ -39,7 +40,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-         SetBackGroundImage(self)
+         SetBackGroundImage2(self)
         
         self.ratingwidth = self.ratingView.frame.width
         self.ratingheight = self.ratingView.frame.height
@@ -57,6 +58,8 @@ class comentariosview: UIViewController, UITableViewDelegate {
         //tableView.rowHeight = UITableViewAutomaticDimension
          self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
+        self.labelComentarios.delegate = self
+        self.labelComentarios.font = UIFont(name: "Arial", size: 12 * dataAccess.sharedInstance.multiplier)
 
     }
 
@@ -77,7 +80,13 @@ class comentariosview: UIViewController, UITableViewDelegate {
     }
     
 
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        //print("Enter")
+        return true;
+    }
+
     /*
     // MARK: - Navigation
 
@@ -242,7 +251,7 @@ class comentariosview: UIViewController, UITableViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
-             SetBackGroundImage(self)
+             SetBackGroundImage2(self)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -257,6 +266,23 @@ class comentariosview: UIViewController, UITableViewDelegate {
         
     }
 
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+                self.LoadData()
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+
+    
     
     
 }

@@ -23,7 +23,7 @@ class horariosview: UIViewController , UITableViewDelegate{
 
         // Do any additional setup after loading the view.
         
-        SetBackGroundImage(self)
+        SetBackGroundImage2(self)
         self.tableView.dataSource = self.dataSource
         self.tableView.delegate = self
         
@@ -108,6 +108,21 @@ class horariosview: UIViewController , UITableViewDelegate{
         LoadData()
         self.refreshControl.endRefreshing()
         
+    }
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+                self.LoadData()
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     }
 
     

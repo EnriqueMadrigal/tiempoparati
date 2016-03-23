@@ -13,7 +13,7 @@ class terminos: UIViewController {
     @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-         setGradient2(self)
+         SetGradient3(self)
         // Do any additional setup after loading the view.
     }
 
@@ -39,5 +39,24 @@ class terminos: UIViewController {
         self.textView.setContentOffset(CGPointZero, animated: false)
     }
 
+    
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetGradient3(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
+
+    
     
 }

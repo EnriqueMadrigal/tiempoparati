@@ -78,6 +78,25 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         
     }
     
+    @IBAction func showConsejos(sender: AnyObject) {
+     
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("tipsBelleza") as! tipsview
+        //vc.curServicio = 1
+        
+        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
+        view.userInteractionEnabled = false
+        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+        view.alpha=0.5
+        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
+        view.addSubview(messageDialog)
+        self.hasWaitDialog = true
+        
+        
+        self.showViewController(vc, sender: nil)
+        //.showViewController(vc, animated: true, completion: nil)
+       
+    }
     
     var searchBarWidth: CGFloat = 0
     var searchBarHeight: CGFloat = 0
@@ -88,7 +107,7 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
        
         // Do any additional setup after loading the view.
         //SetBackGroundImage(self)
-        setGradient2(self)
+        SetGradient3(self)
         //SetBackGroundImage2(self)
         self.searchBarWidth = self.searchView.frame.width
         self.searchBarHeight = self.searchView.frame.height
@@ -136,7 +155,8 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
         //print("willAppear")
         self.labelNombre.text = dataAccess.sharedInstance.curPersona.Nombre!
         //SetBackGroundImage(self)
-        setGradient2(self)
+        
+        SetGradient3(self)
         //SetBackGroundImage2(self)
                
     }
@@ -523,18 +543,27 @@ class mainscene: UIViewController ,UITableViewDelegate, UISearchResultsUpdating,
 
     }
 
+   
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                 SetGradient3(self)
+                self.LoadData()
+        })
+        
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-      
     }
     
-   /*
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animateAlongsideTransition(nil, completion: {
-            print("rotation")
-        }
-*/
-        
+
+    
+    
+    
+    
     override func shouldAutorotate() -> Bool {
         return true
     }

@@ -24,6 +24,8 @@ func setGradient1(curController: UIViewController)
     colors.colorTop = colorTop
     colors.createGradient()
     curController.view.backgroundColor = UIColor.clearColor()
+    
+    
     let backgroundLayer = colors.gl
     backgroundLayer.frame = curController.view.frame
     curController.view.layer.insertSublayer(backgroundLayer, atIndex: 0)
@@ -43,6 +45,7 @@ func setGradient2(curController: UIViewController)
     colors.createGradient()
     curController.view.backgroundColor = UIColor.clearColor()
     let backgroundLayer = colors.gl
+
     backgroundLayer.frame = curController.view.frame
     curController.view.layer.insertSublayer(backgroundLayer, atIndex: 0)
     
@@ -51,13 +54,14 @@ func setGradient2(curController: UIViewController)
 
 
 
-func SetBackGroundImage2 (curController: UIViewController)
+
+
+//////
+func SetGradient3 (curController: UIViewController)
 {
-    let collageImage = UIImage(named: "collage")
-    let curBack = UIImage(named: "background4")
+   
     
     var frame1: CGRect = UIScreen.mainScreen().bounds
-    curController.view.backgroundColor = UIColor(patternImage: curBack!)
     
     if let curNavigationController = curController.navigationController{
         
@@ -67,36 +71,145 @@ func SetBackGroundImage2 (curController: UIViewController)
     }
     
     let backgroundImage = UIImageView(frame: frame1)
-
     
     backgroundImage.tag = 100
+    
+    
+    let colors = Colors()
+    
+    let colorTop = UIColor(red: 0.10, green: 0.10, blue: 0.10, alpha: 1.0).CGColor
+    let colorBottom = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 1.0).CGColor
+    colors.colorBottom = colorBottom
+    colors.colorTop = colorTop
+    colors.createGradient()
+    curController.view.backgroundColor = UIColor.clearColor()
+    
+    
+    let backgroundLayer = colors.gl
+    backgroundLayer.frame = curController.view.frame
+    
+    backgroundImage.layer.insertSublayer(backgroundLayer, atIndex: 0)
+   //curController.view.layer.insertSublayer(backgroundLayer, atIndex: 0)
     
     if let viewWithTag = curController.view.viewWithTag(100) {
         viewWithTag.removeFromSuperview()
     }
     
     
-    var newRect: CGRect!
+    curController.view.insertSubview(backgroundImage, atIndex: 0)
+}
+
+////
+
+
+func SetBackGroundImage2 (curController: UIViewController)
+{
+    var collageImage: UIImage!
+    //let curBack = UIImage(named: "background4")
+    
+    
+    let menModel = UIImage(named: "background3")
+    let womanModel = UIImage(named: "background1")
+    
+    
+    let sexo = dataAccess.sharedInstance.curPersona.sexo
+    
+    collageImage = womanModel
+    
+    if (sexo==1){
+        collageImage = menModel
+    }
+    
+
+    
+    
+    var frame1: CGRect = UIScreen.mainScreen().bounds
+    curController.view.backgroundColor = UIColor.clearColor()
+    
+    var navControllerheight: CGFloat = 0.0
     let curScale: CGFloat = dataAccess.sharedInstance.curScale
-    if (dataAccess.sharedInstance.curOrientation == "Portrait" || dataAccess.sharedInstance.curOrientation == "PortraitUpsideDown")
-    {
-        newRect = CGRectMake(0, 0, ((collageImage?.size.width)! * curScale) / 2, ((collageImage?.size.height)! * curScale))
+    let imageheight = (collageImage?.size.height)! * curScale
+    let imagewidth = (collageImage?.size.width)! * curScale
+    let imageratio: CGFloat = imagewidth / imageheight
+    
+    
+    
+    if let curNavigationController = curController.navigationController{
+        
+        navControllerheight = curNavigationController.navigationBar.bounds.height
+        //frame1 = CGRect(x: 0, y: navControllerheight + 20, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
+        
+    }
+    
+    
+    
+    switch UIDevice.currentDevice().orientation{
+    case .Portrait:
+        frame1 = CGRect(x: 0, y: navControllerheight + 20, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
+        
+    case .PortraitUpsideDown:
+        frame1 = CGRect(x: 0, y: navControllerheight + 20, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
+        
+        
+    case .LandscapeLeft:
+        
+        let newimageHeight: CGFloat = UIScreen.mainScreen().bounds.height - (navControllerheight + 20)
+        let newimageWidth:CGFloat = newimageHeight / imageratio
+        
+        let middleframe:CGFloat = UIScreen.mainScreen().bounds.width / 2.0
+        let posx: CGFloat = middleframe - (( newimageWidth) / 2.0)
+        
+        frame1 = CGRect(x: posx, y: navControllerheight + 20, width: newimageWidth, height: newimageHeight)
+        
+       
+        
+    case .LandscapeRight:
+        let newimageHeight: CGFloat = UIScreen.mainScreen().bounds.height - (navControllerheight + 20)
+        let newimageWidth:CGFloat = newimageHeight * imageratio
+        
+        let middleframe:CGFloat = UIScreen.mainScreen().bounds.width / 2.0
+        let posx: CGFloat = middleframe - (( newimageWidth) / 2.0)
+        
+        frame1 = CGRect(x: posx, y: navControllerheight + 20, width: newimageWidth, height: newimageHeight)
         
 
-    }
-    
-   
-    else
-    {
-        newRect = CGRectMake(0, 0, (collageImage?.size.width)! * curScale, (collageImage?.size.height)! * curScale)
         
+    default:
+        let newimageHeight: CGFloat = UIScreen.mainScreen().bounds.height - (navControllerheight + 20)
+        let newimageWidth:CGFloat = newimageHeight * imageratio
+        
+        let middleframe:CGFloat = UIScreen.mainScreen().bounds.width / 2.0
+        let posx: CGFloat = middleframe - (( newimageWidth) / 2.0)
+        
+        frame1 = CGRect(x: posx, y: navControllerheight + 20, width: newimageWidth, height: newimageHeight)
+    }
+
+    
+    
+    
+    
+    
+    let backgroundImage = UIImageView(frame: frame1)
+    backgroundImage.image = collageImage
+     backgroundImage.tag = 100
+    
+    if let viewWithTag = curController.view.viewWithTag(100) {
+        viewWithTag.removeFromSuperview()
     }
     
+ 
     
+    
+    
+    
+  /*
+    var newRect: CGRect!
+    newRect = CGRectMake(0, 0, (imagewidth! * curScale) , (imageheight! * curScale))
     let imageRef:CGImageRef = CGImageCreateWithImageInRect(collageImage!.CGImage, newRect)!
     let cropped:UIImage = UIImage(CGImage:imageRef)
     
     backgroundImage.image = cropped
+    */
     
     curController.view.insertSubview(backgroundImage, atIndex: 0)
     }

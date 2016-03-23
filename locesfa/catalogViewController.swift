@@ -20,7 +20,7 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
 
         // Do any additional setup after loading the view.
         
-      SetBackGroundImage(self)
+      SetBackGroundImage2(self)
         LoadData()
 
     self.collectionView.dataSource = self
@@ -170,5 +170,23 @@ class catalogViewController: UIViewController, UICollectionViewDelegateFlowLayou
         
         
     }
+    
+    
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+
     
 }

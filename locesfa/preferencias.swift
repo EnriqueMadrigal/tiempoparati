@@ -45,7 +45,7 @@ class preferencias: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
-       SetBackGroundImage(self)        
+       SetBackGroundImage2(self)
         loadDatos()
         
         self.labelEmail.delegate = self
@@ -306,6 +306,22 @@ class preferencias: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
 
         return true;
+    }
+
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     }
 
     

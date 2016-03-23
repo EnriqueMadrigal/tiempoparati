@@ -1,54 +1,55 @@
 //
-//  catalogoviewImage.swift
+//  showtipview.swift
 //  locesfa
 //
-//  Created by Enrique Madrigal Gutierrez on 04/02/16.
+//  Created by Enrique Madrigal Gutierrez on 21/03/16.
 //  Copyright © 2016 datalabor.com.mx. All rights reserved.
 //
 
 import UIKit
 
-class catalogoviewImage: UIViewController {
+class showtipview: UIViewController {
 
-    @IBOutlet weak var image1: UIImageView!
-    @IBOutlet weak var labelDescripcion: UILabel!
+    var CurrentTip: Int!
     
-    var curCatalogo: Catalogos_Esteticas!
+    @IBOutlet weak var image1: UIImageView!
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      SetBackGroundImage2(self)
+        SetGradient3(self)
         
-        if let curCatalogo = curCatalogo{
+        if let CurrentTip = CurrentTip{
+           
             
-            self.labelDescripcion.text = curCatalogo.descripcion!
-            
-            let curWidth = Int(self.image1.frame.width)
-            let curHeight = Int(self.image1.frame.height)
-            
-            let datosImage = SentRequest_image(curaction: "getimagecatalogo.php")
-            datosImage.AddPosData(DataPost(newItem: "idcatalogo", newValue: "\(curCatalogo.id!)"))
-            datosImage.AddPosData(DataPost(newItem: "width", newValue: "\(curWidth)"))
-            datosImage.AddPosData(DataPost(newItem: "height", newValue: "\(curHeight)"))
+            let datosImage = SentRequest_image(curaction: "getimagetip.php")
+            datosImage.AddPosData(DataPost(newItem: "idtip", newValue: "\(CurrentTip)"))
+            datosImage.AddPosData(DataPost(newItem: "width", newValue: "240"))
+            datosImage.AddPosData(DataPost(newItem: "height", newValue: "320"))
             
             datosImage.ObtenData()
             
             if (datosImage.result==1){
-                return
+                self.image1.image = UIImage(named: "notavail")
             }
-            
-            if let newImage: UIImage = datosImage.curimage!{
-                self.image1.image = newImage
+                
+                
+            else {
+                if let curImage: UIImage = datosImage.curimage {
+                    
+                self.image1.image = curImage
+                }
+               
+                
                 
             }
-            
+   
             
             
         }
-    
-    
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +68,7 @@ class catalogoviewImage: UIViewController {
     }
     */
 
+    
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
         coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
@@ -76,11 +78,12 @@ class catalogoviewImage: UIViewController {
             
             }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
                 //print("rotation completed")
-                SetBackGroundImage2(self)
+                SetGradient3(self)
         })
         
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     }
+    
 
     
 }

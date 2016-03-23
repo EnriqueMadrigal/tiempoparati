@@ -367,7 +367,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
 
         // Do any additional setup after loading the view.
         
-        SetBackGroundImage(self)
+        SetBackGroundImage2(self)
         //SetBackGroundImage2(self)
         if let CurEstetica = CurEstetica{
             self.labelNombre.text = CurEstetica.title!
@@ -513,7 +513,8 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         super.viewWillAppear(animated)
         //print("willAppear")
         //SetBackGroundImage(self)
-        setGradient2(self)
+        //setGradient2(self)
+        SetBackGroundImage2(self)
         //SetBackGroundImage2(self)
         
     }
@@ -521,7 +522,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
  
     
     override func viewDidAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewDidAppear(animated)
                if (self.hasWaitDialog){
             Dialogo.closeWaitDialog()
             view.alpha = 1.0
@@ -601,6 +602,22 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     }
     
     
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+    
+
     
     
 }

@@ -47,7 +47,7 @@ class calendarioview: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    SetBackGroundImage(self)
+    SetBackGroundImage2(self)
     
      
            
@@ -77,6 +77,7 @@ class calendarioview: UIViewController, UITextFieldDelegate {
         self.selectedMin = comp.minute
         
         self.textView.delegate = self
+         self.textView.font = UIFont(name: "Arial", size: 12 * dataAccess.sharedInstance.multiplier)
         
       }
 
@@ -96,6 +97,20 @@ class calendarioview: UIViewController, UITextFieldDelegate {
     }
 
     */
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
 
     
     func AgregaCita(){

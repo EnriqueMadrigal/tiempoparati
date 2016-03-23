@@ -23,7 +23,7 @@ class serviciosestetica: UIViewController ,UITableViewDelegate{
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        SetBackGroundImage(self)
+        SetBackGroundImage2(self)
         LoadData()
         
         tableView.dataSource = self.dataSource
@@ -154,22 +154,47 @@ class serviciosestetica: UIViewController ,UITableViewDelegate{
     
     
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        //print("didAppear")
-             //SetBackGroundImage(self)
-    }
-
+   
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //print("willAppear")
-        //SetBackGroundImage(self)
-        setGradient2(self)
+        SetBackGroundImage2(self)
+        //setGradient3(self)
         //SetBackGroundImage2(self)
-        
+        LoadData()
         
 
         
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if (self.hasWaitDialog){
+            Dialogo.closeWaitDialog()
+            view.alpha = 1.0
+            view.userInteractionEnabled = true
+            self.hasWaitDialog = false
+        }
+        //SetBackGroundImage(self)
+        //SetBackGroundImage2(self)
+    }
+
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+                self.LoadData()
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     }
 
     

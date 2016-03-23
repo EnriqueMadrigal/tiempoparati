@@ -33,7 +33,7 @@ class citasview: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        SetBackGroundImage(self)
+        SetBackGroundImage2(self)
         
         LoadData()
         tableView.dataSource = self.dataSource
@@ -252,12 +252,23 @@ class citasview: UIViewController, UITableViewDelegate {
 
     
     override func viewDidAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewDidAppear(animated)
         //self.refreshControl.beginRefreshing()
         LoadData()
         //self.refreshControl.endRefreshing()
 
     
+    }
+
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //print("willAppear")
+        //SetBackGroundImage(self)
+        //setGradient2(self)
+        SetBackGroundImage2(self)
+        //SetBackGroundImage2(self)
+        
     }
 
     
@@ -303,6 +314,22 @@ class citasview: UIViewController, UITableViewDelegate {
         
         
     }
-    
+   
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+            //let orient = UIApplication.sharedApplication().statusBarOrientation
+            
+            
+            }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                //print("rotation completed")
+                SetBackGroundImage2(self)
+                self.LoadData()
+        })
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+    }
+
     
 }
