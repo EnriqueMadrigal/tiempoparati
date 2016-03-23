@@ -33,7 +33,7 @@ class ObtenPersona {
             try managedContext.executeFetchRequest(fetchRequest)
             people = results as! [NSManagedObject]
         } catch let error as NSError {
-            //print("Could not fetch \(error), \(error.userInfo)")
+            print("Could not fetch \(error), \(error.userInfo)")
         }
         //print(people.count)
         
