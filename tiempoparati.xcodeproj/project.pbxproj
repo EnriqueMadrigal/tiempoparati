@@ -39,6 +39,9 @@
 		CD5C766E1C98C6B2000D79D5 /* horariosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C766D1C98C6B2000D79D5 /* horariosview.swift */; };
 		CD5C766F1C98C6B2000D79D5 /* horariosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C766D1C98C6B2000D79D5 /* horariosview.swift */; };
 		CD5C76701C98C6B2000D79D5 /* horariosview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C766D1C98C6B2000D79D5 /* horariosview.swift */; };
+		CD5C7D371CA3C6B900782493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */; };
+		CD5C7D381CA3C6BA00782493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7181AF1C5AF4FA004734E4 /* AppDelegate.swift */; };
+		CD5C7D391CA3C74B00782493 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD7181C91C5AF4FA004734E4 /* Info.plist */; };
 		CD5F22281C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F221F1C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift */; };
 		CD5F22291C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F221F1C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift */; };
 		CD5F222A1C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F221F1C7F8B8E00597951 /* NSCalendar+NWCalendarView.swift */; };
@@ -546,6 +549,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5C7D391CA3C74B00782493 /* Info.plist in Resources */,
 				CD41C6B01C5FDCF80023C520 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +665,7 @@
 				CD5F222F1C7F8B8E00597951 /* NWCalendarCache.swift in Sources */,
 				CDC93CC81C64669B00818782 /* promocionesview.swift in Sources */,
 				CDD3E7581C6EC77800A5F0CD /* customTableView5.swift in Sources */,
+				CD5C7D371CA3C6B900782493 /* AppDelegate.swift in Sources */,
 				CD7182001C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD63A6931C968D30009D62A4 /* CustomButton1.swift in Sources */,
 				CD41C6B41C6017EF0023C520 /* preferencias.swift in Sources */,
@@ -722,6 +727,7 @@
 				CD5F22301C7F8B8E00597951 /* NWCalendarCache.swift in Sources */,
 				CDC93CC91C64669B00818782 /* promocionesview.swift in Sources */,
 				CDD3E7591C6EC77900A5F0CD /* customTableView5.swift in Sources */,
+				CD5C7D381CA3C6BA00782493 /* AppDelegate.swift in Sources */,
 				CD7182011C5B285F004734E4 /* mainscene.swift in Sources */,
 				CD63A6941C968D30009D62A4 /* CustomButton1.swift in Sources */,
 				CD41C6B51C6017EF0023C520 /* preferencias.swift in Sources */,
@@ -892,9 +898,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = locesfaTests/Info.plist;
+				INFOPLIST_FILE = tiempoparati/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/locesfa.app/locesfa";
 			};
@@ -904,9 +910,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = locesfaTests/Info.plist;
+				INFOPLIST_FILE = tiempoparati/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaTests;
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/locesfa.app/locesfa";
 			};
@@ -915,9 +921,9 @@
 		CD7181DE1C5AF4FA004734E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = locesfaUITests/Info.plist;
+				INFOPLIST_FILE = tiempoparatiUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = locesfa;
 				USES_XCTRUNNER = YES;
@@ -927,9 +933,9 @@
 		CD7181DF1C5AF4FA004734E4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = locesfaUITests/Info.plist;
+				INFOPLIST_FILE = tiempoparatiUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = datalabor.locesfaUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = locesfa;
 				USES_XCTRUNNER = YES;
