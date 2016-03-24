@@ -141,9 +141,6 @@ func SetBackGroundImage2 (curController: UIViewController)
         
     }
     
-    print(UIDevice.currentDevice().orientation.isLandscape)
-    
-    
     
         frame1 = CGRect(x: 0, y: navControllerheight + 20, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
         
