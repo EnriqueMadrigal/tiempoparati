@@ -412,7 +412,7 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
             </objects>
             <point key="canvasLocation" x="1636" y="-469"/>
         </scene>
-        <!--Esteticas-->
+        <!--Directorio-->
         <scene sceneID="gKj-dg-dnc">
             <objects>
                 <viewController id="LV7-6t-WEx" customClass="mainscene" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
@@ -632,7 +632,7 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                             <constraint firstItem="Etk-v7-HTk" firstAttribute="top" secondItem="raA-Q3-72a" secondAttribute="topMargin" constant="80" id="t8j-Rc-Hpj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Esteticas" id="j3g-1C-bvQ"/>
+                    <navigationItem key="navigationItem" title="Directorio" id="j3g-1C-bvQ"/>
                     <connections>
                         <outlet property="labelBienvenido" destination="ztS-zj-ZvQ" id="Eaa-wU-G7v"/>
                         <outlet property="labelNombre" destination="74u-Ri-x8j" id="5QC-Gj-HO2"/>
@@ -842,7 +842,7 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
             </objects>
             <point key="canvasLocation" x="3375" y="-476"/>
         </scene>
-        <!--Estetica-->
+        <!--Establecimiento-->
         <scene sceneID="8Vq-5B-GgR">
             <objects>
                 <viewController storyboardIdentifier="Estetica" id="vP2-y6-8m2" customClass="esteticaview" customModule="locesfa" customModuleProvider="target" sceneMemberID="viewController">
@@ -1075,7 +1075,7 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                             <constraint firstItem="u74-ZJ-uE3" firstAttribute="leading" secondItem="lWw-yG-WjV" secondAttribute="leadingMargin" id="kkt-uh-LOu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Estetica" id="TNh-0D-HtR"/>
+                    <navigationItem key="navigationItem" title="Establecimiento" id="TNh-0D-HtR"/>
                     <connections>
                         <outlet property="image1" destination="siw-ky-V3S" id="708-oy-XCG"/>
                         <outlet property="labelDescripcion" destination="qN9-De-jPm" id="NNq-ad-Zsq"/>
@@ -1600,26 +1600,48 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="icj-LC-paY">
-                                <rect key="frame" x="139" y="115" width="322" height="450"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1SG-hf-aMR">
+                                <rect key="frame" x="75" y="-6" width="450" height="652"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-1B-yiF">
-                                        <rect key="frame" x="0.0" y="0.0" width="322" height="429"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-dm-855">
+                                        <rect key="frame" x="0.0" y="0.0" width="450" height="622"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notavail" translatesAutoresizingMaskIntoConstraints="NO" id="sMZ-VP-2ag">
-                                                <rect key="frame" x="0.0" y="0.0" width="322" height="429"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="sMZ-VP-2ag" secondAttribute="height" multiplier="3:4" id="425-rg-el9"/>
-                                                </constraints>
-                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mbh-5S-XHU">
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="601"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notavail" translatesAutoresizingMaskIntoConstraints="NO" id="sMZ-VP-2ag">
+                                                        <rect key="frame" x="0.0" y="0.0" width="450" height="601"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="sMZ-VP-2ag" secondAttribute="height" multiplier="3:4" id="mzn-Xz-KZM"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GpG-qY-afu">
+                                                <rect key="frame" x="0.0" y="601" width="450" height="21"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BSv-s9-e9d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="450" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kLs-QE-j3g">
-                                        <rect key="frame" x="0.0" y="429" width="322" height="21"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xvN-Wh-rvJ">
+                                        <rect key="frame" x="0.0" y="622" width="450" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BSv-s9-e9d">
-                                                <rect key="frame" x="0.0" y="0.0" width="322" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" text="* Las imagenes mostradas son propiedad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="016-cD-Qzi">
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" text=" del establecimiento que muestra el servicio." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="zza-Md-F5q">
+                                                <rect key="frame" x="0.0" y="15" width="450" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1630,9 +1652,9 @@ Estas modificaciones estarán disponibles al público en esta aplicación móvil
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="icj-LC-paY" firstAttribute="height" secondItem="Mig-c7-djr" secondAttribute="height" multiplier="0.75" id="8ss-Sf-HBn"/>
-                            <constraint firstItem="icj-LC-paY" firstAttribute="centerY" secondItem="Mig-c7-djr" secondAttribute="centerY" constant="40" id="Tve-QW-qZ2"/>
-                            <constraint firstItem="icj-LC-paY" firstAttribute="centerX" secondItem="Mig-c7-djr" secondAttribute="centerX" id="can-Sk-4DA"/>
+                            <constraint firstItem="1SG-hf-aMR" firstAttribute="width" secondItem="Mig-c7-djr" secondAttribute="width" multiplier="0.75" id="075-Vm-Wjb"/>
+                            <constraint firstItem="1SG-hf-aMR" firstAttribute="centerX" secondItem="Mig-c7-djr" secondAttribute="centerX" id="MxK-zL-jdg"/>
+                            <constraint firstItem="1SG-hf-aMR" firstAttribute="centerY" secondItem="Mig-c7-djr" secondAttribute="centerY" constant="20" id="xzf-2a-MuW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Catálogo" id="7c9-YD-sKe"/>

@@ -70,8 +70,11 @@ class Estetica {
     var idhorario: Int?
     var rate: Int?
     var citas: Int?
+    var comentarios: Int?
     var imageFileName: String?
     var descripcion: String?
+    var idestatus: Int?
+    var idestatus_pagos: Int?
     
     
     
@@ -90,8 +93,12 @@ class Estetica {
         self.idhorario = Int((json["idhorario"] as? String)!)!
         self.rate = Int((json["rate"] as? String)!)!
         self.citas = Int((json["citas"] as? String)!)!
+        self.comentarios = Int((json["comentarios"] as? String)!)!
         self.imageFileName = json["imageFileName"] as? String
         self.descripcion = json["descripcion"] as? String
+        self.idestatus = Int((json["idestatus"] as? String)!)!
+        self.idestatus_pagos = Int((json["idestatus_pagos"] as? String)!)!
+        
     }
     
 }

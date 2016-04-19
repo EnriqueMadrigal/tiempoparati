@@ -117,6 +117,9 @@
 		CD7182041C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD7182051C5B2A54004734E4 /* esteticaview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7182021C5B2A54004734E4 /* esteticaview.swift */; };
 		CD759DF21C6A633D00BB60CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD759DF11C6A633D00BB60CF /* MapKit.framework */; };
+		CD8724BF1CABA1A200E7FABF /* coords.GeoJson in Resources */ = {isa = PBXBuildFile; fileRef = CD8724BE1CABA1A200E7FABF /* coords.GeoJson */; };
+		CD8724C01CABA1A200E7FABF /* coords.GeoJson in Resources */ = {isa = PBXBuildFile; fileRef = CD8724BE1CABA1A200E7FABF /* coords.GeoJson */; };
+		CD8724C11CABA1A200E7FABF /* coords.GeoJson in Resources */ = {isa = PBXBuildFile; fileRef = CD8724BE1CABA1A200E7FABF /* coords.GeoJson */; };
 		CD88C7E41CA06ED1006E1943 /* DataSourceTipsFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88C7E31CA06ED1006E1943 /* DataSourceTipsFixed.swift */; };
 		CD88C7E51CA06ED1006E1943 /* DataSourceTipsFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88C7E31CA06ED1006E1943 /* DataSourceTipsFixed.swift */; };
 		CD88C7E61CA06ED1006E1943 /* DataSourceTipsFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88C7E31CA06ED1006E1943 /* DataSourceTipsFixed.swift */; };
@@ -247,6 +250,7 @@
 		CD7181FE1C5B285F004734E4 /* mainscene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainscene.swift; sourceTree = "<group>"; };
 		CD7182021C5B2A54004734E4 /* esteticaview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = esteticaview.swift; sourceTree = "<group>"; };
 		CD759DF11C6A633D00BB60CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CD8724BE1CABA1A200E7FABF /* coords.GeoJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coords.GeoJson; sourceTree = "<group>"; };
 		CD88C7E31CA06ED1006E1943 /* DataSourceTipsFixed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTipsFixed.swift; sourceTree = "<group>"; };
 		CD88C7E71CA070EE006E1943 /* tipsview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tipsview.swift; sourceTree = "<group>"; };
 		CD88C7EB1CA081EB006E1943 /* showtipview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showtipview.swift; sourceTree = "<group>"; };
@@ -315,6 +319,7 @@
 		CD7181A31C5AF4FA004734E4 = {
 			isa = PBXGroup;
 			children = (
+				CD8724BE1CABA1A200E7FABF /* coords.GeoJson */,
 				CD759DF11C6A633D00BB60CF /* MapKit.framework */,
 				CD7181AE1C5AF4FA004734E4 /* locesfa */,
 				CD7181C61C5AF4FA004734E4 /* locesfaTests */,
@@ -542,6 +547,7 @@
 				CD7181BD1C5AF4FA004734E4 /* LaunchScreen.storyboard in Resources */,
 				CD7181BA1C5AF4FA004734E4 /* Assets.xcassets in Resources */,
 				CD7181B51C5AF4FA004734E4 /* Main.storyboard in Resources */,
+				CD8724BF1CABA1A200E7FABF /* coords.GeoJson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +555,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8724C01CABA1A200E7FABF /* coords.GeoJson in Resources */,
 				CD5C7D391CA3C74B00782493 /* Info.plist in Resources */,
 				CD41C6B01C5FDCF80023C520 /* Assets.xcassets in Resources */,
 			);
@@ -559,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD41C6B11C5FDCF90023C520 /* Assets.xcassets in Resources */,
+				CD8724C11CABA1A200E7FABF /* coords.GeoJson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +883,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = tiempoparati/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;
@@ -887,6 +896,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = tiempoparati/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = datalabor.tiempoparati;

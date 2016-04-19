@@ -19,7 +19,8 @@ class catalogoviewImage: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-      SetBackGroundImage2(self)
+      //SetBackGroundImage2(self)
+        SetGradient3(self)
         
         if let curCatalogo = curCatalogo{
             
@@ -79,7 +80,8 @@ class catalogoviewImage: UIViewController {
             
             }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
                 //print("rotation completed")
-                SetBackGroundImage2(self)
+                //SetBackGroundImage2(self)
+                SetGradient3(self)
         })
         
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)

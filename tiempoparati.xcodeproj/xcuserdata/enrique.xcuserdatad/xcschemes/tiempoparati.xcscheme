@@ -83,6 +83,9 @@
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
+      <RoutingCoverageFileReference
+         identifier = "../../coords.GeoJson">
+      </RoutingCoverageFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

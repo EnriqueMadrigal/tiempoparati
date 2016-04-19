@@ -280,6 +280,7 @@ class SentRequest {
             posdata = self.posData
         }
         
+        //print(self.globalUrl + self.CurAction )
         //print(posdata)
        
         

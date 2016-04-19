@@ -19,9 +19,8 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     @IBOutlet weak var tel1: CustomButton2!
     @IBOutlet weak var tel2: CustomButton2!
     @IBOutlet weak var tel3: CustomButton1!
+
     
-    
-    @IBOutlet weak var tableView: UITableView!
     @IBAction func Favoritos(sender: AnyObject) {
      AgregarFavorito()
     }
@@ -30,6 +29,13 @@ class esteticaview: UIViewController ,UITableViewDelegate{
      var Dialogo = Dialogs()
     
     @IBAction func showCatalogo(sender: AnyObject) {
+        
+        if (self.CurEstetica.idestatus_pagos != 1){
+             self.showWarning("No disponible", titlesign: "!Advertencia")
+            return
+        }
+        
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("catalogoView") as! catalogViewController
         //vc.curServicio = 1
@@ -49,42 +55,15 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         
     }
     
-    @IBAction func getPeinados(sender: UIButton) {
-        //performSegueWithIdentifier("showServicios", sender: nil)
-       // let vc :serviciosview = self.storyboard?.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
-         //      self.presentViewController(vc, animated: true, completion: nil)
-        
- 
-        Dialogo.setPos(view.frame.midX - 90, view.frame.midY - 25)
-        view.userInteractionEnabled = false
-        //view.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-        view.alpha=0.5
-        let messageDialog: UIView = Dialogo.showWaitDialog("Un momento")
-        view.addSubview(messageDialog)
-        self.hasWaitDialog = true
-
-
-        
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Servicios") as! serviciosview
-        //vc.curServicio = 1
-        //self.showViewController(vc, sender: nil)
-            //.showViewController(vc, animated: true, completion: nil)
-        
-        dispatch_async(dispatch_get_main_queue()) {
-        self.showViewController(vc, sender: nil)
-            
-            
-           // dispatch_async(dispatch_get_main_queue()) {
-          //  }
-        }
-        
-        
-    }
     
     
     @IBAction func getPromociones(sender: AnyObject) {
       
+        if (self.CurEstetica.idestatus_pagos != 1){
+            self.showWarning("No disponible", titlesign: "!Advertencia")
+            return
+        }
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Promociones") as! promocionesview
         //vc.curServicio = 1
@@ -102,12 +81,11 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         //.showViewController(vc, animated: true, completion: nil)
 
         
-        
-        
     }
     
     @IBAction func getComentarios(sender: AnyObject) {
     
+        if (self.CurEstetica.comentarios == 1){
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Comentarios") as! comentariosview
@@ -122,10 +100,11 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         let messageDialog: UIView = self.Dialogo.showWaitDialog("Un momento")
         self.view.addSubview(messageDialog)
         self.hasWaitDialog = true
-       
-        
-        
         self.showViewController(vc, sender: nil)
+        }
+        else {
+            self.showWarning("No disponible", titlesign: "!Advertencia")
+        }
 
         
     
@@ -211,6 +190,13 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     }
     
     @IBAction func getProductos(sender: AnyObject) {
+        
+        if (self.CurEstetica.idestatus_pagos != 1){
+            self.showWarning("No disponible", titlesign: "!Advertencia")
+            return
+        }
+        
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("Productos") as! productosview
         //vc.curServicio = 1
@@ -232,7 +218,12 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     
     @IBAction func getCalendario(sender: AnyObject) {
-
+        
+        if (self.CurEstetica.idestatus_pagos != 1){
+            self.showWarning("No disponible", titlesign: "!Advertencia")
+            return
+        }
+        
       
         if (self.CurEstetica.citas == 1){
         
@@ -254,12 +245,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         }
         
         else {
-            
-            let alert :UIAlertController = UIAlertController(title: "!Advertencia", message: "No disponible servicio de citas", preferredStyle: UIAlertControllerStyle.Alert)
-            let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
-            alert.addAction(OkButton)
-            self.presentViewController(alert, animated: false, completion: nil)
-            
+            self.showWarning("No disponible servicio de citas", titlesign: "!Advertencia")
         }
         
         
@@ -268,6 +254,13 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     @IBAction func getServices(sender: AnyObject) {
      
+        /*
+        if (self.CurEstetica.idestatus_pagos != 1){
+            self.showWarning("No disponible", titlesign: "!Advertencia")
+            return
+        }
+    */
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("ServiciosEstetica") as! serviciosestetica
         
@@ -331,6 +324,12 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     
     @IBAction func getHorarios(sender: AnyObject) {
         
+        if (self.CurEstetica.idestatus_pagos != 1){
+            self.showWarning("No disponible", titlesign: "!Advertencia")
+            return
+        }
+
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc = mainStoryboard.instantiateViewControllerWithIdentifier("HorariosEstetica") as! horariosview
         
@@ -370,6 +369,7 @@ class esteticaview: UIViewController ,UITableViewDelegate{
         SetBackGroundImage2(self)
         //SetBackGroundImage2(self)
         if let CurEstetica = CurEstetica{
+            self.CurEstetica = CurEstetica
             self.labelNombre.text = CurEstetica.title!
             self.labelDescripcion.text = CurEstetica.descripcion!
             self.labelDescripcion.numberOfLines = 0
@@ -397,7 +397,6 @@ class esteticaview: UIViewController ,UITableViewDelegate{
 
             let telefono2 = self.CurEstetica.telefono2
             tel2.setTitle(telefono2, forState: UIControlState.Normal)
-
             
              }
         
@@ -628,6 +627,14 @@ class esteticaview: UIViewController ,UITableViewDelegate{
     }
     
 
+    func showWarning(messagesign: String, titlesign: String){
+        
+        let alert :UIAlertController = UIAlertController(title: titlesign, message: messagesign, preferredStyle: UIAlertControllerStyle.Alert)
+        let OkButton : UIAlertAction = UIAlertAction(title: "Aceptar", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) in print("Foo")})
+        alert.addAction(OkButton)
+        self.presentViewController(alert, animated: false, completion: nil)
+
+    }
     
     
 }
